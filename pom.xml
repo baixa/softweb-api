@@ -7,13 +7,15 @@
     <groupId>com.softweb</groupId>
     <artifactId>root</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
     <name>SoftWeb-API Root</name>
     <description>Root project of SoftWeb-API application</description>
 
     <!-- Modules of application -->
     <modules>
-
+        <!-- Store application module-->
+        <module>store-api</module>
     </modules>
 
     <properties>

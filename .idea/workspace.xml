@@ -4,21 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="50feb5b1-314b-46e4-afec-a2fe698d5743" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LICENSE.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    <list default="true" id="50feb5b1-314b-46e4-afec-a2fe698d5743" name="Changes" comment="Init commit.&#10;Demo-release of version 1.0-SNAPSHOT. Add README.md and LICENSE.md files and prepare environment to add new modules">
+      <change afterPath="$PROJECT_DIR$/bin/scripts/data.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/scripts/init.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="dev" />
+      </map>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -29,6 +29,9 @@
         <option name="workspaceImportEnabled" value="true" />
       </MavenImportingSettings>
     </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="2LmlkeKf2zSPhoKIIgv77QrMuSH" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -42,14 +45,34 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "19",
+    "last_opened_file_path": "D:/Data/Projects/Softweb-Root/bin/scripts",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Data\Projects\Softweb-Root\bin\scripts" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="StoreApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="store-api" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.softweb.api.store.StoreApiApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -59,10 +82,26 @@
       <option name="presentableId" value="Default" />
       <updated>1676484285060</updated>
       <workItem from="1676484286286" duration="2125000" />
+      <workItem from="1676486928952" duration="761000" />
     </task>
+    <task id="LOCAL-00001" summary="Init commit.&#10;Demo-release of version 1.0-SNAPSHOT. Add README.md and LICENSE.md files and prepare environment to add new modules">
+      <created>1676487159443</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1676487159443</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/store-api" />
+    </ignored-roots>
+    <MESSAGE value="Init commit.&#10;Demo-release of version 1.0-SNAPSHOT. Add README.md and LICENSE.md files and prepare environment to add new modules" />
+    <option name="LAST_COMMIT_MESSAGE" value="Init commit.&#10;Demo-release of version 1.0-SNAPSHOT. Add README.md and LICENSE.md files and prepare environment to add new modules" />
   </component>
 </project>
