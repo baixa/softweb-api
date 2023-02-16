@@ -1,0 +1,45 @@
+version: '2.1'
+services:
+  database:
+    image: postgres:latest
+    container_name: database
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB:       softweb_dev
+    volumes:
+      - ./scripts/init.sql:/docker-entrypoint-initdb.d/1-init.sql
+      - ./scripts/data.sql:/docker-entrypoint-initdb.d/2-data.sql
+    networks:
+      backend:
+        aliases:
+          - "database"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+  store:
+    image: softweb/store-api:0.0.1-SNAPSHOT
+    build:
+      context: .
+    container_name: store
+    ports:
+      - "8080:8080"
+    depends_on:
+      - database
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://database:5432/softweb_dev
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+    networks:
+      backend:
+        aliases:
+          - "store"
+
+networks:
+  backend:
+    driver: bridge
+    name: softweb
