@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/v1/installer")
+@RequestMapping(value = "/v1/installer")
 public class InstallerController {
     private final InstallerService installerService;
 
@@ -15,37 +15,31 @@ public class InstallerController {
         this.installerService = installerService;
     }
 
-    @GetMapping
-    @RequestMapping(value = "/{id}")
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public ResponseEntity<?> getInstallerById (@PathVariable(name = "id") String installerId) {
         return ResponseEntity.ok(installerService.getInstallerById(installerId));
     }
 
-    @GetMapping
-    @RequestMapping(value = "/")
+    @RequestMapping(value = "/", method = RequestMethod.GET)
     public ResponseEntity<?> getInstallers () {
         return ResponseEntity.ok(installerService.getInstallers());
     }
 
-    @PostMapping
-    @RequestMapping(value = "/")
+    @RequestMapping(value = "/", method = RequestMethod.POST)
     public ResponseEntity<?> postInstaller (@RequestBody Installer installer) {
         installerService.saveInstaller(installer);
         return new ResponseEntity<>(null, HttpStatus.OK);
     }
 
-    @PutMapping
-    @RequestMapping(value = "/")
+    @RequestMapping(value = "/", method = RequestMethod.PUT)
     public ResponseEntity<?> putInstaller (@RequestBody Installer installer) {
         installerService.saveInstaller(installer);
         return new ResponseEntity<>(null, HttpStatus.OK);
     }
 
-    @DeleteMapping
-    @RequestMapping(value = "/{id}")
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<?> deleteInstaller (@PathVariable(name = "id") String installerId) {
         installerService.deleteInstallerById(installerId);
         return new ResponseEntity<>(null, HttpStatus.OK);
     }
-
 }

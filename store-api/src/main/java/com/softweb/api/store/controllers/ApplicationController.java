@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/v1/application")
+@RequestMapping(value = "/v1/application")
 public class ApplicationController {
     private final ApplicationService applicationService;
 
@@ -15,37 +15,31 @@ public class ApplicationController {
         this.applicationService = applicationService;
     }
 
-    @GetMapping
-    @RequestMapping(value = "/{id}")
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public ResponseEntity<?> getApplicationById (@PathVariable(name = "id") String applicationId) {
         return ResponseEntity.ok(applicationService.getApplicationById(applicationId));
     }
 
-    @GetMapping
-    @RequestMapping(value = "/")
+    @RequestMapping(value = "/", method = RequestMethod.GET)
     public ResponseEntity<?> getApplications () {
         return ResponseEntity.ok(applicationService.getApplications());
     }
 
-    @PostMapping
-    @RequestMapping(value = "/")
+    @RequestMapping(value = "/", method = RequestMethod.POST)
     public ResponseEntity<?> postApplication (@RequestBody Application application) {
         applicationService.saveApplication(application);
         return new ResponseEntity<>(null, HttpStatus.OK);
     }
 
-    @PutMapping
-    @RequestMapping(value = "/")
+    @RequestMapping(value = "/", method = RequestMethod.PUT)
     public ResponseEntity<?> putApplication (@RequestBody Application application) {
         applicationService.saveApplication(application);
         return new ResponseEntity<>(null, HttpStatus.OK);
     }
 
-    @DeleteMapping
-    @RequestMapping(value = "/{id}")
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<?> deleteApplication (@PathVariable(name = "id") String applicationId) {
         applicationService.deleteApplicationById(applicationId);
         return new ResponseEntity<>(null, HttpStatus.OK);
     }
-
 }

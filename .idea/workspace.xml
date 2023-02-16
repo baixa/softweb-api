@@ -4,6 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+    <list default="true" id="53817c4f-1016-4278-acc3-7f1b4ff0a562" name="Changes" comment="#1 - Add Store module">
+      <change afterPath="$PROJECT_DIR$/bin/control.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/ApplicationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/ApplicationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/DeveloperController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/DeveloperController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/ImageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/ImageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/InstallerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/InstallerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/LicenseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/LicenseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/OperatingSystemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/OperatingSystemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/resources/application.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,12 +53,16 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "19",
-    "last_opened_file_path": "D:/Data/Projects/Softweb-Root/bin/scripts",
+    "last_opened_file_path": "D:/Data/Projects/Softweb-Root/store-api",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -52,11 +72,14 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "spring.configuration.checksum": "624c7ac78c3fae67c9366b28a93e3549",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Data\Projects\Softweb-Root\store-api" />
+      <recent name="D:\Data\Projects\Softweb-Root\bin" />
       <recent name="D:\Data\Projects\Softweb-Root\bin\scripts" />
     </key>
   </component>
@@ -72,13 +95,14 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="50feb5b1-314b-46e4-afec-a2fe698d5743" name="Changes" comment="" />
+      <changelist id="53817c4f-1016-4278-acc3-7f1b4ff0a562" name="Changes" comment="#1 - Add Store module" />
       <created>1676484285060</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1676484285060</updated>
       <workItem from="1676484286286" duration="2125000" />
       <workItem from="1676486928952" duration="1119000" />
+      <workItem from="1676551090656" duration="1399000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit.&#10;Demo-release of version 1.0-SNAPSHOT. Add README.md and LICENSE.md files and prepare environment to add new modules">
       <created>1676487159443</created>

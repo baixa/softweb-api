@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/v1/image")
+@RequestMapping(value = "/v1/image")
 public class ImageController {
     private final ImageService imageService;
 
@@ -15,37 +15,31 @@ public class ImageController {
         this.imageService = imageService;
     }
 
-    @GetMapping
-    @RequestMapping(value = "/{id}")
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public ResponseEntity<?> getImageById (@PathVariable(name = "id") String imageId) {
         return ResponseEntity.ok(imageService.getImageById(imageId));
     }
 
-    @GetMapping
-    @RequestMapping(value = "/")
+    @RequestMapping(value = "/", method = RequestMethod.GET)
     public ResponseEntity<?> getImages () {
         return ResponseEntity.ok(imageService.getImages());
     }
 
-    @PostMapping
-    @RequestMapping(value = "/")
+    @RequestMapping(value = "/", method = RequestMethod.POST)
     public ResponseEntity<?> postImage (@RequestBody Image image) {
         imageService.saveImage(image);
         return new ResponseEntity<>(null, HttpStatus.OK);
     }
 
-    @PutMapping
-    @RequestMapping(value = "/")
+    @RequestMapping(value = "/", method = RequestMethod.PUT)
     public ResponseEntity<?> putImage (@RequestBody Image image) {
         imageService.saveImage(image);
         return new ResponseEntity<>(null, HttpStatus.OK);
     }
 
-    @DeleteMapping
-    @RequestMapping(value = "/{id}")
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<?> deleteImage (@PathVariable(name = "id") String imageId) {
         imageService.deleteImageById(imageId);
         return new ResponseEntity<>(null, HttpStatus.OK);
     }
-
 }
