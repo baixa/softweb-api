@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/v1/operatingSystem")
+@RequestMapping(value = "/v1/operatingSystem")
 public class OperatingSystemController {
     private final OperatingSystemService operatingSystemService;
 
@@ -15,37 +15,31 @@ public class OperatingSystemController {
         this.operatingSystemService = operatingSystemService;
     }
 
-    @GetMapping
-    @RequestMapping(value = "/{id}")
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public ResponseEntity<?> getOperatingSystemById (@PathVariable(name = "id") String operatingSystemId) {
         return ResponseEntity.ok(operatingSystemService.getOperatingSystemById(operatingSystemId));
     }
 
-    @GetMapping
-    @RequestMapping(value = "/")
+    @RequestMapping(value = "/", method = RequestMethod.GET)
     public ResponseEntity<?> getOperatingSystems () {
         return ResponseEntity.ok(operatingSystemService.getOperatingSystems());
     }
 
-    @PostMapping
-    @RequestMapping(value = "/")
+    @RequestMapping(value = "/", method = RequestMethod.POST)
     public ResponseEntity<?> postOperatingSystem (@RequestBody OperatingSystem operatingSystem) {
         operatingSystemService.saveOperatingSystem(operatingSystem);
         return new ResponseEntity<>(null, HttpStatus.OK);
     }
 
-    @PutMapping
-    @RequestMapping(value = "/")
+    @RequestMapping(value = "/", method = RequestMethod.PUT)
     public ResponseEntity<?> putOperatingSystem (@RequestBody OperatingSystem operatingSystem) {
         operatingSystemService.saveOperatingSystem(operatingSystem);
         return new ResponseEntity<>(null, HttpStatus.OK);
     }
 
-    @DeleteMapping
-    @RequestMapping(value = "/{id}")
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<?> deleteOperatingSystem (@PathVariable(name = "id") String operatingSystemId) {
         operatingSystemService.deleteOperatingSystemById(operatingSystemId);
         return new ResponseEntity<>(null, HttpStatus.OK);
     }
-
 }
