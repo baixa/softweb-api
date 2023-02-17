@@ -21,6 +21,15 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+  eureka:
+    image: softweb/eureka:0.0.1-SNAPSHOT
+    container_name: eureka
+    ports:
+      - "8761:8761"
+    networks:
+      backend:
+        aliases:
+          - "eureka"
   store:
     image: softweb/store-api:0.0.1-SNAPSHOT
     build:
@@ -34,6 +43,7 @@ services:
       SPRING_DATASOURCE_URL: jdbc:postgresql://database:5432/softweb_dev
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: postgres
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka:8761/eureka/
     networks:
       backend:
         aliases:
