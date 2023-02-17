@@ -16,6 +16,9 @@
     <modules>
         <!-- Store application module-->
         <module>store-api</module>
+
+        <!-- Service discovery server-->
+        <module>eureka</module>
     </modules>
 
     <properties>
