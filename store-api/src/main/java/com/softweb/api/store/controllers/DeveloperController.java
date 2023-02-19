@@ -1,10 +1,13 @@
 package com.softweb.api.store.controllers;
 
+import com.softweb.api.store.model.dto.DeveloperDto;
 import com.softweb.api.store.model.entities.Developer;
 import com.softweb.api.store.services.DeveloperService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping(value = "/v1/developer")
@@ -17,12 +20,15 @@ public class DeveloperController {
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public ResponseEntity<?> getDeveloperById (@PathVariable(name = "id") String developerId) {
-        return ResponseEntity.ok(developerService.getDeveloperById(developerId));
+        Developer developer = developerService.getDeveloperById(developerId);
+        return ResponseEntity.ok(new DeveloperDto(developer));
     }
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ResponseEntity<?> getDevelopers () {
-        return ResponseEntity.ok(developerService.getDevelopers());
+        List<Developer> developerList = developerService.getDevelopers();
+        List<DeveloperDto> developerDtos = developerList.stream().map(DeveloperDto::new).toList();
+        return ResponseEntity.ok(developerDtos);
     }
 
     @RequestMapping(value = "/", method = RequestMethod.POST)

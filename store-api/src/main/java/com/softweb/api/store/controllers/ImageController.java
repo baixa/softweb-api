@@ -1,10 +1,13 @@
 package com.softweb.api.store.controllers;
 
+import com.softweb.api.store.model.dto.ImageDto;
 import com.softweb.api.store.model.entities.Image;
 import com.softweb.api.store.services.ImageService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping(value = "/v1/image")
@@ -17,12 +20,15 @@ public class ImageController {
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public ResponseEntity<?> getImageById (@PathVariable(name = "id") String imageId) {
-        return ResponseEntity.ok(imageService.getImageById(imageId));
+        Image image = imageService.getImageById(imageId);
+        return ResponseEntity.ok(new ImageDto(image));
     }
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ResponseEntity<?> getImages () {
-        return ResponseEntity.ok(imageService.getImages());
+        List<Image> imageList = imageService.getImages();
+        List<ImageDto> imageDtos = imageList.stream().map(ImageDto::new).toList();
+        return ResponseEntity.ok(imageDtos);
     }
 
     @RequestMapping(value = "/", method = RequestMethod.POST)

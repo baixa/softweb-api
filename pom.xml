@@ -14,10 +14,10 @@
 
     <!-- Modules of application -->
     <modules>
-        <!-- Store application module-->
+        <!-- Store application module -->
         <module>store-api</module>
 
-        <!-- Service discovery server-->
+        <!-- Service discovery server -->
         <module>eureka</module>
     </modules>
 
