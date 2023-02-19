@@ -7,7 +7,7 @@ import java.util.Date;
 import java.util.Set;
 
 /**
- * The Developer entity class contains data about the application developers who host products in the system.
+ * The User entity class contains data about the application users who host products in the system.
  * <p>
  * The class contains an identifier and data for user authorization in the system.
  * <p>
@@ -17,10 +17,10 @@ import java.util.Set;
  * @version 1.0
  */
 @Entity
-@Table(name = "developer")
+@Table(name = "users")
 @Getter @Setter @ToString
 @AllArgsConstructor @NoArgsConstructor
-public class Developer {
+public class User {
 
     /**
      * Automatically generated identifier
@@ -31,7 +31,7 @@ public class Developer {
     private Long id;
 
     /**
-     * Username of developer
+     * Username of user
      */
     @Column(name = "username", length = 30, nullable = false)
     private String username;
@@ -49,10 +49,10 @@ public class Developer {
     private String password;
 
     /**
-     * Indicator of privileged user
+     * Is user enabled
      */
-    @Column(name = "is_admin", nullable = false)
-    private boolean isAdmin;
+    @Column(name = "enabled", nullable = false)
+    private boolean isEnabled;
 
     /**
      * Last login date.
@@ -63,7 +63,13 @@ public class Developer {
     /**
      * List of published applications.
      */
-    @OneToMany(mappedBy = "developer", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
     private Set<Application> applications;
+
+    /**
+     * User authority
+     */
+    @OneToOne(mappedBy = "user", fetch = FetchType.EAGER)
+    private Authority authority;
 
 }

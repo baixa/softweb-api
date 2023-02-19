@@ -469,15 +469,20 @@ INSERT INTO public.license (code, name) VALUES ('ZPL-1.1', 'Zope Public License 
 INSERT INTO public.license (code, name) VALUES ('ZPL-2.0', 'Zope Public License 2.0');
 INSERT INTO public.license (code, name) VALUES ('ZPL-2.1', 'Zope Public License 2.1');
 
---- Developer table (default password - test)
-INSERT INTO public.developer (id, username, full_name, password, is_admin, last_entered) VALUES (4, 'Michael', 'Michael Houls', '9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08', true, '2023-01-27 16:27:32');
-INSERT INTO public.developer (id, username, full_name, password, is_admin, last_entered) VALUES (5, 'Miles', 'Miles Cole', '9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08', false, '2021-01-27 16:27:36');
-INSERT INTO public.developer (id, username, full_name, password, is_admin, last_entered) VALUES (6, 'James', 'James Trace', '9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08', false, '2023-01-25 16:28:08');
+--- Users table (default password - test, test1, test2)
+INSERT INTO public.users (id, username, full_name, password, enabled, last_entered) VALUES (4, 'Michael', 'Michael Houls', '$2a$09$FdW6rFU6pxaHfAhGDUiav.WdMsNTLArooI2uttn4DFKxLC.JmRl0W', true, '2023-01-27 16:27:32');
+INSERT INTO public.users (id, username, full_name, password, enabled, last_entered) VALUES (5, 'Miles', 'Miles Cole', '$2a$10$adDk5yKRMihe06jKa2MFTuaYYnsIWWiqEEhzd0SmnVdSJfXTyUPG2', true, '2021-01-27 16:27:36');
+INSERT INTO public.users (id, username, full_name, password, enabled, last_entered) VALUES (6, 'James', 'James Trace', '$2a$10$gDkbvFxhFyv0pVGEH/sSmuKN5y.6CQ/pNVI34nvB78S65WEUGICke', true, '2023-01-25 16:28:08');
+
+--- Authority table
+INSERT INTO public.authority (user_id, authority) VALUES (4, 'ADMIN');
+INSERT INTO public.authority (user_id, authority) VALUES (5, 'USER');
+INSERT INTO public.authority (user_id, authority) VALUES (6, 'USER');
 
 --- Application table
-INSERT INTO public.application (id, name, short_description, long_description, logo_path, license, developer_id, last_update, downloads, views) VALUES (4, 'Google Chrome', 'Fastes browser', 'It can help you serf Internet', NULL, 'ZPL-2.0', 4, '2023-02-27 16:28:05', 5, 125);
-INSERT INTO public.application (id, name, short_description, long_description, logo_path, license, developer_id, last_update, downloads, views) VALUES (5, 'Yandex Browser', 'Be smart', NULL, NULL, 'Artistic-1.0', 5, '2023-01-24 16:35:08', 4, 106);
-INSERT INTO public.application (id, name, short_description, long_description, logo_path, license, developer_id, last_update, downloads, views) VALUES (6, 'Firefox', 'Light browser', NULL, NULL, 'Apache-1.0', 6, '2023-01-10 16:35:50', 7, 100);
+INSERT INTO public.application (id, name, short_description, long_description, logo_path, license, user_id, last_update, downloads, views) VALUES (4, 'Google Chrome', 'Fastes browser', 'It can help you serf Internet', NULL, 'ZPL-2.0', 4, '2023-02-27 16:28:05', 5, 125);
+INSERT INTO public.application (id, name, short_description, long_description, logo_path, license, user_id, last_update, downloads, views) VALUES (5, 'Yandex Browser', 'Be smart', NULL, NULL, 'Artistic-1.0', 5, '2023-01-24 16:35:08', 4, 106);
+INSERT INTO public.application (id, name, short_description, long_description, logo_path, license, user_id, last_update, downloads, views) VALUES (6, 'Firefox', 'Light browser', NULL, NULL, 'Apache-1.0', 6, '2023-01-10 16:35:50', 7, 100);
 
 --- Operating system
 INSERT INTO public.operating_system (id, name) VALUES (1, 'Windows 10');

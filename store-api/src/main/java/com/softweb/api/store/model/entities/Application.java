@@ -12,7 +12,7 @@ import java.util.Set;
  * The class contains an automatically generated identifier, the name of the application,
  * its description and title, the path and image of the application logo, license information, and application analytics data: the number of downloads and views.
  * <p>
- * The class also contains fields that associate the application with its developer, image list, and application installers.
+ * The class also contains fields that associate the application with its user, image list, and application installers.
  *
  * @author Maksimchuk I.
  * @version 1.0
@@ -63,11 +63,11 @@ public class Application {
     private License license;
 
     /**
-     * Developer of application
+     * User of application
      */
     @ManyToOne
-    @JoinColumn(name = "developer_id")
-    private Developer developer;
+    @JoinColumn(name = "user_id")
+    private User user;
 
 
     /**
@@ -99,6 +99,4 @@ public class Application {
      */
     @OneToMany(mappedBy = "application", fetch = FetchType.EAGER)
     private Set<Installer> installers;
-
-
 }
