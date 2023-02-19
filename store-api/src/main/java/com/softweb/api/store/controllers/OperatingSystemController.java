@@ -1,10 +1,13 @@
 package com.softweb.api.store.controllers;
 
+import com.softweb.api.store.model.dto.OperatingSystemDto;
 import com.softweb.api.store.model.entities.OperatingSystem;
 import com.softweb.api.store.services.OperatingSystemService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping(value = "/v1/operatingSystem")
@@ -17,12 +20,15 @@ public class OperatingSystemController {
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public ResponseEntity<?> getOperatingSystemById (@PathVariable(name = "id") String operatingSystemId) {
-        return ResponseEntity.ok(operatingSystemService.getOperatingSystemById(operatingSystemId));
+        OperatingSystem operatingSystem = operatingSystemService.getOperatingSystemById(operatingSystemId);
+        return ResponseEntity.ok(new OperatingSystemDto(operatingSystem));
     }
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ResponseEntity<?> getOperatingSystems () {
-        return ResponseEntity.ok(operatingSystemService.getOperatingSystems());
+        List<OperatingSystem> operatingSystems = operatingSystemService.getOperatingSystems();
+        List<OperatingSystemDto> operatingSystemDtos = operatingSystems.stream().map(OperatingSystemDto::new).toList();
+        return ResponseEntity.ok(operatingSystemDtos);
     }
 
     @RequestMapping(value = "/", method = RequestMethod.POST)

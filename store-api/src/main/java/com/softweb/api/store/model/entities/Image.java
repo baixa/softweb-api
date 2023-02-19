@@ -1,6 +1,7 @@
 package com.softweb.api.store.model.entities;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 /**
  * An entity class that contains information about the associated application's images.
@@ -12,6 +13,8 @@ import jakarta.persistence.*;
  */
 @Entity
 @Table(name = "image")
+@Getter @Setter @ToString
+@AllArgsConstructor @NoArgsConstructor
 public class Image {
     /**
      * Automatically generated identifier

@@ -1,10 +1,13 @@
 package com.softweb.api.store.controllers;
 
+import com.softweb.api.store.model.dto.InstallerDto;
 import com.softweb.api.store.model.entities.Installer;
 import com.softweb.api.store.services.InstallerService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping(value = "/v1/installer")
@@ -17,12 +20,15 @@ public class InstallerController {
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public ResponseEntity<?> getInstallerById (@PathVariable(name = "id") String installerId) {
-        return ResponseEntity.ok(installerService.getInstallerById(installerId));
+        Installer installer = installerService.getInstallerById(installerId);
+        return ResponseEntity.ok(new InstallerDto(installer));
     }
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ResponseEntity<?> getInstallers () {
-        return ResponseEntity.ok(installerService.getInstallers());
+        List<Installer> installerList = installerService.getInstallers();
+        List<InstallerDto> installerDtos = installerList.stream().map(InstallerDto::new).toList();
+        return ResponseEntity.ok(installerDtos);
     }
 
     @RequestMapping(value = "/", method = RequestMethod.POST)
