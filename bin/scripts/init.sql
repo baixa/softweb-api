@@ -5,16 +5,27 @@ CREATE TABLE license
     CONSTRAINT pk_license PRIMARY KEY (code)
 );
 
-CREATE TABLE developer
+CREATE TABLE users
 (
     id           SERIAL      NOT NULL,
     username     VARCHAR(30) NOT NULL,
     full_name    VARCHAR(100),
     password     VARCHAR(64) NOT NULL,
-    is_admin     BOOLEAN     NOT NULL,
+    enabled      BOOLEAN     NOT NULL,
     last_entered TIMESTAMP WITHOUT TIME ZONE,
-    CONSTRAINT pk_developer PRIMARY KEY (id)
+    CONSTRAINT pk_user PRIMARY KEY (id)
+
 );
+
+CREATE TABLE authority
+(
+    user_id BIGINT      NOT NULL,
+    authority VARCHAR(30) NOT NULL,
+    CONSTRAINT pk_authority PRIMARY KEY (user_id)
+);
+
+ALTER TABLE authority
+    ADD CONSTRAINT FK_AUTHORITY_ON_USERS FOREIGN KEY (user_id) REFERENCES users (id);
 
 CREATE TABLE operating_system
 (
@@ -31,7 +42,7 @@ CREATE TABLE application
     long_description  VARCHAR(255),
     logo_path         VARCHAR(255),
     license           VARCHAR(100),
-    developer_id      BIGINT,
+    user_id      BIGINT,
     last_update       TIMESTAMP WITHOUT TIME ZONE,
     downloads         INTEGER     NOT NULL,
     views             INTEGER     NOT NULL,
@@ -39,7 +50,7 @@ CREATE TABLE application
 );
 
 ALTER TABLE application
-    ADD CONSTRAINT FK_APPLICATION_ON_DEVELOPER FOREIGN KEY (developer_id) REFERENCES developer (id);
+    ADD CONSTRAINT FK_APPLICATION_ON_USERS FOREIGN KEY (user_id) REFERENCES users (id);
 
 ALTER TABLE application
     ADD CONSTRAINT FK_APPLICATION_ON_LICENSE FOREIGN KEY (license) REFERENCES license (code);

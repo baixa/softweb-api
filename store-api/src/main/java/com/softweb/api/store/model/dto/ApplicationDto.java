@@ -19,7 +19,7 @@ public class ApplicationDto implements Serializable {
     private final String longDescription;
     private final String logoPath;
     private final LicenseDto license;
-    private final DeveloperDto developer;
+    private final UserDto user;
     private final Date lastUpdate;
     private final int downloads;
     private final int views;
@@ -32,7 +32,7 @@ public class ApplicationDto implements Serializable {
         this.longDescription = application.getLongDescription();
         this.logoPath = application.getLogoPath();
         this.license = new LicenseDto(application.getLicense());
-        this.developer = new DeveloperDto(application.getDeveloper());
+        this.user = new UserDto(application.getUser());
         this.lastUpdate = application.getLastUpdate();
         this.downloads = application.getDownloads();
         this.views = application.getViews();
