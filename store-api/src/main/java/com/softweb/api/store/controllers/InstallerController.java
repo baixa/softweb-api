@@ -1,6 +1,6 @@
 package com.softweb.api.store.controllers;
 
-import com.softweb.api.store.model.dto.InstallerDto;
+import com.softweb.api.store.model.dto.installer.InstallerDto;
 import com.softweb.api.store.model.entities.Installer;
 import com.softweb.api.store.services.InstallerService;
 import org.springframework.http.HttpStatus;

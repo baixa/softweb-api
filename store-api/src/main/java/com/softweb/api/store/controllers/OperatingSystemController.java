@@ -1,6 +1,6 @@
 package com.softweb.api.store.controllers;
 
-import com.softweb.api.store.model.dto.OperatingSystemDto;
+import com.softweb.api.store.model.dto.operatingsystem.OperatingSystemDto;
 import com.softweb.api.store.model.entities.OperatingSystem;
 import com.softweb.api.store.services.OperatingSystemService;
 import org.springframework.http.HttpStatus;

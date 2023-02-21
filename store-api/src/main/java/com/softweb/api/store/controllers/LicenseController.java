@@ -1,6 +1,6 @@
 package com.softweb.api.store.controllers;
 
-import com.softweb.api.store.model.dto.LicenseDto;
+import com.softweb.api.store.model.dto.license.LicenseDto;
 import com.softweb.api.store.model.entities.License;
 import com.softweb.api.store.services.LicenseService;
 import org.springframework.http.HttpStatus;

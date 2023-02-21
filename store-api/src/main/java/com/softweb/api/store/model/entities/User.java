@@ -18,7 +18,7 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "users")
-@Getter @Setter @ToString
+@Getter @Setter
 @AllArgsConstructor @NoArgsConstructor
 public class User {
 
@@ -72,4 +72,16 @@ public class User {
     @OneToOne(mappedBy = "user", fetch = FetchType.EAGER)
     private Authority authority;
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", fullName='" + fullName + '\'' +
+                ", password='" + password + '\'' +
+                ", isEnabled=" + isEnabled +
+                ", lastEntered=" + lastEntered +
+                ", authority=" + authority +
+                '}';
+    }
 }

@@ -1,5 +1,6 @@
 package com.softweb.api.store.model.entities;
 
+import com.softweb.api.store.model.dto.application.ApplicationPostDto;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -19,7 +20,7 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "application")
-@Getter @Setter @ToString
+@Getter @Setter
 @AllArgsConstructor @NoArgsConstructor
 public class Application {
 
@@ -27,7 +28,7 @@ public class Application {
      * Automatically generated identifier
      */
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
 
@@ -99,4 +100,34 @@ public class Application {
      */
     @OneToMany(mappedBy = "application", fetch = FetchType.EAGER)
     private Set<Installer> installers;
+
+    public Application(ApplicationPostDto applicationDto) {
+        this.name = applicationDto.getName();
+        this.shortDescription = applicationDto.getShortDescription();
+        this.longDescription = applicationDto.getLongDescription();
+        this.logoPath = applicationDto.getLogoBase64();
+        this.lastUpdate = applicationDto.getLastUpdate();
+        this.views = applicationDto.getViews();
+        this.downloads = applicationDto.getDownloads();
+        this.user = applicationDto.getUser();
+        this.license = applicationDto.getLicense();
+    }
+
+    @Override
+    public String toString() {
+        return "Application{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", shortDescription='" + shortDescription + '\'' +
+                ", longDescription='" + longDescription + '\'' +
+                ", logoPath='" + logoPath + '\'' +
+                ", license=" + license +
+                ", user=" + user +
+                ", lastUpdate=" + lastUpdate +
+                ", downloads=" + downloads +
+                ", views=" + views +
+                ", images=" + images +
+                ", installers=" + installers +
+                '}';
+    }
 }

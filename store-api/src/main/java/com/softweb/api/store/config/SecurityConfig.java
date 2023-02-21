@@ -1,5 +1,6 @@
 package com.softweb.api.store.config;
 
+import com.softweb.api.store.model.entities.Authorities;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -23,11 +24,13 @@ public class SecurityConfig {
         httpSecurity
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/", "/home").permitAll()
-                        .requestMatchers(HttpMethod.GET, "/v1/application", "/v1/application/**").authenticated()
-                        .requestMatchers(HttpMethod.POST, "/v1/application", "/v1/application/**").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.DELETE, "/v1/application", "/v1/application/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.GET, "/v1/application", "/v1/application/**").anonymous()
+                        .requestMatchers(HttpMethod.POST, "/v1/application", "/v1/application/**").authenticated()
+                        .requestMatchers(HttpMethod.PUT, "/v1/application", "/v1/application/**").authenticated()
+                        .requestMatchers(HttpMethod.DELETE, "/v1/application", "/v1/application/**").authenticated()
                         .anyRequest().denyAll()
                 )
+                .csrf().disable()
                 .httpBasic();
         return httpSecurity.build();
     }

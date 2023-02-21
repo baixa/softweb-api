@@ -1,4 +1,4 @@
-package com.softweb.api.store.model.dto;
+package com.softweb.api.store.model.dto.authority;
 
 import com.softweb.api.store.model.entities.Authority;
 import lombok.Data;

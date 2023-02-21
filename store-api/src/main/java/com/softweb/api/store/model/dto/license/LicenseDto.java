@@ -1,4 +1,4 @@
-package com.softweb.api.store.model.dto;
+package com.softweb.api.store.model.dto.license;
 
 import com.softweb.api.store.model.entities.License;
 import lombok.Data;

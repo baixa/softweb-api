@@ -4,25 +4,42 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53817c4f-1016-4278-acc3-7f1b4ff0a562" name="Changes" comment="#12 - Add Eureka module">
-      <change afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/AuthorityDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/entities/Authority.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
+    <list default="true" id="53817c4f-1016-4278-acc3-7f1b4ff0a562" name="Changes" comment="#10 - Setting up authorization by using credentials from a data source">
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/HomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/application/ApplicationAdminGetDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/application/ApplicationDefaultGetDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/application/ApplicationPostDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/application/ApplicationPutDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/user/UserDefaultDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/entities/Authorities.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/repository/RepositoryConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/AuthenticationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/utils/NumParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/utils/StringUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/scripts/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/bin/scripts/data.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/scripts/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/bin/scripts/init.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/eureka/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/mvnw" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/DeveloperController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/ApplicationDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/ApplicationDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/DeveloperDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/UserDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/ApplicationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/ApplicationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/ImageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/ImageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/InstallerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/InstallerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/LicenseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/LicenseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/OperatingSystemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/OperatingSystemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/ApplicationDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/application/AbstractApplicationGetDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/AuthorityDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/authority/AuthorityDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/ImageDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/image/ImageDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/InstallerDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/installer/InstallerDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/LicenseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/license/LicenseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/OperatingSystemDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/operatingsystem/OperatingSystemDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/user/UserAdminDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/entities/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/entities/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/entities/Developer.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/repository/DeveloperRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/DeveloperService.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/entities/Authority.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/entities/Authority.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/repository/ApplicationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/repository/ApplicationRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/ApplicationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/ApplicationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,9 +49,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="com.haulmont.jpb.JpaEntity" />
+        <option value="Enum" />
         <option value="com.haulmont.jpb.NewClass" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -85,8 +103,8 @@
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;9139d7845e0e64fff8745f0006578876&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;5583b5c266f0482c91598d9a9487da62&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -187,6 +205,8 @@
       <workItem from="1676700475624" duration="9974000" />
       <workItem from="1676737221873" duration="42000" />
       <workItem from="1676783975767" duration="11495000" />
+      <workItem from="1676889831334" duration="6493000" />
+      <workItem from="1676957919310" duration="8120000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit.&#10;Demo-release of version 1.0-SNAPSHOT. Add README.md and LICENSE.md files and prepare environment to add new modules">
       <created>1676487159443</created>

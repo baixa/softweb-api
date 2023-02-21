@@ -1,6 +1,6 @@
 package com.softweb.api.store.controllers;
 
-import com.softweb.api.store.model.dto.ImageDto;
+import com.softweb.api.store.model.dto.image.ImageDto;
 import com.softweb.api.store.model.entities.Image;
 import com.softweb.api.store.services.ImageService;
 import org.springframework.http.HttpStatus;

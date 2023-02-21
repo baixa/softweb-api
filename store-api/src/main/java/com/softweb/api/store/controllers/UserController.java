@@ -1,6 +1,6 @@
 package com.softweb.api.store.controllers;
 
-import com.softweb.api.store.model.dto.UserDto;
+import com.softweb.api.store.model.dto.user.UserAdminDto;
 import com.softweb.api.store.model.entities.User;
 import com.softweb.api.store.services.UserService;
 import org.springframework.http.HttpStatus;
@@ -21,14 +21,14 @@ public class UserController {
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public ResponseEntity<?> getUserById (@PathVariable(name = "id") String userId) {
         User user = userService.getUserById(userId);
-        return ResponseEntity.ok(new UserDto(user));
+        return ResponseEntity.ok(new UserAdminDto(user));
     }
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ResponseEntity<?> getUsers () {
         List<User> userList = userService.getUsers();
-        List<UserDto> userDtos = userList.stream().map(UserDto::new).toList();
-        return ResponseEntity.ok(userDtos);
+        List<UserAdminDto> userAdminDtos = userList.stream().map(UserAdminDto::new).toList();
+        return ResponseEntity.ok(userAdminDtos);
     }
 
     @RequestMapping(value = "/", method = RequestMethod.POST)

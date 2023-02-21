@@ -1,5 +1,6 @@
-package com.softweb.api.store.model.dto;
+package com.softweb.api.store.model.dto.user;
 
+import com.softweb.api.store.model.dto.authority.AuthorityDto;
 import com.softweb.api.store.model.entities.User;
 import lombok.Data;
 
@@ -10,7 +11,7 @@ import java.util.Date;
  * A DTO for the {@link User} entity
  */
 @Data
-public class UserDto implements Serializable {
+public class UserAdminDto implements Serializable {
     private final Long id;
     private final String username;
     private final String fullName;
@@ -19,7 +20,7 @@ public class UserDto implements Serializable {
     private final boolean isEnabled;
     private final AuthorityDto authorityDto;
 
-    public UserDto(User user) {
+    public UserAdminDto(User user) {
         this.id = user.getId();
         this.username = user.getUsername();
         this.fullName = user.getFullName();

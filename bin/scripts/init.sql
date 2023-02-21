@@ -42,7 +42,7 @@ CREATE TABLE application
     long_description  VARCHAR(255),
     logo_path         VARCHAR(255),
     license           VARCHAR(100),
-    user_id      BIGINT,
+    user_id           BIGINT      NOT NULL,
     last_update       TIMESTAMP WITHOUT TIME ZONE,
     downloads         INTEGER     NOT NULL,
     views             INTEGER     NOT NULL,

@@ -33,4 +33,8 @@ public class UserService {
     public void deleteUserById (String userId) {
         userRepository.deleteById(Long.valueOf(userId));
     }
+
+    public User getUserByUsername(String authenticationName) {
+        return userRepository.findByUsername(authenticationName).orElse(null);
+    }
 }

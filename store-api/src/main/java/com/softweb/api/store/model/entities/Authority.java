@@ -5,7 +5,7 @@ import lombok.*;
 
 @Entity
 @Table(name = "authority")
-@Getter @Setter @ToString
+@Getter @Setter
 @AllArgsConstructor @NoArgsConstructor
 public class Authority {
     @Id
@@ -15,4 +15,11 @@ public class Authority {
 
     @Column(name = "authority")
     private String authority;
+
+    @Override
+    public String toString() {
+        return "Authority{" +
+                "authority='" + authority + '\'' +
+                '}';
+    }
 }

@@ -1,4 +1,4 @@
-package com.softweb.api.store.model.dto;
+package com.softweb.api.store.model.dto.operatingsystem;
 
 import com.softweb.api.store.model.entities.OperatingSystem;
 import lombok.Data;
