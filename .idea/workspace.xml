@@ -4,31 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53817c4f-1016-4278-acc3-7f1b4ff0a562" name="Changes" comment="#27 - Completion ApplicationController.java">
-      <change afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/user/AbstractUserGetDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/user/AbstractUserSaveDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/user/UserPostDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/user/UserPutDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/repository/AuthorityRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/AuthorityService.java" afterDir="false" />
+    <list default="true" id="53817c4f-1016-4278-acc3-7f1b4ff0a562" name="Changes" comment="#27 - Completion UserController.java">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/scripts/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/bin/scripts/data.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/scripts/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/bin/scripts/init.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/application/ApplicationAdminGetDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/application/ApplicationAdminGetDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/application/ApplicationDefaultGetDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/application/ApplicationDefaultGetDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/authority/AuthorityDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/authority/AuthorityDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/user/UserAdminDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/user/UserAdminGetDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/user/UserDefaultDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/user/UserDefaultGetDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/entities/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/entities/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/entities/Authority.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/entities/Authority.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/entities/Image.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/entities/Image.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/entities/Installer.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/entities/Installer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/entities/OperatingSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/entities/OperatingSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,7 +178,7 @@
       <workItem from="1676737221873" duration="42000" />
       <workItem from="1676783975767" duration="11495000" />
       <workItem from="1676889831334" duration="6493000" />
-      <workItem from="1676957919310" duration="24699000" />
+      <workItem from="1676957919310" duration="26051000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit.&#10;Demo-release of version 1.0-SNAPSHOT. Add README.md and LICENSE.md files and prepare environment to add new modules">
       <created>1676487159443</created>
@@ -223,7 +201,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676968175402</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="#27 - Completion UserController.java">
+      <created>1677080757262</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1677080757262</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,7 +233,8 @@
     <MESSAGE value="Init commit.&#10;Demo-release of version 1.0-SNAPSHOT. Add README.md and LICENSE.md files and prepare environment to add new modules" />
     <MESSAGE value="#1 - Add Store module" />
     <MESSAGE value="#27 - Completion ApplicationController.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="#27 - Completion ApplicationController.java" />
+    <MESSAGE value="#27 - Completion UserController.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="#27 - Completion UserController.java" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -257,6 +243,11 @@
           <url>file://$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/UserController.java</url>
           <line>103</line>
           <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/UserController.java</url>
+          <line>129</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
