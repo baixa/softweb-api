@@ -10,9 +10,9 @@ import java.io.Serializable;
  */
 @Data
 public class AuthorityDto implements Serializable {
-    private final String authority;
+    private final String name;
 
     public AuthorityDto(Authority authority) {
-        this.authority = authority.getAuthority();
+        this.name = authority.getAuthority();
     }
 }

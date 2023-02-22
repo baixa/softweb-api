@@ -28,7 +28,8 @@ public class Application {
      * Automatically generated identifier
      */
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sq_application")
+    @SequenceGenerator(name = "sq_application", allocationSize = 1)
     @Column(name = "id", nullable = false)
     private Long id;
 

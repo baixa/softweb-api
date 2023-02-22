@@ -20,7 +20,8 @@ public class Image {
      * Automatically generated identifier
      */
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sq_image")
+    @SequenceGenerator(name = "sq_image", allocationSize = 1)
     @Column(name = "id", nullable = false)
     private Long id;
 
