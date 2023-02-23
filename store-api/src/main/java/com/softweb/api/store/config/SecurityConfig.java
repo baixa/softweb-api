@@ -37,6 +37,10 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.GET,"/v1/license", "/v1/license/**").permitAll()
                         // Operating-system endpoints
                         .requestMatchers(HttpMethod.GET,"/v1/operatingSystem", "/v1/operatingSystem/**").permitAll()
+                        // Image endpoints
+                        .requestMatchers(HttpMethod.GET,"/v1/image", "/v1/image/**").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/v1/image", "/v1/image/**").authenticated()
+                        .requestMatchers(HttpMethod.DELETE, "/v1/image", "/v1/image/**").authenticated()
                         .anyRequest().denyAll()
                 )
                 .csrf().disable()

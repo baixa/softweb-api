@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53817c4f-1016-4278-acc3-7f1b4ff0a562" name="Changes" comment="#27 - Edit README.md">
+    <list default="true" id="53817c4f-1016-4278-acc3-7f1b4ff0a562" name="Changes" comment="#27 - Edit LicenseController and OperatingSystemController">
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/image/UploadImageDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/FileStorageService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/images/test.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/LicenseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/LicenseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/OperatingSystemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/OperatingSystemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/LicenseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/LicenseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/OperatingSystemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/OperatingSystemService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/ImageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/ImageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/repository/ImageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/repository/ImageRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/ImageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/ImageService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store-api/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,46 +57,49 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;19&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Data/Projects/Softweb-Root/authorization&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;5583b5c266f0482c91598d9a9487da62&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "19",
+    "last_opened_file_path": "D:/Data/Projects/Softweb-Root/store-api/src/main/resources/static/images",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "spring.configuration.checksum": "5583b5c266f0482c91598d9a9487da62",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Data\Projects\Softweb-Root\store-api\src\main\resources\static\images" />
       <recent name="D:\Data\Projects\Softweb-Root\authorization" />
       <recent name="D:\Data\Projects\Softweb-Root\resource" />
       <recent name="D:\Data\Projects\Softweb-Root\eureka" />
       <recent name="D:\Data\Projects\Softweb-Root\store-api" />
-      <recent name="D:\Data\Projects\Softweb-Root\bin" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Data\Projects\Softweb-Root\store-api\src\main\resources\static" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.StoreApiApplication">
@@ -184,7 +189,7 @@
       <workItem from="1676783975767" duration="11495000" />
       <workItem from="1676889831334" duration="6493000" />
       <workItem from="1676957919310" duration="26305000" />
-      <workItem from="1677162082189" duration="1506000" />
+      <workItem from="1677162082189" duration="18248000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit.&#10;Demo-release of version 1.0-SNAPSHOT. Add README.md and LICENSE.md files and prepare environment to add new modules">
       <created>1676487159443</created>
@@ -221,7 +226,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677082010200</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="#27 - Edit LicenseController and OperatingSystemController">
+      <created>1677163821635</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1677163821635</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,7 +260,8 @@
     <MESSAGE value="#27 - Completion ApplicationController.java" />
     <MESSAGE value="#27 - Completion UserController.java" />
     <MESSAGE value="#27 - Edit README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="#27 - Edit README.md" />
+    <MESSAGE value="#27 - Edit LicenseController and OperatingSystemController" />
+    <option name="LAST_COMMIT_MESSAGE" value="#27 - Edit LicenseController and OperatingSystemController" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -262,6 +275,16 @@
           <url>file://$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/UserController.java</url>
           <line>129</line>
           <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/ImageController.java</url>
+          <line>119</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/ImageController.java</url>
+          <line>127</line>
+          <option name="timeStamp" value="28" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
