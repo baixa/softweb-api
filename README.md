@@ -35,7 +35,7 @@ The main structure is based on Java (Spring). Desktop application is developed w
 
 ## How To Use
 
-To clone and run this application, you'll need [Git](https://git-scm.com) and [Docker](https://www.docker.com/) installed on your computer. From your command line:
+To clone and run this application, you'll need [Git](https://git-scm.com), [Docker](https://www.docker.com/), [JDK 17+](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) and [Maven](https://maven.apache.org/download.cgi) installed on your computer. From your command line:
 
 ```bash
 # Clone this repository

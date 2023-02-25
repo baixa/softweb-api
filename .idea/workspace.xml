@@ -5,24 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="53817c4f-1016-4278-acc3-7f1b4ff0a562" name="Changes" comment="#12 - Add Eureka module">
-      <change afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/AuthorityDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/entities/Authority.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/scripts/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/bin/scripts/data.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/scripts/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/bin/scripts/init.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eureka/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/eureka/mvnw" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store-api/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/DeveloperController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/ApplicationDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/ApplicationDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/DeveloperDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/UserDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/entities/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/entities/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/entities/Developer.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/repository/DeveloperRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/DeveloperService.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +28,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev" />
+        <entry key="$PROJECT_DIR$" value="27_completion_controllers" />
       </map>
     </option>
     <option name="ROOT_SYNC" value="DONT_SYNC" />
