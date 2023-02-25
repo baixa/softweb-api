@@ -1,14 +1,20 @@
 package com.softweb.api.store.services;
 
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ResourceUtils;
 import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -22,7 +28,7 @@ public class FileStorageService {
 
     @Autowired
     public FileStorageService() throws Exception {
-        this.fileStorageLocation = Paths.get(ResourceUtils.getURL("classpath:static/images").toURI())
+        this.fileStorageLocation = Paths.get(ResourceUtils.getURL("classpath:static/files").toURI())
                 .toAbsolutePath().normalize();
 
         try {
@@ -66,10 +72,27 @@ public class FileStorageService {
         }
     }
 
-    public boolean removeImageByPath(String imagePath) {
+    public boolean removeFileByPath(String imagePath) {
         String fileName = imagePath.substring(imagePath.lastIndexOf('/') + 1);
         Path targetLocation = this.fileStorageLocation.resolve(fileName);
         File file = new File(targetLocation.toUri());
         return file.delete();
+    }
+
+    public static ResponseEntity<Resource> getResourceAsResponseEntity(@PathVariable String fileName, HttpServletRequest request, FileStorageService fileStorageService) throws Exception {
+        Resource resource = fileStorageService.loadFileAsResource(fileName);
+
+        String contentType = null;
+        try {
+            contentType = request.getServletContext().getMimeType(resource.getFile().getAbsolutePath());
+        } catch (IOException ignored) {}
+
+        if (contentType == null)
+            contentType = "application/octet-stream";
+
+        return ResponseEntity.ok()
+                .contentType(MediaType.parseMediaType(contentType))
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + resource.getFilename() + "\"")
+                .body(resource);
     }
 }

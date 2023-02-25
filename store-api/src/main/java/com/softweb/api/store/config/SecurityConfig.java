@@ -41,6 +41,10 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.GET,"/v1/image", "/v1/image/**").permitAll()
                         .requestMatchers(HttpMethod.POST, "/v1/image", "/v1/image/**").authenticated()
                         .requestMatchers(HttpMethod.DELETE, "/v1/image", "/v1/image/**").authenticated()
+                        // Installer endpoints
+                        .requestMatchers(HttpMethod.GET,"/v1/installer", "/v1/installer/**").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/v1/installer", "/v1/installer/**").authenticated()
+                        .requestMatchers(HttpMethod.DELETE, "/v1/installer", "/v1/installer/**").authenticated()
                         .anyRequest().denyAll()
                 )
                 .csrf().disable()

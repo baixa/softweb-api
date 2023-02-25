@@ -11,18 +11,17 @@ import com.softweb.api.store.services.FileStorageService;
 import com.softweb.api.store.services.ImageService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.core.io.Resource;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+
+import static com.softweb.api.store.services.FileStorageService.getResourceAsResponseEntity;
 
 @RestController
 @RequestMapping(value = "/v1/image")
@@ -41,19 +40,7 @@ public class ImageController {
 
     @GetMapping("/{fileName:.+}")
     public ResponseEntity<Resource> getImageByName(@PathVariable String fileName, HttpServletRequest request) throws Exception {
-        Resource resource = fileStorageService.loadFileAsResource(fileName);
-        String contentType = null;
-        try {
-            contentType = request.getServletContext().getMimeType(resource.getFile().getAbsolutePath());
-        } catch (IOException ignored) {}
-
-        if (contentType == null)
-            contentType = "application/octet-stream";
-
-        return ResponseEntity.ok()
-                .contentType(MediaType.parseMediaType(contentType))
-                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + resource.getFilename() + "\"")
-                .body(resource);
+        return getResourceAsResponseEntity(fileName, request, fileStorageService);
     }
 
     @PostMapping("/upload")
@@ -76,7 +63,7 @@ public class ImageController {
         image.setApplication(application);
         image.setPath(fileDownloadUri);
         imageService.saveImage(image);
-        return ResponseEntity.ok(new UploadImageDto(fileName, fileDownloadUri,
+        return ResponseEntity.ok(new UploadImageDto(image.getId(), fileName, fileDownloadUri,
                 file.getContentType(), file.getSize(), application));
     }
 
@@ -105,7 +92,7 @@ public class ImageController {
             image.setApplication(application);
             image.setPath(fileDownloadUri);
             storedImages.add(image);
-            uploadImageDtos.add(new UploadImageDto(fileName, fileDownloadUri,
+            uploadImageDtos.add(new UploadImageDto(image.getId(), fileName, fileDownloadUri,
                     file.getContentType(), file.getSize(), application));
         }
         imageService.saveImages(storedImages);
@@ -123,7 +110,7 @@ public class ImageController {
                 && authUserAuthority != Authorities.ADMIN)
             return new ResponseEntity<>(null, HttpStatus.FORBIDDEN);
         imageService.deleteImageById(image.getId().toString());
-        if (fileStorageService.removeImageByPath(image.getPath()))
+        if (fileStorageService.removeFileByPath(image.getPath()))
             return new ResponseEntity<>(null, HttpStatus.OK);
         else
             return new ResponseEntity<>(null, HttpStatus.FORBIDDEN);

@@ -4,16 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53817c4f-1016-4278-acc3-7f1b4ff0a562" name="Changes" comment="#27 - Edit LicenseController and OperatingSystemController">
-      <change afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/image/UploadImageDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/FileStorageService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/images/test.jpg" afterDir="false" />
+    <list default="true" id="53817c4f-1016-4278-acc3-7f1b4ff0a562" name="Changes" comment="#27 - Edit ImageController">
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/application/ApplicationShortGetDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/installer/UploadInstallerDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/ImageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/ImageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/repository/ImageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/repository/ImageRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/ImageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/ImageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/InstallerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/InstallerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/application/AbstractApplicationGetDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/application/AbstractApplicationGetDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/application/ApplicationAdminGetDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/application/ApplicationAdminGetDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/application/ApplicationDefaultGetDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/application/ApplicationDefaultGetDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/image/UploadImageDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/image/UploadImageDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/installer/InstallerDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/installer/InstallerDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/FileStorageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/FileStorageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/InstallerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/InstallerService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +71,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "extract.method.default.visibility": "private",
     "jdk.selected.JAVA_MODULE": "19",
     "last_opened_file_path": "D:/Data/Projects/Softweb-Root/store-api/src/main/resources/static/images",
     "node.js.detected.package.eslint": "true",
@@ -91,6 +96,9 @@
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.softweb.api.store.model.dto.application" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Data\Projects\Softweb-Root\store-api\src\main\resources\static\images" />
       <recent name="D:\Data\Projects\Softweb-Root\authorization" />
@@ -99,6 +107,7 @@
       <recent name="D:\Data\Projects\Softweb-Root\store-api" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Data\Projects\Softweb-Root\store-api\src\main\resources\static\files" />
       <recent name="D:\Data\Projects\Softweb-Root\store-api\src\main\resources\static" />
     </key>
   </component>
@@ -189,7 +198,8 @@
       <workItem from="1676783975767" duration="11495000" />
       <workItem from="1676889831334" duration="6493000" />
       <workItem from="1676957919310" duration="26305000" />
-      <workItem from="1677162082189" duration="18248000" />
+      <workItem from="1677162082189" duration="18861000" />
+      <workItem from="1677317030341" duration="6047000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit.&#10;Demo-release of version 1.0-SNAPSHOT. Add README.md and LICENSE.md files and prepare environment to add new modules">
       <created>1676487159443</created>
@@ -233,7 +243,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677163821635</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="#27 - Edit ImageController">
+      <created>1677188751711</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1677188751711</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,7 +278,8 @@
     <MESSAGE value="#27 - Completion UserController.java" />
     <MESSAGE value="#27 - Edit README.md" />
     <MESSAGE value="#27 - Edit LicenseController and OperatingSystemController" />
-    <option name="LAST_COMMIT_MESSAGE" value="#27 - Edit LicenseController and OperatingSystemController" />
+    <MESSAGE value="#27 - Edit ImageController" />
+    <option name="LAST_COMMIT_MESSAGE" value="#27 - Edit ImageController" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -275,16 +293,6 @@
           <url>file://$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/UserController.java</url>
           <line>129</line>
           <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/ImageController.java</url>
-          <line>119</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/ImageController.java</url>
-          <line>127</line>
-          <option name="timeStamp" value="28" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
