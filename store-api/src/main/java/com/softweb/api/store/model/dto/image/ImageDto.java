@@ -1,4 +1,4 @@
-package com.softweb.api.store.model.dto;
+package com.softweb.api.store.model.dto.image;
 
 import com.softweb.api.store.model.entities.Image;
 import lombok.Data;

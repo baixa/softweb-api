@@ -1,7 +1,12 @@
 package com.softweb.api.store.model.entities;
 
+import com.softweb.api.store.model.dto.user.AbstractUserSaveDto;
+import com.softweb.api.store.model.dto.user.UserPutDto;
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.Date;
 import java.util.Set;
@@ -18,7 +23,7 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "users")
-@Getter @Setter @ToString
+@Getter @Setter
 @AllArgsConstructor @NoArgsConstructor
 public class User {
 
@@ -26,7 +31,8 @@ public class User {
      * Automatically generated identifier
      */
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sq_user")
+    @SequenceGenerator(name = "sq_user", allocationSize = 1)
     @Column(name = "id", nullable = false)
     private Long id;
 
@@ -63,13 +69,36 @@ public class User {
     /**
      * List of published applications.
      */
-    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
     private Set<Application> applications;
 
     /**
      * User authority
      */
-    @OneToOne(mappedBy = "user", fetch = FetchType.EAGER)
+    @OneToOne(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
     private Authority authority;
 
+    public User(AbstractUserSaveDto userDto) {
+        if (userDto instanceof UserPutDto)
+            this.id = ((UserPutDto) userDto).getId();
+
+        this.username = userDto.getUsername();
+        this.fullName = userDto.getFullName();
+        this.password = userDto.getPassword();
+        this.isEnabled = userDto.isEnabled();
+        this.lastEntered = userDto.getLastEntered();
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", fullName='" + fullName + '\'' +
+                ", password='" + password + '\'' +
+                ", isEnabled=" + isEnabled +
+                ", lastEntered=" + lastEntered +
+                ", authority=" + authority +
+                '}';
+    }
 }
