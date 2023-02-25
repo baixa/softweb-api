@@ -18,19 +18,15 @@ public class ImageService {
         return imageRepository.findById(Long.valueOf(imageId)).orElse(null);
     }
 
-    public List<Image> getImages () {
-        return imageRepository.findAll();
-    }
-
     public void saveImage (Image image) {
         imageRepository.save(image);
     }
 
-    public void deleteImage (Image image) {
-        imageRepository.delete(image);
-    }
-
     public void deleteImageById (String imageId) {
         imageRepository.deleteById(Long.valueOf(imageId));
+    }
+
+    public void saveImages(List<Image> storedImages) {
+        imageRepository.saveAll(storedImages);
     }
 }

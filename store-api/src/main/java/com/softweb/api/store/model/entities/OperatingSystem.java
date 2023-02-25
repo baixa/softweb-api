@@ -23,7 +23,8 @@ public class OperatingSystem {
      * Automatically generated identifier
      */
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sq_operating_system")
+    @SequenceGenerator(name = "sq_operating_system", allocationSize = 1)
     @Column(name = "id", nullable = false)
     private Long id;
 

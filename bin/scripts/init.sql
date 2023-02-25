@@ -1,3 +1,13 @@
+/*
+    Create required sequences, that used as ids in tables (objects, that has 100 and less id is testing)
+*/
+CREATE SEQUENCE sq_application START 101;
+CREATE SEQUENCE sq_authority START 101;
+CREATE SEQUENCE sq_image START 101;
+CREATE SEQUENCE sq_installer START 101;
+CREATE SEQUENCE sq_operating_system START 101;
+CREATE SEQUENCE sq_user START 101;
+
 CREATE TABLE license
 (
     code VARCHAR(100)  NOT NULL,
@@ -13,15 +23,17 @@ CREATE TABLE users
     password     VARCHAR(64) NOT NULL,
     enabled      BOOLEAN     NOT NULL,
     last_entered TIMESTAMP WITHOUT TIME ZONE,
-    CONSTRAINT pk_user PRIMARY KEY (id)
-
+    CONSTRAINT pk_user PRIMARY KEY (id),
+    CONSTRAINT uq_username UNIQUE (username)
 );
 
 CREATE TABLE authority
 (
-    user_id BIGINT      NOT NULL,
-    authority VARCHAR(30) NOT NULL,
-    CONSTRAINT pk_authority PRIMARY KEY (user_id)
+    id          SERIAL          NOT NULL,
+    user_id     BIGINT          NOT NULL,
+    authority   VARCHAR(30)     NOT NULL,
+    CONSTRAINT pk_authority PRIMARY KEY (id),
+    CONSTRAINT uq_authority UNIQUE (user_id, authority)
 );
 
 ALTER TABLE authority
@@ -42,7 +54,7 @@ CREATE TABLE application
     long_description  VARCHAR(255),
     logo_path         VARCHAR(255),
     license           VARCHAR(100),
-    user_id      BIGINT,
+    user_id           BIGINT      NOT NULL,
     last_update       TIMESTAMP WITHOUT TIME ZONE,
     downloads         INTEGER     NOT NULL,
     views             INTEGER     NOT NULL,

@@ -35,6 +35,8 @@ The main structure is based on Java (Spring). Desktop application is developed w
 
 ## How To Use
 
+### Launch
+
 To clone and run this application, you'll need [Git](https://git-scm.com) and [Docker](https://www.docker.com/) installed on your computer. From your command line:
 
 ```bash
@@ -45,7 +47,40 @@ $ git clone https://github.com/baixa/softweb-api
 $ cd softweb-api
 
 # Run installation script (build jar and run docker-compose)
-$ sh bin/control.sh
+$ sh bin/control.sh start
+```
+
+### Base commands
+
+Base commands to manage containers 
+
+```bash
+# Build jars and docker images and creates network
+$ sh bin/control.sh start
+
+# Stops containers and complete removes docker network and images
+$ sh bin/control.sh rm
+
+# Stops all containers
+$ sh bin/control.sh stop
+
+# Restart containers (the equivalent of `rm + start`)
+$ sh bin/control.sh restart
+```
+
+### Simplification
+
+If you want, you can create an alias of `sh bin/control.sh` command
+
+```bash
+ # Create alias
+ $ echo alias sw=\'sh bin/control.sh\' >> ~/.bashrc
+ 
+ # Refresh .bashrc
+ $ source .bashrc
+ 
+ # Use simplified commands
+ $ sw start 
 ```
 
 ---

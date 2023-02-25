@@ -18,19 +18,15 @@ public class InstallerService {
         return installerRepository.findById(Long.valueOf(installerId)).orElse(null);
     }
 
-    public List<Installer> getInstallers () {
-        return installerRepository.findAll();
-    }
-
     public void saveInstaller (Installer installer) {
         installerRepository.save(installer);
     }
 
-    public void deleteInstaller (Installer installer) {
-        installerRepository.delete(installer);
-    }
-
     public void deleteInstallerById (String installerId) {
         installerRepository.deleteById(Long.valueOf(installerId));
+    }
+
+    public void saveInstallers(List<Installer> storedInstallers) {
+        installerRepository.saveAll(storedInstallers);
     }
 }

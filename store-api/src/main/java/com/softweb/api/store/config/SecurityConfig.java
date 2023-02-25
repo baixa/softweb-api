@@ -23,11 +23,31 @@ public class SecurityConfig {
         httpSecurity
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/", "/home").permitAll()
-                        .requestMatchers(HttpMethod.GET, "/v1/application", "/v1/application/**").authenticated()
-                        .requestMatchers(HttpMethod.POST, "/v1/application", "/v1/application/**").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.DELETE, "/v1/application", "/v1/application/**").hasRole("ADMIN")
+                        // Application endpoints
+                        .requestMatchers(HttpMethod.GET, "/v1/application", "/v1/application/**").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/v1/application", "/v1/application/**").authenticated()
+                        .requestMatchers(HttpMethod.PUT, "/v1/application", "/v1/application/**").authenticated()
+                        .requestMatchers(HttpMethod.DELETE, "/v1/application", "/v1/application/**").authenticated()
+                        // User endpoints
+                        .requestMatchers(HttpMethod.GET,"/v1/user", "/v1/user/**").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/v1/user", "/v1/user/**").permitAll()
+                        .requestMatchers(HttpMethod.PUT, "/v1/user", "/v1/user/**").authenticated()
+                        .requestMatchers(HttpMethod.DELETE, "/v1/user", "/v1/user/**").authenticated()
+                        // License endpoints
+                        .requestMatchers(HttpMethod.GET,"/v1/license", "/v1/license/**").permitAll()
+                        // Operating-system endpoints
+                        .requestMatchers(HttpMethod.GET,"/v1/operatingSystem", "/v1/operatingSystem/**").permitAll()
+                        // Image endpoints
+                        .requestMatchers(HttpMethod.GET,"/v1/image", "/v1/image/**").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/v1/image", "/v1/image/**").authenticated()
+                        .requestMatchers(HttpMethod.DELETE, "/v1/image", "/v1/image/**").authenticated()
+                        // Installer endpoints
+                        .requestMatchers(HttpMethod.GET,"/v1/installer", "/v1/installer/**").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/v1/installer", "/v1/installer/**").authenticated()
+                        .requestMatchers(HttpMethod.DELETE, "/v1/installer", "/v1/installer/**").authenticated()
                         .anyRequest().denyAll()
                 )
+                .csrf().disable()
                 .httpBasic();
         return httpSecurity.build();
     }

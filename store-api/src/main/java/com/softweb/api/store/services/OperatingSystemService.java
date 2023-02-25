@@ -21,16 +21,4 @@ public class OperatingSystemService {
     public List<OperatingSystem> getOperatingSystems () {
         return operatingSystemRepository.findAll();
     }
-
-    public void saveOperatingSystem (OperatingSystem operatingSystem) {
-        operatingSystemRepository.save(operatingSystem);
-    }
-
-    public void deleteOperatingSystem (OperatingSystem operatingSystem) {
-        operatingSystemRepository.delete(operatingSystem);
-    }
-
-    public void deleteOperatingSystemById (String operatingSystemId) {
-        operatingSystemRepository.deleteById(Long.valueOf(operatingSystemId));
-    }
 }

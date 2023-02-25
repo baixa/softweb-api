@@ -475,9 +475,9 @@ INSERT INTO public.users (id, username, full_name, password, enabled, last_enter
 INSERT INTO public.users (id, username, full_name, password, enabled, last_entered) VALUES (6, 'James', 'James Trace', '$2a$10$gDkbvFxhFyv0pVGEH/sSmuKN5y.6CQ/pNVI34nvB78S65WEUGICke', true, '2023-01-25 16:28:08');
 
 --- Authority table
-INSERT INTO public.authority (user_id, authority) VALUES (4, 'ADMIN');
-INSERT INTO public.authority (user_id, authority) VALUES (5, 'USER');
-INSERT INTO public.authority (user_id, authority) VALUES (6, 'USER');
+INSERT INTO public.authority (id, user_id, authority) VALUES (1, 4, 'ADMIN');
+INSERT INTO public.authority (id, user_id, authority) VALUES (2, 5, 'USER');
+INSERT INTO public.authority (id, user_id, authority) VALUES (3, 6, 'USER');
 
 --- Application table
 INSERT INTO public.application (id, name, short_description, long_description, logo_path, license, user_id, last_update, downloads, views) VALUES (4, 'Google Chrome', 'Fastes browser', 'It can help you serf Internet', NULL, 'ZPL-2.0', 4, '2023-02-27 16:28:05', 5, 125);
