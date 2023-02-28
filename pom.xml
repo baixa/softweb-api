@@ -4,23 +4,27 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <!-- Project details -->
     <groupId>com.softweb</groupId>
     <artifactId>root</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-
     <name>SoftWeb-API Root</name>
     <description>Root project of SoftWeb-API application</description>
 
-    <!-- Modules of application -->
+    <!-- Modules of project -->
     <modules>
         <!-- Store application module -->
         <module>store-api</module>
 
-        <!-- Service discovery server -->
+        <!-- Service discovery module -->
         <module>eureka</module>
+
+        <!-- Config Server module -->
+        <module>config</module>
     </modules>
 
+    <!-- Module properties -->
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
@@ -28,8 +32,16 @@
         <docker.image.prefix>softweb</docker.image.prefix>
     </properties>
 
+    <!-- Project build settings -->
     <build>
+
+        <!-- Required plugins -->
         <plugins>
+
+            <!--
+                Dockerfile Maven - adds support for building Dockerfiles in Maven
+                Link: https://mvnrepository.com/artifact/com.spotify/dockerfile-maven-plugin
+            -->
             <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>dockerfile-maven-plugin</artifactId>

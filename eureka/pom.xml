@@ -2,36 +2,69 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
+    <!-- Parent project (Spring Boot) -->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.0.2</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+
+    <!-- Module details -->
     <groupId>com.softweb</groupId>
     <artifactId>eureka</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>eureka</name>
     <description>eureka</description>
+
+    <!-- Module properties -->
     <properties>
         <java.version>17</java.version>
         <spring-cloud.version>2022.0.1</spring-cloud.version>
         <docker.image.prefix>softweb</docker.image.prefix>
     </properties>
+
+    <!-- Module dependencies -->
     <dependencies>
+
+        <!--
+            Eureka Server - starter lib to register module as eureka server
+            Link: https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-netflix-eureka-server
+         -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
         </dependency>
 
+        <!--
+            Spring Test - set of tools for unit and integration app testing
+            Link: https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test
+         -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <!--
+            Spring Config Client - starter lib to register module as Config Server client
+            Link: https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-config
+         -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency>
     </dependencies>
+
+    <!-- Set of settings for dependencies -->
     <dependencyManagement>
         <dependencies>
+
+            <!--
+                Spring Cloud Dependencies - dependencies for other cloud modules
+                Link: https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-dependencies
+            -->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
@@ -42,12 +75,25 @@
         </dependencies>
     </dependencyManagement>
 
+    <!-- Project build settings -->
     <build>
+
+        <!-- Required plugins -->
         <plugins>
+
+            <!--
+                Spring Boot Plugin - optimizes and simplifies building a spring application based on a Maven project
+                Link: https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-maven-plugin
+            -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+
+            <!--
+                Dockerfile Maven - adds support for building Dockerfiles in Maven
+                Link: https://mvnrepository.com/artifact/com.spotify/dockerfile-maven-plugin
+            -->
             <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>dockerfile-maven-plugin</artifactId>
@@ -72,6 +118,8 @@
             </plugin>
         </plugins>
     </build>
+
+    <!-- Settings for searching dependencies -->
     <repositories>
         <repository>
             <id>netflix-candidates</id>

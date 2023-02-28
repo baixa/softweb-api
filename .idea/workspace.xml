@@ -4,9 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53817c4f-1016-4278-acc3-7f1b4ff0a562" name="Changes" comment="Add simple api documentation">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="53817c4f-1016-4278-acc3-7f1b4ff0a562" name="Changes" comment="#15 - Add config module">
+      <change afterPath="$PROJECT_DIR$/config/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/src/main/java/com/softweb/config/ConfigApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/config/src/main/java/com/softweb/config/ConfigApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/eureka/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store-api/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,7 +73,7 @@
     "WebServerToolWindowFactoryState": "false",
     "extract.method.default.visibility": "private",
     "jdk.selected.JAVA_MODULE": "19",
-    "last_opened_file_path": "D:/Data/Projects/Softweb-Root/store-api/src/main/resources/static/images",
+    "last_opened_file_path": "D:/Data/Projects/Softweb-Root/config",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -90,11 +100,11 @@
       <recent name="com.softweb.api.store.model.dto.application" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Data\Projects\Softweb-Root\config" />
       <recent name="D:\Data\Projects\Softweb-Root\store-api\src\main\resources\static\images" />
       <recent name="D:\Data\Projects\Softweb-Root\authorization" />
       <recent name="D:\Data\Projects\Softweb-Root\resource" />
       <recent name="D:\Data\Projects\Softweb-Root\eureka" />
-      <recent name="D:\Data\Projects\Softweb-Root\store-api" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Data\Projects\Softweb-Root\store-api\src\main\resources\static\files" />
@@ -119,6 +129,13 @@
     <configuration name="ClientApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="client" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.softweb.client.ClientApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConfigApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="config" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.softweb.config.ConfigApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -192,7 +209,7 @@
       <workItem from="1677317030341" duration="6047000" />
       <workItem from="1677396449558" duration="2282000" />
       <workItem from="1677474978542" duration="9000" />
-      <workItem from="1677493827939" duration="540000" />
+      <workItem from="1677493827939" duration="8847000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit.&#10;Demo-release of version 1.0-SNAPSHOT. Add README.md and LICENSE.md files and prepare environment to add new modules">
       <created>1676487159443</created>
@@ -250,7 +267,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677330613668</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="#15 - Add config module">
+      <created>1677575252026</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1677575252026</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,7 +305,8 @@
     <MESSAGE value="#27 - Edit LicenseController and OperatingSystemController" />
     <MESSAGE value="#27 - Edit ImageController" />
     <MESSAGE value="Add simple api documentation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add simple api documentation" />
+    <MESSAGE value="#15 - Add config module" />
+    <option name="LAST_COMMIT_MESSAGE" value="#15 - Add config module" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

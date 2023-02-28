@@ -44,10 +44,25 @@ services:
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: postgres
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka:8761/eureka/
+      PROFILE: dev
+      CONFIGSERVER_URI: http://config:8888
     networks:
       backend:
         aliases:
           - "store"
+  config:
+    image: softweb/config:0.0.1-SNAPSHOT
+    build:
+      context: .
+    container_name: config
+    ports:
+      - "8888:8888"
+    environment:
+
+    networks:
+      backend:
+        aliases:
+          - "config"
 
 networks:
   backend:
