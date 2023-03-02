@@ -4,22 +4,6 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53817c4f-1016-4278-acc3-7f1b4ff0a562" name="Changes" comment="Hot Fix: set up CORS policy">
-      <change afterPath="$PROJECT_DIR$/config/src/main/resources/config/store-service-dev.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/src/main/resources/config/store-service-prod.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/src/main/resources/config/store-service.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eureka/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/src/main/java/com/softweb/config/ConfigApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/config/src/main/java/com/softweb/config/ConfigApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev" />
+        <entry key="$PROJECT_DIR$" value="15_config_module" />
       </map>
     </option>
     <option name="ROOT_SYNC" value="DONT_SYNC" />
@@ -289,7 +273,34 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/dev" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/dev" />
+                </option>
+              </RecentGroup>
+            </list>
           </value>
         </entry>
       </map>
