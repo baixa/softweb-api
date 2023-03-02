@@ -13,7 +13,7 @@ import lombok.*;
  */
 @Entity
 @Table(name = "installer")
-@Getter @Setter @ToString
+@Getter @Setter
 @AllArgsConstructor @NoArgsConstructor
 public class Installer {
     /**
@@ -58,4 +58,14 @@ public class Installer {
     @Column(name = "size")
     private int size;
 
+    @Override
+    public String toString() {
+        return "Installer{" +
+                "id=" + id +
+                ", system=" + system +
+                ", installerPath='" + installerPath + '\'' +
+                ", version='" + version + '\'' +
+                ", size=" + size +
+                '}';
+    }
 }

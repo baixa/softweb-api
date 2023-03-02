@@ -3,6 +3,7 @@ package com.softweb.api.store.services;
 import com.softweb.api.store.model.dto.application.ApplicationPostDto;
 import com.softweb.api.store.model.dto.application.ApplicationPutDto;
 import com.softweb.api.store.model.entities.Application;
+import com.softweb.api.store.model.entities.Category;
 import com.softweb.api.store.model.entities.User;
 import com.softweb.api.store.model.repository.ApplicationRepository;
 import com.softweb.api.store.model.repository.RepositoryConstants;
@@ -37,25 +38,17 @@ public class ApplicationService {
         return applicationPage.getContent();
     }
 
-    public List<Application> getApplicationsByUsername (Integer page, String username) {
-        Page<Application> applicationPage = applicationRepository.findApplicationsByUsername(
-                username,
+    public List<Application> getApplicationsByCategory (Integer page, Category category) {
+        Page<Application> applicationPage = applicationRepository.findAllByCategory(
+                category,
                 PageRequest.of(page, RepositoryConstants.COUNT_PAGE_ELEMENTS, Sort.by(Sort.Direction.ASC, "id"))
         );
         return applicationPage.getContent();
     }
 
-    public void saveApplication (Application application) {
-        applicationRepository.save(application);
-    }
-
     public void saveApplication(ApplicationPostDto applicationDto) {
         Application application = new Application(applicationDto);
         applicationRepository.save(application);
-    }
-
-    public void deleteApplication (Application application) {
-        applicationRepository.delete(application);
     }
 
     public void deleteApplicationById (String applicationId) {

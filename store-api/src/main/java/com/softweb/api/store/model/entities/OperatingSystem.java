@@ -15,7 +15,7 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "operating_system")
-@Getter @Setter @ToString
+@Getter @Setter
 @AllArgsConstructor @NoArgsConstructor
 public class OperatingSystem {
 
@@ -40,4 +40,11 @@ public class OperatingSystem {
     @OneToMany(mappedBy = "system", fetch = FetchType.EAGER)
     private Set<Installer> installers;
 
+    @Override
+    public String toString() {
+        return "OperatingSystem{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

@@ -479,10 +479,17 @@ INSERT INTO public.authority (id, user_id, authority) VALUES (1, 4, 'ADMIN');
 INSERT INTO public.authority (id, user_id, authority) VALUES (2, 5, 'USER');
 INSERT INTO public.authority (id, user_id, authority) VALUES (3, 6, 'USER');
 
+--- Category table
+INSERT INTO public.category (id, name) VALUES (1, 'Category 1');
+INSERT INTO public.category (id, name) VALUES (2, 'Category 2');
+INSERT INTO public.category (id, name) VALUES (3, 'Category 3');
+INSERT INTO public.category (id, name) VALUES (4, 'Category 4');
+INSERT INTO public.category (id, name) VALUES (5, 'Category 5');
+
 --- Application table
-INSERT INTO public.application (id, name, short_description, long_description, logo_path, license, user_id, last_update, downloads, views) VALUES (4, 'Google Chrome', 'Fastes browser', 'It can help you serf Internet', NULL, 'ZPL-2.0', 4, '2023-02-27 16:28:05', 5, 125);
-INSERT INTO public.application (id, name, short_description, long_description, logo_path, license, user_id, last_update, downloads, views) VALUES (5, 'Yandex Browser', 'Be smart', NULL, NULL, 'Artistic-1.0', 5, '2023-01-24 16:35:08', 4, 106);
-INSERT INTO public.application (id, name, short_description, long_description, logo_path, license, user_id, last_update, downloads, views) VALUES (6, 'Firefox', 'Light browser', NULL, NULL, 'Apache-1.0', 6, '2023-01-10 16:35:50', 7, 100);
+INSERT INTO public.application (id, name, short_description, long_description, logo_path, license, category_id, user_id, last_update, downloads, views) VALUES (4, 'Google Chrome', 'Fastes browser', 'It can help you serf Internet', NULL, 'ZPL-2.0', 1, 4, '2023-02-27 16:28:05', 5, 125);
+INSERT INTO public.application (id, name, short_description, long_description, logo_path, license, category_id, user_id, last_update, downloads, views) VALUES (5, 'Yandex Browser', 'Be smart', NULL, NULL, 'Artistic-1.0', 2, 5, '2023-01-24 16:35:08', 4, 106);
+INSERT INTO public.application (id, name, short_description, long_description, logo_path, license, category_id, user_id, last_update, downloads, views) VALUES (6, 'Firefox', 'Light browser', NULL, NULL, 'Apache-1.0', 3, 6, '2023-01-10 16:35:50', 7, 100);
 
 --- Operating system
 INSERT INTO public.operating_system (id, name) VALUES (1, 'Windows 10');

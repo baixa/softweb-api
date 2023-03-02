@@ -1,10 +1,9 @@
 package com.softweb.api.store.model.dto.application;
 
+import com.softweb.api.store.model.entities.Category;
 import com.softweb.api.store.model.entities.License;
 import com.softweb.api.store.model.entities.User;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -22,10 +21,12 @@ public class ApplicationPostDto implements Serializable {
     private final int views;
     private final int downloads;
     private final String licenseCode;
+    private final String categoryName;
     private User user;
     private License license;
+    private Category category;
 
-    public ApplicationPostDto(String name, String shortDescription, String longDescription, String logoBase64, String licenseCode) {
+    public ApplicationPostDto(String name, String shortDescription, String longDescription, String logoBase64, String licenseCode, String categoryName) {
         this.name = name;
         this.shortDescription = shortDescription;
         this.longDescription = longDescription;
@@ -34,5 +35,6 @@ public class ApplicationPostDto implements Serializable {
         this.views = 0;
         this.downloads = 0;
         this.licenseCode = licenseCode;
+        this.categoryName = categoryName;
     }
 }
