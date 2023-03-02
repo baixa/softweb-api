@@ -1,3 +1,19 @@
+# Custom configs
 application:
   profile:
     name: "DEV"
+
+# Spring configs
+spring:
+  security:
+    user:
+      name: user
+      password: user
+
+# Logger configs
+logging:
+  level:
+    com:
+      netflix:
+        eureka: ERROR
+        discovery: ERROR

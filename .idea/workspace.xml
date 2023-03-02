@@ -197,7 +197,7 @@
       <workItem from="1677474978542" duration="9000" />
       <workItem from="1677493827939" duration="8847000" />
       <workItem from="1677689075660" duration="2851000" />
-      <workItem from="1677743234282" duration="1053000" />
+      <workItem from="1677743234282" duration="2756000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit.&#10;Demo-release of version 1.0-SNAPSHOT. Add README.md and LICENSE.md files and prepare environment to add new modules">
       <created>1676487159443</created>
@@ -262,7 +262,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677575252026</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="#15 - #16 Set up config server (native mode) and received config for the store module via the config server">
+      <created>1677748356426</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1677748356426</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,7 +328,8 @@
     <MESSAGE value="#27 - Edit ImageController" />
     <MESSAGE value="Add simple api documentation" />
     <MESSAGE value="#15 - Add config module" />
-    <option name="LAST_COMMIT_MESSAGE" value="#15 - Add config module" />
+    <MESSAGE value="#15 - #16 Set up config server (native mode) and received config for the store module via the config server" />
+    <option name="LAST_COMMIT_MESSAGE" value="#15 - #16 Set up config server (native mode) and received config for the store module via the config server" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

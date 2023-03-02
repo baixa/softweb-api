@@ -1,20 +1,4 @@
-spring:
-  datasource:
-    driver-class-name: org.postgresql.Driver
-    username: postgres
-    password: postgres
-    url: jdbc:postgresql://localhost:5432/softweb_dev
-  jpa:
-    database: postgresql
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-  security:
-    user:
-      name: user
-      password: user
-
-
+# Eureka configs
 eureka:
   instance:
     preferIpAddress: true
@@ -22,13 +6,6 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://192.168.198.145:8761/eureka/
-
-logging:
-  level:
-    com:
-      netflix:
-        eureka: ERROR
-        discovery: ERROR
+      defaultZone: http://localhost:8761/eureka/
 
 
