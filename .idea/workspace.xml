@@ -4,6 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+    <list default="true" id="284bb06f-8fbd-42c9-ba7c-569723e132b4" name="Changes" comment="#16 Receive config for the store module via the config server">
+      <change afterPath="$PROJECT_DIR$/config/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/src/main/resources/config/store-service-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/src/main/resources/config/store-service-dev.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +102,7 @@
       <recent name="D:\Data\Projects\Softweb-Root\store-api\src\main\resources\static" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.StoreApiApplication">
+  <component name="RunManager" selected="Spring Boot.ConfigApplication">
     <configuration name="AuthorizationApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="authorization" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.softweb.authorization.AuthorizationApplication" />

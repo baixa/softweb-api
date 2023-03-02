@@ -5,10 +5,13 @@ application:
 
 # Spring configs
 spring:
+  datasource:
+    username: "postgres"
+    password: "{cipher}eed9f172effb6d6b19e206aa9404aa3f3ff039b9c3caad5d0716cd3ce125edc4"
   security:
     user:
-      name: user
-      password: user
+      name: "user"
+      password: "{cipher}bd1de0bdda53bc261441d22b4190487a0e7dd9dd5c57ab35f98c6484c61d3f38"
 
 # Logger configs
 logging:
