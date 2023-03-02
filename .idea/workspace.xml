@@ -4,21 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53817c4f-1016-4278-acc3-7f1b4ff0a562" name="Changes" comment="Hot Fix: set up CORS policy">
-      <change afterPath="$PROJECT_DIR$/config/src/main/resources/config/store-service-dev.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/src/main/resources/config/store-service-prod.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/src/main/resources/config/store-service.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eureka/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/bootstrap.yml" afterDir="false" />
+    <list default="true" id="53817c4f-1016-4278-acc3-7f1b4ff0a562" name="Changes" comment="#15 - #16 Set up config server (native mode) and received config for the store module via the config server">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/src/main/java/com/softweb/config/ConfigApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/config/src/main/java/com/softweb/config/ConfigApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/src/main/resources/config/store-service-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/src/main/resources/config/store-service-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/src/main/resources/config/store-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/src/main/resources/config/store-service.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store-api/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -213,7 +202,7 @@
       <workItem from="1677474978542" duration="9000" />
       <workItem from="1677493827939" duration="8847000" />
       <workItem from="1677689075660" duration="2851000" />
-      <workItem from="1677743234282" duration="1053000" />
+      <workItem from="1677743234282" duration="2756000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit.&#10;Demo-release of version 1.0-SNAPSHOT. Add README.md and LICENSE.md files and prepare environment to add new modules">
       <created>1676487159443</created>
@@ -278,7 +267,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677575252026</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="#15 - #16 Set up config server (native mode) and received config for the store module via the config server">
+      <created>1677748356426</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1677748356426</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -310,7 +306,8 @@
     <MESSAGE value="#27 - Edit ImageController" />
     <MESSAGE value="Add simple api documentation" />
     <MESSAGE value="#15 - Add config module" />
-    <option name="LAST_COMMIT_MESSAGE" value="#15 - Add config module" />
+    <MESSAGE value="#15 - #16 Set up config server (native mode) and received config for the store module via the config server" />
+    <option name="LAST_COMMIT_MESSAGE" value="#15 - #16 Set up config server (native mode) and received config for the store module via the config server" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
