@@ -7,6 +7,7 @@ CREATE SEQUENCE sq_image START 101;
 CREATE SEQUENCE sq_installer START 101;
 CREATE SEQUENCE sq_operating_system START 101;
 CREATE SEQUENCE sq_user START 101;
+CREATE SEQUENCE sq_category START 101;
 
 CREATE TABLE license
 (
@@ -46,6 +47,13 @@ CREATE TABLE operating_system
     CONSTRAINT pk_operating_system PRIMARY KEY (id)
 );
 
+CREATE TABLE category
+(
+    id   SERIAL       NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    CONSTRAINT pk_category PRIMARY KEY (id)
+);
+
 CREATE TABLE application
 (
     id                SERIAL      NOT NULL,
@@ -55,6 +63,7 @@ CREATE TABLE application
     logo_path         VARCHAR(255),
     license           VARCHAR(100),
     user_id           BIGINT      NOT NULL,
+    category_id       BIGINT      NOT NULL,
     last_update       TIMESTAMP WITHOUT TIME ZONE,
     downloads         INTEGER     NOT NULL,
     views             INTEGER     NOT NULL,
@@ -63,6 +72,9 @@ CREATE TABLE application
 
 ALTER TABLE application
     ADD CONSTRAINT FK_APPLICATION_ON_USERS FOREIGN KEY (user_id) REFERENCES users (id);
+
+ALTER TABLE application
+    ADD CONSTRAINT FK_APPLICATION_ON_CATEGORY FOREIGN KEY (category_id) REFERENCES category (id);
 
 ALTER TABLE application
     ADD CONSTRAINT FK_APPLICATION_ON_LICENSE FOREIGN KEY (license) REFERENCES license (code);

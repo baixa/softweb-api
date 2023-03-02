@@ -1,5 +1,6 @@
 package com.softweb.api.store.model.dto.application;
 
+import com.softweb.api.store.model.dto.category.CategoryDto;
 import com.softweb.api.store.model.dto.license.LicenseDto;
 import com.softweb.api.store.model.entities.Application;
 import lombok.Getter;
@@ -15,6 +16,7 @@ public abstract class AbstractApplicationGetDto {
     private final String longDescription;
     private final String logoPath;
     private final LicenseDto license;
+    private final CategoryDto category;
     private final Date lastUpdate;
     private final int downloads;
     private final int views;
@@ -29,5 +31,6 @@ public abstract class AbstractApplicationGetDto {
         this.lastUpdate = application.getLastUpdate();
         this.downloads = application.getDownloads();
         this.views = application.getViews();
+        this.category = new CategoryDto(application.getCategory());
     }
 }

@@ -102,6 +102,10 @@ public class Application {
     @OneToMany(mappedBy = "application", fetch = FetchType.EAGER)
     private Set<Installer> installers;
 
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
+
     public Application(ApplicationPostDto applicationDto) {
         this.name = applicationDto.getName();
         this.shortDescription = applicationDto.getShortDescription();
@@ -112,6 +116,7 @@ public class Application {
         this.downloads = applicationDto.getDownloads();
         this.user = applicationDto.getUser();
         this.license = applicationDto.getLicense();
+        this.category = applicationDto.getCategory();
     }
 
     @Override
@@ -123,6 +128,7 @@ public class Application {
                 ", longDescription='" + longDescription + '\'' +
                 ", logoPath='" + logoPath + '\'' +
                 ", license=" + license +
+                ", category=" + category +
                 ", user=" + user +
                 ", lastUpdate=" + lastUpdate +
                 ", downloads=" + downloads +

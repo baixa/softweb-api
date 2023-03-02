@@ -13,7 +13,7 @@ import lombok.*;
  */
 @Entity
 @Table(name = "image")
-@Getter @Setter @ToString
+@Getter @Setter
 @AllArgsConstructor @NoArgsConstructor
 public class Image {
     /**
@@ -44,4 +44,12 @@ public class Image {
     @ManyToOne
     @JoinColumn(name = "application_id", nullable = false)
     private Application application;
+
+    @Override
+    public String toString() {
+        return "Image{" +
+                "id=" + id +
+                ", path='" + path + '\'' +
+                '}';
+    }
 }
