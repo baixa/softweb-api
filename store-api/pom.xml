@@ -2,56 +2,128 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
+    <!-- Parent project (Spring Boot) -->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.0.2</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+
+    <!-- Module details -->
     <groupId>com.softweb</groupId>
     <artifactId>store-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Store API</name>
     <description>API of store module</description>
+
+    <!-- Module properties -->
     <properties>
         <java.version>17</java.version>
         <docker.image.prefix>softweb</docker.image.prefix>
         <spring-cloud.version>2022.0.1</spring-cloud.version>
     </properties>
+
+    <!-- Module dependencies -->
     <dependencies>
+
+        <!--
+            Spring Data JPA - configure and manage access to data source
+            Link: https://mvnrepository.com/artifact/org.springframework.data/spring-data-jpa
+         -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
 
+        <!--
+            Spring Web - provides integration features such as multipart file upload functionality and
+            the initialization of the IoC container using Servlet listeners and a web-oriented application context.
+            Link: https://mvnrepository.com/artifact/org.springframework/spring-web
+         -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <!--
+            PostgreSQL - tools and JDBC driver to get access to PostgreSQL database
+            Link: https://mvnrepository.com/artifact/org.postgresql/postgresql
+         -->
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <scope>runtime</scope>
         </dependency>
+
+        <!--
+            Lombok - tools to code redundancy minimization (getters, setters, constructors etc.)
+            Link: https://mvnrepository.com/artifact/org.projectlombok/lombok
+         -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
+
+        <!--
+            Spring Test - set of tools for unit and integration app testing
+            Link: https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test
+         -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <!--
+            Eureka Client - starter lib to register module as eureka client
+            Link: https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-netflix-eureka-client
+         -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
+
+        <!--
+            Spring Security - powerful and highly customizable authentication and access-control framework.
+            Link: https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security
+         -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
+        <!--
+            Spring Config Client - starter lib to register module as Config Server client
+            Link: https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-config
+         -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency>
+
+        <!--
+            Spring Cloud Bootstrap - starter lib supports bootstrap config files
+            Link: https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-bootstrap
+         -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bootstrap</artifactId>
+        </dependency>
     </dependencies>
 
+    <!-- Project build settings -->
     <build>
+
+        <!-- Required plugins -->
         <plugins>
+
+            <!--
+                Spring Boot Plugin - optimizes and simplifies building a spring application based on a Maven project
+                Link: https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-maven-plugin
+            -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
@@ -64,6 +136,11 @@
                     </excludes>
                 </configuration>
             </plugin>
+
+            <!--
+                Dockerfile Maven - adds support for building Dockerfiles in Maven
+                Link: https://mvnrepository.com/artifact/com.spotify/dockerfile-maven-plugin
+            -->
             <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>dockerfile-maven-plugin</artifactId>
@@ -89,9 +166,14 @@
         </plugins>
     </build>
 
-
+    <!-- Set of settings for dependencies -->
     <dependencyManagement>
         <dependencies>
+
+            <!--
+                Spring Cloud Dependencies - dependencies for other cloud modules
+                Link: https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-dependencies
+            -->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>

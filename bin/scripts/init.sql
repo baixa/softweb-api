@@ -1,3 +1,13 @@
+/*
+    Create required sequences, that used as ids in tables (objects, that has 100 and less id is testing)
+*/
+CREATE SEQUENCE sq_application START 101;
+CREATE SEQUENCE sq_authority START 101;
+CREATE SEQUENCE sq_image START 101;
+CREATE SEQUENCE sq_installer START 101;
+CREATE SEQUENCE sq_operating_system START 101;
+CREATE SEQUENCE sq_user START 101;
+
 CREATE TABLE license
 (
     code VARCHAR(100)  NOT NULL,
@@ -5,16 +15,29 @@ CREATE TABLE license
     CONSTRAINT pk_license PRIMARY KEY (code)
 );
 
-CREATE TABLE developer
+CREATE TABLE users
 (
     id           SERIAL      NOT NULL,
     username     VARCHAR(30) NOT NULL,
     full_name    VARCHAR(100),
     password     VARCHAR(64) NOT NULL,
-    is_admin     BOOLEAN     NOT NULL,
+    enabled      BOOLEAN     NOT NULL,
     last_entered TIMESTAMP WITHOUT TIME ZONE,
-    CONSTRAINT pk_developer PRIMARY KEY (id)
+    CONSTRAINT pk_user PRIMARY KEY (id),
+    CONSTRAINT uq_username UNIQUE (username)
 );
+
+CREATE TABLE authority
+(
+    id          SERIAL          NOT NULL,
+    user_id     BIGINT          NOT NULL,
+    authority   VARCHAR(30)     NOT NULL,
+    CONSTRAINT pk_authority PRIMARY KEY (id),
+    CONSTRAINT uq_authority UNIQUE (user_id, authority)
+);
+
+ALTER TABLE authority
+    ADD CONSTRAINT FK_AUTHORITY_ON_USERS FOREIGN KEY (user_id) REFERENCES users (id);
 
 CREATE TABLE operating_system
 (
@@ -31,7 +54,7 @@ CREATE TABLE application
     long_description  VARCHAR(255),
     logo_path         VARCHAR(255),
     license           VARCHAR(100),
-    developer_id      BIGINT,
+    user_id           BIGINT      NOT NULL,
     last_update       TIMESTAMP WITHOUT TIME ZONE,
     downloads         INTEGER     NOT NULL,
     views             INTEGER     NOT NULL,
@@ -39,7 +62,7 @@ CREATE TABLE application
 );
 
 ALTER TABLE application
-    ADD CONSTRAINT FK_APPLICATION_ON_DEVELOPER FOREIGN KEY (developer_id) REFERENCES developer (id);
+    ADD CONSTRAINT FK_APPLICATION_ON_USERS FOREIGN KEY (user_id) REFERENCES users (id);
 
 ALTER TABLE application
     ADD CONSTRAINT FK_APPLICATION_ON_LICENSE FOREIGN KEY (license) REFERENCES license (code);

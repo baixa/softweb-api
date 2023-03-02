@@ -1,0 +1,10 @@
+logging:
+  level:
+    com:
+      netflix:
+        eureka: ERROR
+        discovery: ERROR
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false

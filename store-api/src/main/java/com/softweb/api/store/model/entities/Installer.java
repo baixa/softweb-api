@@ -20,7 +20,8 @@ public class Installer {
      * Automatically generated identifier
      */
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sq_installer")
+    @SequenceGenerator(name = "sq_installer", allocationSize = 1)
     @Column(name = "id", nullable = false)
     private Long id;
 
