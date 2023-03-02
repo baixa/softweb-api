@@ -56,7 +56,9 @@ services:
     ports:
       - "8888:8888"
     environment:
-      ENCRYPT_KEY: A7QNWHnSvPfB
+      ENCRYPT_KEYSTORE_PASSWORD: "gth67dtg33"
+      ENCRYPT_KEYSTORE_ALIAS: "config-server-key"
+      ENCRYPT_KEYSTORE_SECRET: "gth67dtg33"
     networks:
       backend:
         aliases:
