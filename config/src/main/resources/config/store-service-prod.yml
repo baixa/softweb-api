@@ -1,0 +1,3 @@
+application:
+  profile:
+    name: "PROD"

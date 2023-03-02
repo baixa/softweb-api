@@ -1,6 +1,4 @@
 spring:
-  application:
-    name: store-service
   datasource:
     driver-class-name: org.postgresql.Driver
     username: postgres
@@ -25,4 +23,12 @@ eureka:
     fetchRegistry: true
     serviceUrl:
       defaultZone: http://192.168.198.145:8761/eureka/
+
+logging:
+  level:
+    com:
+      netflix:
+        eureka: ERROR
+        discovery: ERROR
+
 
