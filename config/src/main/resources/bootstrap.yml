@@ -1,6 +1,10 @@
+# Tomcat configs
 server:
   port: 8888
+
+# Spring configs
 spring:
+  #Spring Cloud
   cloud:
     config:
       server:
@@ -9,10 +13,13 @@ spring:
           clone-on-start: true
         native:
           search-locations: classpath:/config
+  # Spring Security
   security:
     user:
       name: root
       password: root
+
+  # Basic configs
   application:
     name: config
   profiles:
@@ -24,3 +31,8 @@ management:
     web:
       exposure:
         include: "*"
+
+encrypt:
+  key-store:
+    location: classpath:/server.jks
+

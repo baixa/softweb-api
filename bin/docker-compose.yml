@@ -44,15 +44,6 @@ services:
         condition: service_started
       eureka-server:
         condition: service_started
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://database:5432/softweb_dev
-      SPRING_DATASOURCE_USERNAME: postgres
-      SPRING_DATASOURCE_PASSWORD: postgres
-      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka/
-      PROFILE: "dev"
-      CONFIGSERVER_URI: http://config-server:8888
-      CONFIGSERVER_PORT: 8888
-      SPRING_CLOUD_CONFIG_URI: http://config-server:8888
     networks:
       backend:
         aliases:
@@ -64,6 +55,10 @@ services:
     container_name: config-server
     ports:
       - "8888:8888"
+    environment:
+      ENCRYPT_KEYSTORE_PASSWORD: "gth67dtg33"
+      ENCRYPT_KEYSTORE_ALIAS: "config-server-key"
+      ENCRYPT_KEYSTORE_SECRET: "gth67dtg33"
     networks:
       backend:
         aliases:
