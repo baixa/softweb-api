@@ -9,16 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/")
 public class HomeController {
 
-//    @Value("${test.phrase}")
-    private String phrase;
+    @Value("${application.profile.name}")
+    private String profile;
 
     @GetMapping
     public String main() {
-        return "Welcome!";
-    }
-
-    @GetMapping
-    public String verificateConfigServer() {
-        return phrase;
+        return "Welcome! Current profile is " + profile;
     }
 }

@@ -1,16 +1,10 @@
-server:
-  port: 8761
-
+logging:
+  level:
+    com:
+      netflix:
+        eureka: ERROR
+        discovery: ERROR
 eureka:
   client:
     register-with-eureka: false
     fetch-registry: false
-
-
-spring:
-  application:
-    name: eureka
-  cloud:
-    config:
-      uri: http://configserver:8888
-

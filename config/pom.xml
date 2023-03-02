@@ -28,14 +28,14 @@
 	<!-- Module dependencies -->
 	<dependencies>
 
-		<!--
-			Spring Security - powerful and highly customizable authentication and access-control framework.
-			Link: https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security
-		 -->
-        <dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
+<!--		&lt;!&ndash;-->
+<!--			Spring Security - powerful and highly customizable authentication and access-control framework.-->
+<!--			Link: https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security-->
+<!--		 &ndash;&gt;-->
+<!--        <dependency>-->
+<!--			<groupId>org.springframework.boot</groupId>-->
+<!--			<artifactId>spring-boot-starter-security</artifactId>-->
+<!--		</dependency>-->
 
 		<!--
             Spring Web - provides integration features such as multipart file upload functionality and
@@ -87,13 +87,31 @@
 		</dependency>
 
 		<!--
-             Security Test - set of tools for unit and integration app security testing
+            Spring Security Test - set of tools for unit and integration app security testing
             Link: https://mvnrepository.com/artifact/org.springframework.security/spring-security-test
          -->
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+
+		<!--
+            Spring Actuator - set of tools for control module working
+            Link: https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-actuator
+         -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
+		<!--
+            Spring Cloud Bootstrap - starter lib supports bootstrap config files
+            Link: https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-bootstrap
+         -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-bootstrap</artifactId>
 		</dependency>
 	</dependencies>
 

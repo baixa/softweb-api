@@ -7,9 +7,20 @@ spring:
         git:
           uri: https://github.com/baixa/softweb-config.git
           clone-on-start: true
+        native:
+          search-locations: classpath:/config
   security:
     user:
       name: root
       password: root
   application:
     name: config
+  profiles:
+    active: native
+
+#Enable all Spring Boot Actuator endpoints.
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
