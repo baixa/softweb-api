@@ -6,6 +6,7 @@ application:
 # Spring configs
 spring:
   datasource:
+    url: jdbc:postgresql://database:5432/softweb_dev
     username: "postgres"
     password: "{cipher}eed9f172effb6d6b19e206aa9404aa3f3ff039b9c3caad5d0716cd3ce125edc4"
   security:

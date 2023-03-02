@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="284bb06f-8fbd-42c9-ba7c-569723e132b4" name="Changes" comment="#16 Receive config for the store module via the config server">
-      <change afterPath="$PROJECT_DIR$/config/src/main/resources/bootstrap.yml" afterDir="false" />
+    <list default="true" id="284bb06f-8fbd-42c9-ba7c-569723e132b4" name="Changes" comment="#53 Encrypt password via symmetric encryption">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/src/main/resources/application.yml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/config/src/main/resources/config/store-service-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/src/main/resources/config/store-service-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/resources/bootstrap.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -274,7 +276,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677748356426</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="#53 Encrypt password via symmetric encryption">
+      <created>1677763333299</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1677763333299</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -334,7 +343,8 @@
     <MESSAGE value="Add simple api documentation" />
     <MESSAGE value="#15 - Add config module" />
     <MESSAGE value="#15 - #16 Set up config server (native mode) and received config for the store module via the config server" />
-    <option name="LAST_COMMIT_MESSAGE" value="#15 - #16 Set up config server (native mode) and received config for the store module via the config server" />
+    <MESSAGE value="#53 Encrypt password via symmetric encryption" />
+    <option name="LAST_COMMIT_MESSAGE" value="#53 Encrypt password via symmetric encryption" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

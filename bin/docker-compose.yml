@@ -44,11 +44,6 @@ services:
         condition: service_started
       eureka-server:
         condition: service_started
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://database:5432/softweb_dev
-      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka/
-      SPRING_CLOUD_CONFIG_URI: http://config-server:8888
-      ENCRYPT_KEY: A7QNWHnSvPfB
     networks:
       backend:
         aliases:
