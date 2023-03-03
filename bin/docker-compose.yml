@@ -63,6 +63,24 @@ services:
       backend:
         aliases:
           - "config-server"
+  gateway:
+    image: softweb/gateway:0.0.1-SNAPSHOT
+    build:
+      context: .
+    container_name: gateway
+    ports:
+      - "8072:8072"
+    depends_on:
+      database:
+        condition: service_healthy
+      config-server:
+        condition: service_started
+      eureka-server:
+        condition: service_started
+    networks:
+      backend:
+        aliases:
+          - "gateway"
 
 networks:
   backend:

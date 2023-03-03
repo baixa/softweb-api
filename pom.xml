@@ -22,6 +22,9 @@
 
         <!-- Config Server module -->
         <module>config</module>
+
+        <!-- Gateway module -->
+        <module>gateway</module>
     </modules>
 
     <!-- Module properties -->
