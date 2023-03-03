@@ -1,0 +1,23 @@
+# Tomcat configs
+server:
+  port: 8072
+
+# Spring configs
+spring:
+  application:
+    name: gateway
+  profiles:
+    active: dev
+  cloud:
+    config:
+      uri: http://config-server:8888
+
+# Eureka configs
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://eureka-server:8761/eureka/
