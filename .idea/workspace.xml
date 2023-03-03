@@ -4,25 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="284bb06f-8fbd-42c9-ba7c-569723e132b4" name="Changes" comment="#34 Add application categories">
-      <change afterPath="$PROJECT_DIR$/config/src/main/resources/config/gateway-dev.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/src/main/resources/config/gateway-prod.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/src/main/resources/config/gateway.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/src/main/java/com/softweb/gateway/GatewayApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/src/test/java/com/softweb/gateway/GatewayApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="284bb06f-8fbd-42c9-ba7c-569723e132b4" name="Changes" comment="#37 Add gateway module">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/src/main/resources/config/gateway-dev.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/src/main/resources/config/gateway-prod.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/src/main/resources/config/gateway.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/src/main/resources/config/gateway.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/resources/bootstrap.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,11 +93,11 @@
       <recent name="com.softweb.api.store.model.dto.application" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Data\Projects\Softweb-Root\gateway" />
       <recent name="D:\Data\Projects\Softweb-Root\config\src\main\resources" />
       <recent name="D:\Data\Projects\Softweb-Root\config\src\main\resources\config" />
       <recent name="D:\Data\Projects\Softweb-Root\config" />
       <recent name="D:\Data\Projects\Softweb-Root\store-api\src\main\resources\static\images" />
-      <recent name="D:\Data\Projects\Softweb-Root\authorization" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Data\Projects\Softweb-Root\store-api\src\main\resources\static\files" />
@@ -225,7 +212,7 @@
       <workItem from="1677493827939" duration="8847000" />
       <workItem from="1677689075660" duration="2851000" />
       <workItem from="1677743234282" duration="2756000" />
-      <workItem from="1677853946338" duration="4081000" />
+      <workItem from="1677853946338" duration="6670000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit.&#10;Demo-release of version 1.0-SNAPSHOT. Add README.md and LICENSE.md files and prepare environment to add new modules">
       <created>1676487159443</created>
@@ -311,7 +298,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677765097298</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="#37 Add gateway module">
+      <created>1677871425330</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1677871425330</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -375,7 +369,8 @@
     <MESSAGE value="#53 Encrypt password via symmetric encryption" />
     <MESSAGE value="#53 Optimize docker files" />
     <MESSAGE value="#34 Add application categories" />
-    <option name="LAST_COMMIT_MESSAGE" value="#34 Add application categories" />
+    <MESSAGE value="#37 Add gateway module" />
+    <option name="LAST_COMMIT_MESSAGE" value="#37 Add gateway module" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
