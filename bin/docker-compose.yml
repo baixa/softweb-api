@@ -26,6 +26,11 @@ services:
     container_name: eureka-server
     ports:
       - "8761:8761"
+    depends_on:
+      database:
+        condition: service_healthy
+      config-server:
+        condition: service_started
     networks:
       backend:
         aliases:

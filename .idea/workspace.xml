@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="284bb06f-8fbd-42c9-ba7c-569723e132b4" name="Changes" comment="#38 Add filters to generate correlation id">
+    <list default="true" id="284bb06f-8fbd-42c9-ba7c-569723e132b4" name="Changes" comment="#38 Add gateway and store to config module">
+      <change afterPath="$PROJECT_DIR$/config/src/main/resources/config/eureka-service.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/src/main/resources/config/gateway.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/src/main/resources/config/gateway.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/src/main/resources/config/store-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/src/main/resources/config/store-service.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka/src/main/resources/bootstrap.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -307,7 +308,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677871425330</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="#38 Add gateway and store to config module">
+      <created>1677934197999</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1677934197999</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -373,7 +381,8 @@
     <MESSAGE value="#34 Add application categories" />
     <MESSAGE value="#37 Add gateway module" />
     <MESSAGE value="#38 Add filters to generate correlation id" />
-    <option name="LAST_COMMIT_MESSAGE" value="#38 Add filters to generate correlation id" />
+    <MESSAGE value="#38 Add gateway and store to config module" />
+    <option name="LAST_COMMIT_MESSAGE" value="#38 Add gateway and store to config module" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

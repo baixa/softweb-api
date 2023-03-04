@@ -1,9 +1,16 @@
+# Tomcat configs
+server:
+  port: 8761
+
+# Logger configs
 logging:
   level:
     com:
       netflix:
         eureka: ERROR
         discovery: ERROR
+
+# Eureka configs
 eureka:
   client:
     register-with-eureka: false
