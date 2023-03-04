@@ -25,3 +25,10 @@ management:
     web:
       exposure:
         include: "*"
+
+# Logger configs
+logging:
+  level:
+    com.netflix: WARN
+    org.springframework.web: WARN
+    com.softweb: DEBUG
