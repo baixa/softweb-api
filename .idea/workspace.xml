@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="284bb06f-8fbd-42c9-ba7c-569723e132b4" name="Changes" comment="#38 Add filters to generate correlation id">
-      <change afterPath="$PROJECT_DIR$/gateway/src/main/java/com/softweb/gateway/filters/FilterUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/src/main/java/com/softweb/gateway/filters/ResponseFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/src/main/java/com/softweb/gateway/filters/TrackingFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/control.sh" beforeDir="false" afterPath="$PROJECT_DIR$/bin/control.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/src/main/resources/config/gateway.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/src/main/resources/config/gateway.yml" afterDir="false" />
+    <list default="true" id="284bb06f-8fbd-42c9-ba7c-569723e132b4" name="Changes" comment="#38 Add eureka to config module">
+      <change beforePath="$PROJECT_DIR$/gateway/src/main/java/com/softweb/gateway/GatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/java/com/softweb/gateway/GatewayApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +26,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="57_resilience4j" />
+        <entry key="$PROJECT_DIR$" value="dev" />
       </map>
     </option>
     <option name="ROOT_SYNC" value="DONT_SYNC" />
@@ -308,7 +303,21 @@
       <option name="project" value="LOCAL" />
       <updated>1677871425330</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="#38 Add gateway and store to config module">
+      <created>1677934197999</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1677934197999</updated>
+    </task>
+    <task id="LOCAL-00015" summary="#38 Add eureka to config module">
+      <created>1677934861240</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1677934861240</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -374,7 +383,9 @@
     <MESSAGE value="#34 Add application categories" />
     <MESSAGE value="#37 Add gateway module" />
     <MESSAGE value="#38 Add filters to generate correlation id" />
-    <option name="LAST_COMMIT_MESSAGE" value="#38 Add filters to generate correlation id" />
+    <MESSAGE value="#38 Add gateway and store to config module" />
+    <MESSAGE value="#38 Add eureka to config module" />
+    <option name="LAST_COMMIT_MESSAGE" value="#38 Add eureka to config module" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
