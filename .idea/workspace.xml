@@ -4,24 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="284bb06f-8fbd-42c9-ba7c-569723e132b4" name="Changes" comment="#38 Add eureka to config module">
-      <change beforePath="$PROJECT_DIR$/gateway/src/main/java/com/softweb/gateway/GatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/java/com/softweb/gateway/GatewayApplication.java" afterDir="false" />
+    <list default="true" id="3cf68074-8047-4a31-a1f3-e42be313d241" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/scripts/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/bin/scripts/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/scripts/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/bin/scripts/init.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="com.haulmont.jpb.JpaEntity" />
-        <option value="Enum" />
-        <option value="com.haulmont.jpb.NewClass" />
-        <option value="com.haulmont.jpb.JpaRepository" />
-        <option value="Class" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -29,97 +24,62 @@
         <entry key="$PROJECT_DIR$" value="dev" />
       </map>
     </option>
-    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
     <option name="importingSettings">
       <MavenImportingSettings>
         <option name="workspaceImportEnabled" value="true" />
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
-  </component>
-  <component name="ProjectId" id="2LmlkeKf2zSPhoKIIgv77QrMuSH" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="2MYHuvwxUoctMGvdEbmh8JK0ZwQ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;19&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Data/Projects/Softweb-Root/gateway&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;bf62f670bcb42774077b8ff9e62c8eba&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "database.data.extractors.current.export.id": "SQL Inserts",
+    "last_opened_file_path": "C:/Users/Иван/Downloads",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "spring.configuration.checksum": "e84fe88790f64bc68f4fb4a03d90e08a",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ],
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "TEXT",
+      "PLAIN_TEXT"
     ]
   }
-}</component>
-  <component name="ReactorSettings">
-    <option name="notificationShown" value="true" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.softweb.api.store.utils" />
-      <recent name="com.softweb.gateway.filters" />
-      <recent name="com.softweb.api.store.model.dto.application" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Data\Projects\Softweb-Root\gateway" />
-      <recent name="D:\Data\Projects\Softweb-Root\config\src\main\resources" />
-      <recent name="D:\Data\Projects\Softweb-Root\config\src\main\resources\config" />
-      <recent name="D:\Data\Projects\Softweb-Root\config" />
-      <recent name="D:\Data\Projects\Softweb-Root\store-api\src\main\resources\static\images" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Data\Projects\Softweb-Root\store-api\src\main\resources\static\files" />
-      <recent name="D:\Data\Projects\Softweb-Root\store-api\src\main\resources\static" />
-    </key>
-  </component>
+}]]></component>
   <component name="RunManager" selected="Spring Boot.ConfigApplication">
-    <configuration name="AuthorizationApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="authorization" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.softweb.authorization.AuthorizationApplication" />
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="SoftWeb-API" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClientApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="client" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.client.ClientApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ClientApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="client" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.softweb.client.ClientApplication" />
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="SoftWeb-API" />
+      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -131,30 +91,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="demo" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.softweb.demo.DemoApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EurekaApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="eureka" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.softweb.eureka.EurekaApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="EurekaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="eureka" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.softweb.api.eureka.EurekaApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EurekaClientApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="eureka-client" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.eurekaclient.EurekaClientApplication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.softweb.eureka.EurekaApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -162,13 +101,6 @@
     <configuration name="GatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="gateway" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.softweb.gateway.GatewayApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ResourceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="resource" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.resource.ResourceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -184,223 +116,17 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="284bb06f-8fbd-42c9-ba7c-569723e132b4" name="Changes" comment="#34 Add application categories" />
-      <created>1676484285060</created>
+      <changelist id="3cf68074-8047-4a31-a1f3-e42be313d241" name="Changes" comment="" />
+      <created>1677937825966</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1676484285060</updated>
-      <workItem from="1676484286286" duration="2125000" />
-      <workItem from="1676486928952" duration="1119000" />
-      <workItem from="1676551090656" duration="1399000" />
-      <workItem from="1676617824430" duration="5419000" />
-      <workItem from="1676630136557" duration="1697000" />
-      <workItem from="1676631962484" duration="53000" />
-      <workItem from="1676632755860" duration="2325000" />
-      <workItem from="1676635479566" duration="2640000" />
-      <workItem from="1676651889821" duration="2475000" />
-      <workItem from="1676700475624" duration="9974000" />
-      <workItem from="1676737221873" duration="42000" />
-      <workItem from="1676783975767" duration="11495000" />
-      <workItem from="1676889831334" duration="6493000" />
-      <workItem from="1676957919310" duration="26305000" />
-      <workItem from="1677162082189" duration="18861000" />
-      <workItem from="1677317030341" duration="6047000" />
-      <workItem from="1677396449558" duration="2282000" />
-      <workItem from="1677474978542" duration="9000" />
-      <workItem from="1677493827939" duration="8847000" />
-      <workItem from="1677689075660" duration="2851000" />
-      <workItem from="1677743234282" duration="2756000" />
-      <workItem from="1677853946338" duration="6670000" />
+      <updated>1677937825966</updated>
+      <workItem from="1677937827992" duration="81000" />
+      <workItem from="1677944908724" duration="10535000" />
     </task>
-    <task id="LOCAL-00001" summary="Init commit.&#10;Demo-release of version 1.0-SNAPSHOT. Add README.md and LICENSE.md files and prepare environment to add new modules">
-      <created>1676487159443</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1676487159443</updated>
-    </task>
-    <task id="LOCAL-00002" summary="#1 - Add Store module">
-      <created>1676487971927</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1676487971927</updated>
-    </task>
-    <task id="LOCAL-00003" summary="#27 - Completion ApplicationController.java">
-      <created>1676968175402</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1676968175402</updated>
-    </task>
-    <task id="LOCAL-00004" summary="#27 - Completion UserController.java">
-      <created>1677080757262</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1677080757262</updated>
-    </task>
-    <task id="LOCAL-00005" summary="#27 - Edit README.md">
-      <created>1677082010200</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1677082010200</updated>
-    </task>
-    <task id="LOCAL-00006" summary="#27 - Edit LicenseController and OperatingSystemController">
-      <created>1677163821635</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1677163821635</updated>
-    </task>
-    <task id="LOCAL-00007" summary="#27 - Edit ImageController">
-      <created>1677188751711</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1677188751711</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Add simple api documentation">
-      <created>1677330613668</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1677330613668</updated>
-    </task>
-    <task id="LOCAL-00009" summary="#15 - Add config module">
-      <created>1677575252026</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1677575252026</updated>
-    </task>
-    <task id="LOCAL-00010" summary="#15 - #16 Set up config server (native mode) and received config for the store module via the config server">
-      <created>1677748356426</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1677748356426</updated>
-    </task>
-    <task id="LOCAL-00011" summary="#53 Encrypt password via symmetric encryption">
-      <created>1677763333299</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1677763333299</updated>
-    </task>
-    <task id="LOCAL-00012" summary="#53 Optimize docker files">
-      <created>1677765097298</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1677765097298</updated>
-    </task>
-    <task id="LOCAL-00013" summary="#37 Add gateway module">
-      <created>1677871425330</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1677871425330</updated>
-    </task>
-    <task id="LOCAL-00014" summary="#38 Add gateway and store to config module">
-      <created>1677934197999</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1677934197999</updated>
-    </task>
-    <task id="LOCAL-00015" summary="#38 Add eureka to config module">
-      <created>1677934861240</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1677934861240</updated>
-    </task>
-    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="origin/dev" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="origin/dev" />
-                </option>
-              </RecentGroup>
-            </list>
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <ignored-roots>
-      <path value="$PROJECT_DIR$/store-api" />
-      <path value="$PROJECT_DIR$/eureka" />
-      <path value="$PROJECT_DIR$/config" />
-      <path value="$PROJECT_DIR$/gateway" />
-    </ignored-roots>
-    <MESSAGE value="Init commit.&#10;Demo-release of version 1.0-SNAPSHOT. Add README.md and LICENSE.md files and prepare environment to add new modules" />
-    <MESSAGE value="#1 - Add Store module" />
-    <MESSAGE value="#27 - Completion ApplicationController.java" />
-    <MESSAGE value="#27 - Completion UserController.java" />
-    <MESSAGE value="#27 - Edit README.md" />
-    <MESSAGE value="#27 - Edit LicenseController and OperatingSystemController" />
-    <MESSAGE value="#27 - Edit ImageController" />
-    <MESSAGE value="Add simple api documentation" />
-    <MESSAGE value="#15 - Add config module" />
-    <MESSAGE value="#15 - #16 Set up config server (native mode) and received config for the store module via the config server" />
-    <MESSAGE value="#53 Encrypt password via symmetric encryption" />
-    <MESSAGE value="#53 Optimize docker files" />
-    <MESSAGE value="#34 Add application categories" />
-    <MESSAGE value="#37 Add gateway module" />
-    <MESSAGE value="#38 Add filters to generate correlation id" />
-    <MESSAGE value="#38 Add gateway and store to config module" />
-    <MESSAGE value="#38 Add eureka to config module" />
-    <option name="LAST_COMMIT_MESSAGE" value="#38 Add eureka to config module" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/UserController.java</url>
-          <line>103</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/UserController.java</url>
-          <line>129</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

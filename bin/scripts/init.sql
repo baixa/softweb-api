@@ -57,10 +57,10 @@ CREATE TABLE category
 CREATE TABLE application
 (
     id                SERIAL      NOT NULL,
-    name              VARCHAR(20) NOT NULL,
-    short_description VARCHAR(50) NOT NULL,
-    long_description  VARCHAR(255),
-    logo_path         VARCHAR(255),
+    name              VARCHAR(50) NOT NULL,
+    short_description VARCHAR(50),
+    long_description  TEXT,
+    logo_path         TEXT,
     license           VARCHAR(100),
     user_id           BIGINT      NOT NULL,
     category_id       BIGINT      NOT NULL,
@@ -82,7 +82,7 @@ ALTER TABLE application
 CREATE TABLE image
 (
     id             SERIAL NOT NULL,
-    path           VARCHAR(255),
+    path           TEXT,
     application_id BIGINT NOT NULL,
     CONSTRAINT pk_image PRIMARY KEY (id)
 );
@@ -95,7 +95,7 @@ CREATE TABLE installer
     id             SERIAL  NOT NULL,
     application_id BIGINT,
     system_id      BIGINT,
-    path           VARCHAR(255),
+    path           TEXT,
     version        VARCHAR(255),
     size           INTEGER NOT NULL,
     CONSTRAINT pk_installer PRIMARY KEY (id)
