@@ -1,8 +1,11 @@
+# Custom configs
 application:
   profile:
     name: "DEFAULT"
 
+# Spring configs
 spring:
+  # Datasource configs
   datasource:
     driver-class-name: org.postgresql.Driver
   jpa:
@@ -12,3 +15,12 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
 
 
+# Eureka configs
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://eureka-server:8761/eureka/
