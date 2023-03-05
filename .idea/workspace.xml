@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3cf68074-8047-4a31-a1f3-e42be313d241" name="Changes" comment="#33 Add applications for social category">
+    <list default="true" id="3cf68074-8047-4a31-a1f3-e42be313d241" name="Changes" comment="#33 Add applications for all categories">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/scripts/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/bin/scripts/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/scripts/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/bin/scripts/init.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +118,7 @@
       <updated>1677937825966</updated>
       <workItem from="1677937827992" duration="81000" />
       <workItem from="1677944908724" duration="10861000" />
-      <workItem from="1677999938918" duration="8451000" />
+      <workItem from="1677999938918" duration="10562000" />
     </task>
     <task id="LOCAL-00001" summary="#33 Add applications for social category">
       <created>1677960517018</created>
@@ -127,7 +127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677960517018</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="#33 Add applications for all categories">
+      <created>1678011356556</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1678011356556</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,6 +142,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="#33 Add applications for social category" />
-    <option name="LAST_COMMIT_MESSAGE" value="#33 Add applications for social category" />
+    <MESSAGE value="#33 Add applications for all categories" />
+    <option name="LAST_COMMIT_MESSAGE" value="#33 Add applications for all categories" />
   </component>
 </project>

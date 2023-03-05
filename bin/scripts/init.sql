@@ -1,13 +1,13 @@
 /*
     Create required sequences, that used as ids in tables (objects, that has 100 and less id is testing)
 */
-CREATE SEQUENCE sq_application START 101;
-CREATE SEQUENCE sq_authority START 101;
-CREATE SEQUENCE sq_image START 101;
-CREATE SEQUENCE sq_installer START 101;
-CREATE SEQUENCE sq_operating_system START 101;
-CREATE SEQUENCE sq_user START 101;
-CREATE SEQUENCE sq_category START 101;
+CREATE SEQUENCE sq_application START 10001;
+CREATE SEQUENCE sq_authority START 10001;
+CREATE SEQUENCE sq_image START 10001;
+CREATE SEQUENCE sq_installer START 10001;
+CREATE SEQUENCE sq_operating_system START 10001;
+CREATE SEQUENCE sq_user START 10001;
+CREATE SEQUENCE sq_category START 10001;
 
 CREATE TABLE license
 (
