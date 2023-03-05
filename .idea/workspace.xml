@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3cf68074-8047-4a31-a1f3-e42be313d241" name="Changes" comment="#33 Fix duplicate names">
+    <list default="true" id="3cf68074-8047-4a31-a1f3-e42be313d241" name="Changes" comment="#33 Add logo images">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -118,7 +118,7 @@
       <workItem from="1677937827992" duration="81000" />
       <workItem from="1677944908724" duration="10861000" />
       <workItem from="1677999938918" duration="13975000" />
-      <workItem from="1678024250555" duration="318000" />
+      <workItem from="1678024250555" duration="1518000" />
     </task>
     <task id="LOCAL-00001" summary="#33 Add applications for social category">
       <created>1677960517018</created>
@@ -155,7 +155,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678017612852</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="#33 Add logo images">
+      <created>1678025462338</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1678025462338</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,6 +173,7 @@
     <MESSAGE value="#33 Add applications for all categories" />
     <MESSAGE value="#33 Fix social category" />
     <MESSAGE value="#33 Fix duplicate names" />
-    <option name="LAST_COMMIT_MESSAGE" value="#33 Fix duplicate names" />
+    <MESSAGE value="#33 Add logo images" />
+    <option name="LAST_COMMIT_MESSAGE" value="#33 Add logo images" />
   </component>
 </project>
