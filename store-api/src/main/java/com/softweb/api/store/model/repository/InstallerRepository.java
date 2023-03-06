@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface InstallerRepository extends JpaRepository<Installer, Long> {
+    long countByInstallerPath(String installerPath);
 }

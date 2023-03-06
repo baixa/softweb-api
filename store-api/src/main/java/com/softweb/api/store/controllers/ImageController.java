@@ -110,9 +110,15 @@ public class ImageController {
                 && authUserAuthority != Authorities.ADMIN)
             return new ResponseEntity<>(null, HttpStatus.FORBIDDEN);
         imageService.deleteImageById(image.getId().toString());
-        if (fileStorageService.removeFileByPath(image.getPath()))
+
+        if (imageService.getCountImagesByPath(image.getPath()) == 1) {
+            if (fileStorageService.removeFileByPath(image.getPath()))
+                return new ResponseEntity<>(null, HttpStatus.OK);
+            else
+                return new ResponseEntity<>(null, HttpStatus.FORBIDDEN);
+        } else {
             return new ResponseEntity<>(null, HttpStatus.OK);
-        else
-            return new ResponseEntity<>(null, HttpStatus.FORBIDDEN);
+        }
+
     }
 }

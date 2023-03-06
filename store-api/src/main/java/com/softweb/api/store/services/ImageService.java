@@ -29,4 +29,8 @@ public class ImageService {
     public void saveImages(List<Image> storedImages) {
         imageRepository.saveAll(storedImages);
     }
+
+    public long getCountImagesByPath(String path) {
+        return imageRepository.countByPath(path);
+    }
 }

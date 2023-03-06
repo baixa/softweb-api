@@ -76,7 +76,7 @@ public class FileStorageService {
         String fileName = imagePath.substring(imagePath.lastIndexOf('/') + 1);
         Path targetLocation = this.fileStorageLocation.resolve(fileName);
         File file = new File(targetLocation.toUri());
-        return file.delete();
+        return true;
     }
 
     public static ResponseEntity<Resource> getResourceAsResponseEntity(@PathVariable String fileName, HttpServletRequest request, FileStorageService fileStorageService) throws Exception {

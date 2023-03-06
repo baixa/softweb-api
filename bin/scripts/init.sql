@@ -51,6 +51,7 @@ CREATE TABLE category
 (
     id   SERIAL       NOT NULL,
     name VARCHAR(100) NOT NULL,
+    image_path TEXT   NOT NULL,
     CONSTRAINT pk_category PRIMARY KEY (id)
 );
 
@@ -97,7 +98,7 @@ CREATE TABLE installer
     system_id      BIGINT,
     path           TEXT,
     version        VARCHAR(255),
-    size           INTEGER NOT NULL,
+    size           int8 NOT NULL,
     CONSTRAINT pk_installer PRIMARY KEY (id)
 );
 

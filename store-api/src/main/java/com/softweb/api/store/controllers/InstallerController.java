@@ -122,9 +122,13 @@ public class InstallerController {
                 && authUserAuthority != Authorities.ADMIN)
             return new ResponseEntity<>(null, HttpStatus.FORBIDDEN);
         installerService.deleteInstallerById(installer.getId().toString());
-        if (fileStorageService.removeFileByPath(installer.getInstallerPath()))
+        if (installerService.getCountInstallersByPath(installer.getInstallerPath()) == 1) {
+            if (fileStorageService.removeFileByPath(installer.getInstallerPath()))
+                return new ResponseEntity<>(null, HttpStatus.OK);
+            else
+                return new ResponseEntity<>(null, HttpStatus.FORBIDDEN);
+        } else {
             return new ResponseEntity<>(null, HttpStatus.OK);
-        else
-            return new ResponseEntity<>(null, HttpStatus.FORBIDDEN);
+        }
     }
 }

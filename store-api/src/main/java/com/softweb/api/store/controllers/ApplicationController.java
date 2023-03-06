@@ -5,15 +5,14 @@ import com.softweb.api.store.model.entities.Application;
 import com.softweb.api.store.model.entities.Authorities;
 import com.softweb.api.store.model.entities.Category;
 import com.softweb.api.store.model.entities.User;
-import com.softweb.api.store.services.ApplicationService;
-import com.softweb.api.store.services.AuthenticationService;
-import com.softweb.api.store.services.CategoryService;
-import com.softweb.api.store.services.LicenseService;
+import com.softweb.api.store.services.*;
 import com.softweb.api.store.utils.NumParser;
 import com.softweb.api.store.utils.StringUtil;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,12 +25,18 @@ public class ApplicationController {
     private final AuthenticationService authenticationService;
     private final LicenseService licenseService;
     private final CategoryService categoryService;
+    private final FileStorageService fileStorageService;
 
-    public ApplicationController(ApplicationService applicationService, AuthenticationService authenticationService, LicenseService licenseService, CategoryService categoryService) {
+    public ApplicationController(ApplicationService applicationService,
+                                 AuthenticationService authenticationService,
+                                 LicenseService licenseService,
+                                 CategoryService categoryService,
+                                 FileStorageService fileStorageService) {
         this.applicationService = applicationService;
         this.authenticationService = authenticationService;
         this.licenseService = licenseService;
         this.categoryService = categoryService;
+        this.fileStorageService = fileStorageService;
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
@@ -129,7 +134,18 @@ public class ApplicationController {
     }
 
     @PostMapping
-    public ResponseEntity<?> postApplication(@RequestBody ApplicationPostDto applicationPostDto) {
+    public ResponseEntity<?> postApplication(@RequestBody ApplicationPostDto applicationPostDto,
+                                             @RequestParam("logo") MultipartFile logo) {
+        if (!Objects.requireNonNull(logo.getContentType()).contains("image"))
+            return new ResponseEntity<>(null, HttpStatus.FORBIDDEN);
+
+        String fileName = fileStorageService.storeFile(logo);
+        String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
+                .path("/v1/image/")
+                .path(fileName)
+                .toUriString();
+
+        applicationPostDto.setLogo(fileDownloadUri);
         applicationPostDto.setUser(authenticationService.getAuthenticatedUser());
         applicationPostDto.setLicense(licenseService.getLicenseById(applicationPostDto.getLicenseCode()));
         applicationPostDto.setCategory(categoryService.getCategoryById(applicationPostDto.getCategoryName()));
@@ -138,11 +154,23 @@ public class ApplicationController {
     }
 
     @PutMapping
-    public ResponseEntity<?> putApplication (@RequestBody ApplicationPutDto applicationPutDto) {
+    public ResponseEntity<?> putApplication (@RequestBody ApplicationPutDto applicationPutDto,
+                                             @RequestParam("logo") MultipartFile logo) {
         User user = authenticationService.getAuthenticatedUser();
-        if (!Objects.equals(user.getAuthority().getAuthority(), Authorities.ADMIN.name()) && !applicationService.isUserOwner(applicationPutDto, user)) {
+
+        if (!Objects.equals(user.getAuthority().getAuthority(), Authorities.ADMIN.name())
+                && !applicationService.isUserOwner(applicationPutDto, user))
             return new ResponseEntity<>(null, HttpStatus.FORBIDDEN);
-        }
+        if (!Objects.requireNonNull(logo.getContentType()).contains("image"))
+            return new ResponseEntity<>(null, HttpStatus.FORBIDDEN);
+
+        String fileName = fileStorageService.storeFile(logo);
+        String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
+                .path("/v1/image/")
+                .path(fileName)
+                .toUriString();
+
+        applicationPutDto.setLogo(fileDownloadUri);
         applicationPutDto.setLicense(licenseService.getLicenseById(applicationPutDto.getLicenseCode()));
         applicationPutDto.setCategory(categoryService.getCategoryById(applicationPutDto.getCategoryName()));
         Application result = applicationService.saveApplication(applicationPutDto);
@@ -156,7 +184,8 @@ public class ApplicationController {
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteApplication (@PathVariable(name = "id") String applicationId) {
         User user = authenticationService.getAuthenticatedUser();
-        if (!Objects.equals(user.getAuthority().getAuthority(), Authorities.ADMIN.name()) && !applicationService.isUserOwner(applicationId, user)) {
+        if (!Objects.equals(user.getAuthority().getAuthority(), Authorities.ADMIN.name())
+                && !applicationService.isUserOwner(applicationId, user)) {
             return new ResponseEntity<>(null, HttpStatus.FORBIDDEN);
         }
         applicationService.deleteApplicationById(applicationId);
