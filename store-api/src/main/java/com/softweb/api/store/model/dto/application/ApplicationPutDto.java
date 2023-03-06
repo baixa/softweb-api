@@ -12,19 +12,18 @@ public class ApplicationPutDto {
     private final String name;
     private final String shortDescription;
     private final String longDescription;
-    private final String logoBase64;
+    private String logo;
     private final Date lastUpdate;
     private final String licenseCode;
     private final String categoryName;
     private License license;
     private Category category;
 
-    public ApplicationPutDto(Long id, String name, String shortDescription, String longDescription, String logoBase64, String licenseCode, String categoryName) {
+    public ApplicationPutDto(Long id, String name, String shortDescription, String longDescription, String licenseCode, String categoryName) {
         this.id = id;
         this.name = name;
         this.shortDescription = shortDescription;
         this.longDescription = longDescription;
-        this.logoBase64 = logoBase64;
         this.licenseCode = licenseCode;
         this.categoryName = categoryName;
         this.lastUpdate = new Date();

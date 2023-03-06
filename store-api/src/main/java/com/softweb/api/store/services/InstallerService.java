@@ -29,4 +29,8 @@ public class InstallerService {
     public void saveInstallers(List<Installer> storedInstallers) {
         installerRepository.saveAll(storedInstallers);
     }
+
+    public long getCountInstallersByPath(String installerPath) {
+        return installerRepository.countByInstallerPath(installerPath);
+    }
 }

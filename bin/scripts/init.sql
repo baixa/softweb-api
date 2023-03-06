@@ -51,6 +51,7 @@ CREATE TABLE category
 (
     id   SERIAL       NOT NULL,
     name VARCHAR(100) NOT NULL,
+    image_path TEXT   NOT NULL,
     CONSTRAINT pk_category PRIMARY KEY (id)
 );
 

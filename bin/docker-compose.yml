@@ -21,6 +21,20 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+  keycloak:
+    image: jboss/keycloak
+    restart: always
+    container_name: keycloak
+    environment:
+      KEYCLOAK_VERSION: 6.0.1
+      KEYCLOAK_USER: admin
+      KEYCLOAK_PASSWORD: admin
+    ports:
+      - "8080:8080"
+    networks:
+      backend:
+        aliases:
+          - "keycloak"
   eureka-server:
     image: softweb/eureka:0.0.1-SNAPSHOT
     container_name: eureka-server
@@ -41,7 +55,7 @@ services:
       context: .
     container_name: store
     ports:
-      - "8080:8080"
+      - "8180:8080"
     depends_on:
       database:
         condition: service_healthy

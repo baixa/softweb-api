@@ -65,7 +65,7 @@ public class ApplicationService {
             application.setShortDescription(applicationPutDto.getShortDescription());
             application.setLongDescription(applicationPutDto.getLongDescription());
             application.setLicense(applicationPutDto.getLicense());
-            application.setLogoPath(applicationPutDto.getLogoBase64());
+            application.setLogoPath(applicationPutDto.getLogo());
             application.setLastUpdate(applicationPutDto.getLastUpdate());
             return applicationRepository.save(application);
         }

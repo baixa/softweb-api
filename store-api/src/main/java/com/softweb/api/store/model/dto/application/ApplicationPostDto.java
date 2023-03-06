@@ -16,7 +16,7 @@ public class ApplicationPostDto implements Serializable {
     private final String name;
     private final String shortDescription;
     private final String longDescription;
-    private final String logoBase64;
+    private String logo;
     private final Date lastUpdate;
     private final int views;
     private final int downloads;
@@ -26,11 +26,10 @@ public class ApplicationPostDto implements Serializable {
     private License license;
     private Category category;
 
-    public ApplicationPostDto(String name, String shortDescription, String longDescription, String logoBase64, String licenseCode, String categoryName) {
+    public ApplicationPostDto(String name, String shortDescription, String longDescription, String licenseCode, String categoryName) {
         this.name = name;
         this.shortDescription = shortDescription;
         this.longDescription = longDescription;
-        this.logoBase64 = logoBase64;
         this.lastUpdate = new Date();
         this.views = 0;
         this.downloads = 0;

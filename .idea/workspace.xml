@@ -4,8 +4,76 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3cf68074-8047-4a31-a1f3-e42be313d241" name="Changes" comment="#33 Add logo images">
+    <list default="true" id="3cf68074-8047-4a31-a1f3-e42be313d241" name="Changes" comment="#33 Add category controller">
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/creativity.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/development.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/games.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/image_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/image_10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/image_11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/image_12.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/image_13.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/image_14.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/image_15.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/image_16.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/image_17.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/image_18.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/image_19.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/image_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/image_20.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/image_21.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/image_22.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/image_23.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/image_24.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/image_25.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/image_26.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/image_27.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/image_28.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/image_29.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/image_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/image_30.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/image_31.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/image_32.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/image_33.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/image_34.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/image_35.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/image_36.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/image_37.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/image_38.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/image_39.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/image_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/image_40.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/image_41.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/image_42.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/image_43.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/image_44.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/image_45.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/image_46.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/image_47.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/image_5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/image_6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/image_7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/image_8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/image_9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/productivity.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/security.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store-api/src/main/resources/static/files/socials.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/scripts/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/bin/scripts/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/scripts/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/bin/scripts/init.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/ApplicationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/ApplicationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/ImageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/ImageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/InstallerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/InstallerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/application/ApplicationPostDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/application/ApplicationPostDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/application/ApplicationPutDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/application/ApplicationPutDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/entities/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/entities/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/repository/ImageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/repository/ImageRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/repository/InstallerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/repository/InstallerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/ApplicationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/ApplicationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/FileStorageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/FileStorageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/ImageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/ImageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/InstallerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/InstallerService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,7 +83,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev" />
+        <entry key="$PROJECT_DIR$" value="6_auth_module" />
       </map>
     </option>
   </component>
@@ -35,35 +103,41 @@
     </option>
   </component>
   <component name="ProjectId" id="2MYHuvwxUoctMGvdEbmh8JK0ZwQ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;database.data.extractors.current.export.id&quot;: &quot;SQL Inserts&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Иван/Downloads&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;e84fe88790f64bc68f4fb4a03d90e08a&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "database.data.extractors.current.export.id": "SQL Inserts",
+    "last_opened_file_path": "D:/Data/Projects/SoftWeb-API/store-api/src/main/resources/static/files",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "spring.configuration.checksum": "e84fe88790f64bc68f4fb4a03d90e08a",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ],
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;TEXT&quot;,
-      &quot;PLAIN_TEXT&quot;
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "TEXT",
+      "PLAIN_TEXT"
     ]
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Data\Projects\SoftWeb-API\store-api\src\main\resources\static\files" />
+    </key>
+  </component>
   <component name="RunManager" selected="Spring Boot.ConfigApplication">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="SoftWeb-API" />
@@ -119,6 +193,7 @@
       <workItem from="1677944908724" duration="10861000" />
       <workItem from="1677999938918" duration="13975000" />
       <workItem from="1678024250555" duration="1518000" />
+      <workItem from="1678122217320" duration="5115000" />
     </task>
     <task id="LOCAL-00001" summary="#33 Add applications for social category">
       <created>1677960517018</created>

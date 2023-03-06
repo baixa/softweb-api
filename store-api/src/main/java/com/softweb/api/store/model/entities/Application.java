@@ -110,7 +110,7 @@ public class Application {
         this.name = applicationDto.getName();
         this.shortDescription = applicationDto.getShortDescription();
         this.longDescription = applicationDto.getLongDescription();
-        this.logoPath = applicationDto.getLogoBase64();
+        this.logoPath = applicationDto.getLogo();
         this.lastUpdate = applicationDto.getLastUpdate();
         this.views = applicationDto.getViews();
         this.downloads = applicationDto.getDownloads();
