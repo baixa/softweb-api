@@ -98,7 +98,7 @@ CREATE TABLE installer
     system_id      BIGINT,
     path           TEXT,
     version        VARCHAR(255),
-    size           INTEGER NOT NULL,
+    size           int8 NOT NULL,
     CONSTRAINT pk_installer PRIMARY KEY (id)
 );
 
