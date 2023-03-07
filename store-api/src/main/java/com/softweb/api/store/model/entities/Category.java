@@ -36,6 +36,12 @@ public class Category {
     @Column(name = "name", nullable = false)
     private String name;
 
+    /**
+     * Name of category
+     */
+    @Column(name = "image_path", nullable = false)
+    private String image;
+
     @OneToMany(mappedBy = "category")
     private Set<Application> applications;
 
@@ -44,6 +50,7 @@ public class Category {
         return "Category{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", image='" + image + '\'' +
                 '}';
     }
 }
