@@ -6,8 +6,8 @@ import com.softweb.api.store.model.entities.Authorities;
 import com.softweb.api.store.model.entities.Category;
 import com.softweb.api.store.model.entities.User;
 import com.softweb.api.store.services.*;
-import com.softweb.api.store.utils.NumParser;
-import com.softweb.api.store.utils.StringUtil;
+import org.springdoc.core.annotations.ParameterObject;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -64,17 +64,16 @@ public class ApplicationController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public ResponseEntity<?> getApplications (@RequestParam(name = "page") String page) {
-        Integer pageValue = StringUtil.isBlankString(page) ? Integer.valueOf(0) : NumParser.parseIntOrNull(page);
+    public ResponseEntity<?> getApplications (@ParameterObject Pageable pageable) {
         Authorities userAuthority = authenticationService.getAuthenticationAuthority();
         List<AbstractApplicationGetDto> result = new ArrayList<>();
         if (userAuthority == null) {
-            List<Application> applications = applicationService.getApplications(pageValue);
+            List<Application> applications = applicationService.getApplications(pageable);
             result.addAll(applications.stream().map(ApplicationDefaultGetDto::new).toList());
         }
         else {
             String authUsername = authenticationService.getAuthenticationName();
-            List<Application> applications = applicationService.getApplications(pageValue);
+            List<Application> applications = applicationService.getApplications(pageable);
             switch (userAuthority) {
                 case USER -> {
                     result.addAll(
@@ -97,21 +96,20 @@ public class ApplicationController {
     }
 
     @GetMapping("/category")
-    public ResponseEntity<?> getApplicationsByCategoryName (@RequestParam(name = "page") String page,
+    public ResponseEntity<?> getApplicationsByCategoryName (@ParameterObject Pageable pageable,
                                                             @RequestParam(name = "categoryId") String categoryId) {
-        Integer pageValue = StringUtil.isBlankString(page) ? Integer.valueOf(0) : NumParser.parseIntOrNull(page);
         Authorities userAuthority = authenticationService.getAuthenticationAuthority();
         Category category = categoryService.getCategoryById(categoryId);
         if (Objects.isNull(category))
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         List<AbstractApplicationGetDto> result = new ArrayList<>();
         if (userAuthority == null) {
-            List<Application> applications = applicationService.getApplicationsByCategory(pageValue, category);
+            List<Application> applications = applicationService.getApplicationsByCategory(pageable, category);
             result.addAll(applications.stream().map(ApplicationDefaultGetDto::new).toList());
         }
         else {
             String authUsername = authenticationService.getAuthenticationName();
-            List<Application> applications = applicationService.getApplicationsByCategory(pageValue, category);
+            List<Application> applications = applicationService.getApplicationsByCategory(pageable, category);
             switch (userAuthority) {
                 case USER -> {
                     result.addAll(

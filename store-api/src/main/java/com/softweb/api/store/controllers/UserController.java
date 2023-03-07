@@ -7,8 +7,8 @@ import com.softweb.api.store.model.entities.User;
 import com.softweb.api.store.services.AuthenticationService;
 import com.softweb.api.store.services.AuthorityService;
 import com.softweb.api.store.services.UserService;
-import com.softweb.api.store.utils.NumParser;
-import com.softweb.api.store.utils.StringUtil;
+import org.springdoc.core.annotations.ParameterObject;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -43,17 +43,16 @@ public class UserController {
     }
 
     @GetMapping
-    public ResponseEntity<?> getUsers (@RequestParam(name = "page") String page) {
-        Integer pageValue = StringUtil.isBlankString(page) ? Integer.valueOf(0) : NumParser.parseIntOrNull(page);
+    public ResponseEntity<?> getUsers (@ParameterObject Pageable pageable) {
         Authorities userAuthority = authenticationService.getAuthenticationAuthority();
         List<AbstractUserGetDto> result = new ArrayList<>();
         if (userAuthority == null) {
-            List<User> users = userService.getUsers(pageValue);
+            List<User> users = userService.getUsers(pageable);
             result.addAll(users.stream().map(UserDefaultGetDto::new).toList());
         }
         else {
             String authUsername = authenticationService.getAuthenticationName();
-            List<User> users = userService.getUsers(pageValue);
+            List<User> users = userService.getUsers(pageable);
             switch (userAuthority) {
                 case USER -> {
                     result.addAll(

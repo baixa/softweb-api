@@ -3,11 +3,14 @@ package com.softweb.api.store.controllers;
 import com.softweb.api.store.model.dto.license.LicenseDto;
 import com.softweb.api.store.model.entities.License;
 import com.softweb.api.store.services.LicenseService;
-import com.softweb.api.store.utils.NumParser;
-import com.softweb.api.store.utils.StringUtil;
+import org.springdoc.core.annotations.ParameterObject;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 import java.util.Objects;
@@ -28,9 +31,8 @@ public class LicenseController {
     }
 
     @GetMapping
-    public ResponseEntity<?> getLicenses (@RequestParam(name = "page") String page) {
-        Integer pageValue = StringUtil.isBlankString(page) ? Integer.valueOf(0) : NumParser.parseIntOrNull(page);
-        List<License> licenses = licenseService.getLicenses(pageValue);
+    public ResponseEntity<?> getLicenses (@ParameterObject Pageable pageable) {
+        List<License> licenses = licenseService.getLicenses(pageable);
         List<LicenseDto> licenseDtos = licenses.stream().map(LicenseDto::new).toList();
         return ResponseEntity.ok(licenseDtos);
     }

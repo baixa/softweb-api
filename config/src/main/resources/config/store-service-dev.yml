@@ -21,3 +21,4 @@ logging:
       netflix:
         eureka: ERROR
         discovery: ERROR
+
