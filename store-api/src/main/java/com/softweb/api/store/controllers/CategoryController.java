@@ -16,7 +16,6 @@ import java.util.Objects;
 @RestController
 @RequestMapping(value = "/v1/category")
 public class CategoryController {
-
     private final CategoryService categoryService;
 
     public CategoryController(CategoryService categoryService) {
@@ -31,7 +30,7 @@ public class CategoryController {
     }
 
     @GetMapping
-    public ResponseEntity<?> getCategories () {
+    public ResponseEntity<?> getCategories() {
         List<Category> categories = categoryService.getCategories();
         List<CategoryDto> categoryDtos = categories.stream().map(CategoryDto::new).toList();
         return ResponseEntity.ok(categoryDtos);

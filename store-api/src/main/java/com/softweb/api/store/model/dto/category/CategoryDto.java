@@ -12,9 +12,11 @@ import java.io.Serializable;
 public class CategoryDto implements Serializable {
     private final Long id;
     private final String name;
+    private final String image;
 
     public CategoryDto(Category category) {
         this.id = category.getId();
         this.name = category.getName();
+        this.image = category.getImage();
     }
 }
