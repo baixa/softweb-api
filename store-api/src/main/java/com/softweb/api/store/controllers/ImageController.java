@@ -9,6 +9,7 @@ import com.softweb.api.store.services.ApplicationService;
 import com.softweb.api.store.services.AuthenticationService;
 import com.softweb.api.store.services.FileStorageService;
 import com.softweb.api.store.services.ImageService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpStatus;
@@ -44,6 +45,7 @@ public class ImageController {
     }
 
     @PostMapping("/upload")
+    @SecurityRequirement(name = "api")
     public ResponseEntity<?> uploadFile(@RequestParam("file") MultipartFile file, @RequestParam String applicationId) {
         User authUser = authenticationService.getAuthenticatedUser();
         Authorities authUserAuthority = authenticationService.getAuthenticationAuthority();
@@ -68,6 +70,7 @@ public class ImageController {
     }
 
     @PostMapping("/uploadMultiple")
+    @SecurityRequirement(name = "api")
     public ResponseEntity<?> uploadMultipleFiles(@RequestParam("files") MultipartFile[] files,
                                                  @RequestParam String applicationId) {
         User authUser = authenticationService.getAuthenticatedUser();
@@ -100,6 +103,7 @@ public class ImageController {
     }
 
     @DeleteMapping("/{id}")
+    @SecurityRequirement(name = "api")
     public ResponseEntity<?> deleteImage(@PathVariable String id) {
         Image image = imageService.getImageById(id);
         if (image == null)

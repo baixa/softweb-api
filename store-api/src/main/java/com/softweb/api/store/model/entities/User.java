@@ -69,13 +69,13 @@ public class User {
     /**
      * List of published applications.
      */
-    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE)
     private Set<Application> applications;
 
     /**
      * User authority
      */
-    @OneToOne(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+    @OneToOne(mappedBy = "user", cascade = CascadeType.REMOVE)
     private Authority authority;
 
     public User(AbstractUserSaveDto userDto) {

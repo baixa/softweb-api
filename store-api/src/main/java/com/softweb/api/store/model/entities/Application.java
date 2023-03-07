@@ -93,13 +93,13 @@ public class Application {
     /**
      * Application image list
      */
-    @OneToMany(mappedBy = "application", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "application", cascade = CascadeType.REMOVE)
     private Set<Image> images;
 
     /**
      * List of app installers
      */
-    @OneToMany(mappedBy = "application", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "application", cascade = CascadeType.REMOVE)
     private Set<Installer> installers;
 
     @ManyToOne

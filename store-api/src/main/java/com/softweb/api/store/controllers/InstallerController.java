@@ -3,6 +3,7 @@ package com.softweb.api.store.controllers;
 import com.softweb.api.store.model.dto.installer.UploadInstallerDto;
 import com.softweb.api.store.model.entities.*;
 import com.softweb.api.store.services.*;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpStatus;
@@ -43,6 +44,7 @@ public class InstallerController {
 
 
     @PostMapping("/upload")
+    @SecurityRequirement(name = "api")
     public ResponseEntity<?> uploadFile(@RequestParam("file") MultipartFile file,
                                         @RequestParam String applicationId,
                                         @RequestParam String systemId,
@@ -74,6 +76,7 @@ public class InstallerController {
     }
 
     @PostMapping("/uploadMultiple")
+    @SecurityRequirement(name = "api")
     public ResponseEntity<?> uploadMultipleFiles(@RequestParam("files") MultipartFile[] files,
                                                  @RequestParam String applicationId,
                                                  @RequestParam String systemId,
@@ -112,6 +115,7 @@ public class InstallerController {
     }
 
     @DeleteMapping("/{id}")
+    @SecurityRequirement(name = "api")
     public ResponseEntity<?> deleteInstaller(@PathVariable String id) {
         Installer installer = installerService.getInstallerById(id);
         if (installer == null)

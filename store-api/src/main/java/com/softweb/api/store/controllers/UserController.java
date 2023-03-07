@@ -7,6 +7,7 @@ import com.softweb.api.store.model.entities.User;
 import com.softweb.api.store.services.AuthenticationService;
 import com.softweb.api.store.services.AuthorityService;
 import com.softweb.api.store.services.UserService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
@@ -30,7 +31,7 @@ public class UserController {
         this.authorityService = authorityService;
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    @GetMapping(value = "/{id}")
     public ResponseEntity<?> getUserById (@PathVariable(name = "id") String userId) {
         User authUser = authenticationService.getAuthenticatedUser();
         Authorities authUserAuthority = authenticationService.getAuthenticationAuthority();
@@ -99,6 +100,7 @@ public class UserController {
     }
 
     @PutMapping
+    @SecurityRequirement(name = "api")
     public ResponseEntity<?> putUser (@RequestBody UserPutDto userDto) {
         Authorities authUserAuthority = authenticationService.getAuthenticationAuthority();
         User authUser = authenticationService.getAuthenticatedUser();
@@ -124,7 +126,8 @@ public class UserController {
         }
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    @DeleteMapping(value = "/{id}")
+    @SecurityRequirement(name = "api")
     public ResponseEntity<?> deleteUser (@PathVariable(name = "id") String userId) {
         Authorities authUserAuthority = authenticationService.getAuthenticationAuthority();
         if (Objects.requireNonNull(authUserAuthority) == Authorities.ADMIN) {

@@ -39,9 +39,9 @@ public class ApplicationService {
         return applicationPage.getContent();
     }
 
-    public void saveApplication(ApplicationPostDto applicationDto) {
+    public Application saveApplication(ApplicationPostDto applicationDto) {
         Application application = new Application(applicationDto);
-        applicationRepository.save(application);
+        return applicationRepository.save(application);
     }
 
     public void deleteApplicationById (String applicationId) {
