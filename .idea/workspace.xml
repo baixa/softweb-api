@@ -4,17 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e1eb751-0cc7-4a2b-80fd-d9eaef23426d" name="Changes" comment="#33 Add category images">
+    <list default="true" id="6e1eb751-0cc7-4a2b-80fd-d9eaef23426d" name="Changes" comment="#56 Add Swagger OpenAPI UI">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/src/main/resources/config/store-service-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/src/main/resources/config/store-service-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/ApplicationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/ApplicationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/LicenseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/LicenseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/ApplicationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/ApplicationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/LicenseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/LicenseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store-api/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/resources/bootstrap.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -211,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678132535908</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="#56 Add Swagger OpenAPI UI">
+      <created>1678193444395</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1678193444395</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,6 +236,7 @@
     <MESSAGE value="#33 Add logo images" />
     <MESSAGE value="#33 Add application images" />
     <MESSAGE value="#33 Remove redundant files" />
-    <option name="LAST_COMMIT_MESSAGE" value="#33 Remove redundant files" />
+    <MESSAGE value="#56 Add Swagger OpenAPI UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="#56 Add Swagger OpenAPI UI" />
   </component>
 </project>

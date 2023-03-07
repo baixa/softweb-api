@@ -22,3 +22,9 @@ logging:
         eureka: ERROR
         discovery: ERROR
 
+# SpringDoc configs
+springdoc:
+  api-docs:
+    path: /v1/api-docs
+  swagger-ui:
+    path: /v1/api-swagger/swagger-ui.html
