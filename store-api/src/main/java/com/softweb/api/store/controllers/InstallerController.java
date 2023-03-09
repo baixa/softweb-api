@@ -36,8 +36,7 @@ public class InstallerController {
     }
 
     @GetMapping("/{fileName:.+}")
-    public ResponseEntity<Resource> getInstallerByName(@PathVariable String fileName,
-                                                       HttpServletRequest request) throws Exception {
+    public ResponseEntity<Resource> getInstallerByName(@PathVariable String fileName, HttpServletRequest request) {
         return getResourceAsResponseEntity(fileName, request, fileStorageService);
     }
 
@@ -126,7 +125,7 @@ public class InstallerController {
                 && authUserAuthority != Authorities.ADMIN)
             return new ResponseEntity<>(null, HttpStatus.FORBIDDEN);
         installerService.deleteInstallerById(installer.getId().toString());
-        if (installerService.getCountInstallersByPath(installer.getInstallerPath()) == 1) {
+        if (installerService.getCountInstallersByPath(installer.getInstallerPath()) == 0) {
             if (fileStorageService.removeFileByPath(installer.getInstallerPath()))
                 return new ResponseEntity<>(null, HttpStatus.OK);
             else

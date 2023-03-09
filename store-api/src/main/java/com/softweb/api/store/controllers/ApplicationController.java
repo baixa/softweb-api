@@ -35,7 +35,7 @@ import java.util.Optional;
  */
 @RestController
 @RequestMapping(value = "/v1/application")
-@Tag(name = "Application API", description = "API provides ability to manipulate users' applications")
+@Tag(name = "Application", description = "API provides ability to manipulate users' applications")
 public class ApplicationController {
     /**
      * Service, that provides ability to interaction with the Application entity
@@ -333,7 +333,7 @@ public class ApplicationController {
             description = "Delete application that are based on request body data"
     )
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Returns edited application",
+            @ApiResponse(responseCode = "200", description = "Returns status of application removing",
                     content = {@Content(mediaType = "application/json",
                             schema = @Schema(implementation = AbstractApplicationGetDto.class))}),
             @ApiResponse(responseCode = "400", description = "Invalid data supplied", content = @Content),

@@ -27,7 +27,7 @@ import java.util.Objects;
  */
 @RestController
 @RequestMapping(value = "/v1/category")
-@Tag(name = "Category API", description = "API provides ability to manipulate applications' categories")
+@Tag(name = "Category", description = "API provides ability to manipulate applications' categories")
 public class CategoryController {
     /**
      * Service, that provides ability to interaction with the Category entity

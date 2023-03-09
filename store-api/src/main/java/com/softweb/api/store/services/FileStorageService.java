@@ -20,6 +20,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.Objects;
+import java.util.Optional;
 
 @Service
 public class FileStorageService {
@@ -38,23 +40,23 @@ public class FileStorageService {
         }
     }
 
-    public Resource loadFileAsResource(String fileName) throws Exception {
+    public Resource loadFileAsResource(String fileName) {
         try {
             Path filePath = this.fileStorageLocation.resolve(fileName).normalize();
             Resource resource = new UrlResource(filePath.toUri());
             if(resource.exists()) {
                 return resource;
             } else {
-                throw new Exception("File not found");
+                return null;
             }
         } catch (MalformedURLException ex) {
-            throw new Exception("File not found");
+            return null;
         }
     }
 
     public String storeFile(MultipartFile file) {
         // Normalize file name
-        String fileName = StringUtils.cleanPath(file.getOriginalFilename());
+        String fileName = StringUtils.cleanPath(Objects.requireNonNull(file.getOriginalFilename()));
 
         try {
             // Check if the file's name contains invalid characters
@@ -76,11 +78,14 @@ public class FileStorageService {
         String fileName = imagePath.substring(imagePath.lastIndexOf('/') + 1);
         Path targetLocation = this.fileStorageLocation.resolve(fileName);
         File file = new File(targetLocation.toUri());
-        return true;
+        return file.delete();
     }
 
-    public static ResponseEntity<Resource> getResourceAsResponseEntity(@PathVariable String fileName, HttpServletRequest request, FileStorageService fileStorageService) throws Exception {
+    public static ResponseEntity<Resource> getResourceAsResponseEntity(@PathVariable String fileName, HttpServletRequest request, FileStorageService fileStorageService) {
         Resource resource = fileStorageService.loadFileAsResource(fileName);
+
+        if (Objects.isNull(resource))
+            return ResponseEntity.of(Optional.empty());
 
         String contentType = null;
         try {
