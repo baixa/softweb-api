@@ -6,10 +6,8 @@ import com.softweb.api.store.model.entities.Application;
 import com.softweb.api.store.model.entities.Category;
 import com.softweb.api.store.model.entities.User;
 import com.softweb.api.store.model.repository.ApplicationRepository;
-import com.softweb.api.store.model.repository.RepositoryConstants;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -31,24 +29,19 @@ public class ApplicationService {
         return applicationRepository.findById(applicationId).orElse(null);
     }
 
-    public List<Application> getApplications (Integer page) {
-        Page<Application> applicationPage = applicationRepository.findAll(
-                PageRequest.of(page, RepositoryConstants.COUNT_PAGE_ELEMENTS, Sort.by(Sort.Direction.ASC, "id"))
-        );
+    public List<Application> getApplications (Pageable pageable) {
+        Page<Application> applicationPage = applicationRepository.findAll(pageable);
         return applicationPage.getContent();
     }
 
-    public List<Application> getApplicationsByCategory (Integer page, Category category) {
-        Page<Application> applicationPage = applicationRepository.findAllByCategory(
-                category,
-                PageRequest.of(page, RepositoryConstants.COUNT_PAGE_ELEMENTS, Sort.by(Sort.Direction.ASC, "id"))
-        );
+    public List<Application> getApplicationsByCategory (Pageable pageable, Category category) {
+        Page<Application> applicationPage = applicationRepository.findAllByCategory(category,pageable);
         return applicationPage.getContent();
     }
 
-    public void saveApplication(ApplicationPostDto applicationDto) {
+    public Application saveApplication(ApplicationPostDto applicationDto) {
         Application application = new Application(applicationDto);
-        applicationRepository.save(application);
+        return applicationRepository.save(application);
     }
 
     public void deleteApplicationById (String applicationId) {

@@ -47,6 +47,9 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.DELETE, "/v1/installer", "/v1/installer/**").authenticated()
                         // Category endpoints
                         .requestMatchers(HttpMethod.GET,"/v1/category", "/v1/category/**").permitAll()
+                        // API-Docs endpoint
+                        .requestMatchers(HttpMethod.GET,"/v1/api-docs", "/v1/api-docs/**").permitAll()
+                        .requestMatchers(HttpMethod.GET,"/v1/api-swagger", "/v1/api-swagger/**").permitAll()
                         .anyRequest().denyAll()
                 )
                 .csrf().disable()
