@@ -3,7 +3,6 @@ package com.softweb.api.store.controllers;
 import com.softweb.api.store.model.dto.category.CategoryDto;
 import com.softweb.api.store.model.entities.Category;
 import com.softweb.api.store.services.CategoryService;
-import com.softweb.api.store.utils.ResponseError;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -11,7 +10,6 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Controller for applications' categories
@@ -64,9 +63,7 @@ public class CategoryController {
             @Parameter(description = "Id of requested category")
             @PathVariable(name = "id") String categoryId) {
         Category category = categoryService.getCategoryById(categoryId);
-        return Objects.isNull(category) ?
-                new ResponseEntity<>(new ResponseError(String.format("Category with id = %s is absent", categoryId)),
-                        HttpStatus.NOT_FOUND) :
+        return Objects.isNull(category) ? ResponseEntity.of(Optional.empty()) :
                 ResponseEntity.ok(new CategoryDto(category));
     }
 

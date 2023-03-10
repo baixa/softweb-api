@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e1eb751-0cc7-4a2b-80fd-d9eaef23426d" name="Changes" comment="#56 Set up Home controller">
+    <list default="true" id="6e1eb751-0cc7-4a2b-80fd-d9eaef23426d" name="Changes" comment="#56 Set up Image controller">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/ApplicationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/ApplicationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/CategoryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/ImageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/ImageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/InstallerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/InstallerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/FileStorageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/FileStorageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/LicenseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/LicenseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/OperatingSystemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/OperatingSystemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/LicenseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/LicenseService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +132,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3cf68074-8047-4a31-a1f3-e42be313d241" name="Changes" comment="" />
+      <changelist id="6e1eb751-0cc7-4a2b-80fd-d9eaef23426d" name="Changes" comment="#56 Set up Image controller" />
       <created>1677937825966</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -143,6 +146,7 @@
       <workItem from="1678183072801" duration="94000" />
       <workItem from="1678183373022" duration="876000" />
       <workItem from="1678184587180" duration="1068000" />
+      <workItem from="1678443515279" duration="5913000" />
     </task>
     <task id="LOCAL-00001" summary="#33 Add applications for social category">
       <created>1677960517018</created>
@@ -235,7 +239,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678368406934</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="#56 Set up Image controller">
+      <created>1678373302949</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1678373302949</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,6 +275,7 @@
     <MESSAGE value="#56 Set up swagger settings" />
     <MESSAGE value="#56 Set up Category controller" />
     <MESSAGE value="#56 Set up Home controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="#56 Set up Home controller" />
+    <MESSAGE value="#56 Set up Image controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="#56 Set up Image controller" />
   </component>
 </project>

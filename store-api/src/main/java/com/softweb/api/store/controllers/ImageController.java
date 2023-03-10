@@ -119,7 +119,7 @@ public class ImageController {
             @ApiResponse(responseCode = "201", description = "Returns created image object",
                     content = {@Content(mediaType = "application/json",
                             schema = @Schema(implementation = UploadImageDto.class))}),
-            @ApiResponse(responseCode = "404", description = "Linked application not found"),
+            @ApiResponse(responseCode = "404", description = "Linked entity not found"),
             @ApiResponse(responseCode = "400", description = "Invalid data supplied"),
             @ApiResponse(responseCode = "403", description = "Access denied")})
     public ResponseEntity<?> uploadFile(
@@ -168,7 +168,7 @@ public class ImageController {
             @ApiResponse(responseCode = "201", description = "Returns created image objects",
                     content = {@Content(mediaType = "application/json",
                             schema = @Schema(implementation = UploadImageDto.class))}),
-            @ApiResponse(responseCode = "404", description = "Linked application not found"),
+            @ApiResponse(responseCode = "404", description = "Linked entities not found"),
             @ApiResponse(responseCode = "400", description = "Invalid data supplied"),
             @ApiResponse(responseCode = "403", description = "Access denied")})
     public ResponseEntity<?> uploadMultipleFiles(

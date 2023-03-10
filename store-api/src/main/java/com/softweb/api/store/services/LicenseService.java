@@ -2,7 +2,6 @@ package com.softweb.api.store.services;
 
 import com.softweb.api.store.model.entities.License;
 import com.softweb.api.store.model.repository.LicenseRepository;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,7 +18,7 @@ public class LicenseService {
         return licenseRepository.findById(licenseCode).orElse(null);
     }
 
-    public List<License> getLicenses (Pageable pageable) {
-        return licenseRepository.findAll(pageable).getContent();
+    public List<License> getLicenses () {
+        return licenseRepository.findAll();
     }
 }

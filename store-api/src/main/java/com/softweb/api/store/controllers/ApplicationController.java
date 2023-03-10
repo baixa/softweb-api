@@ -100,12 +100,10 @@ public class ApplicationController {
                             schema = @Schema(implementation = AbstractApplicationGetDto.class))}),
             @ApiResponse(responseCode = "404", description = "Application with given id is absent", content = @Content),
             @ApiResponse(responseCode = "400", description = "Invalid data supplied", content = @Content) })
-    public ResponseEntity<?> getApplicationById (
-            @Parameter(description = "Id of requested application")
-            @PathVariable(name = "id") String applicationId) {
+    public ResponseEntity<?> getApplicationById (@PathVariable(name = "id") String applicationId) {
 
         if (NumParser.parseIntOrNull(applicationId) == null)
-            return new ResponseEntity<>(new ResponseError("Invalid application ID"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(new ResponseError("Invalid ID"), HttpStatus.BAD_REQUEST);
 
         Application application = applicationService.getApplicationById(applicationId);
         Authorities userAuthority = authenticationService.getAuthenticationAuthority();
@@ -250,9 +248,10 @@ public class ApplicationController {
             @ApiResponse(responseCode = "201", description = "Returns created application",
                     content = {@Content(mediaType = "application/json",
                             schema = @Schema(implementation = AbstractApplicationGetDto.class))}),
-            @ApiResponse(responseCode = "400", description = "Invalid data supplied", content = @Content) })
+            @ApiResponse(responseCode = "400", description = "Invalid data supplied", content = @Content),
+            @ApiResponse(responseCode = "403", description = "Access denied", content = @Content) })
     public ResponseEntity<?> postApplication(
-            @io.swagger.v3.oas.annotations.parameters.RequestBody(description = "Creating application", required = true,
+            @io.swagger.v3.oas.annotations.parameters.RequestBody(description = "Creatable application", required = true,
                 content = {@Content(mediaType = "application/json",
                         schema = @Schema(implementation = ApplicationPostDto.class))})
             @RequestBody ApplicationPostDto applicationPostDto,
@@ -303,7 +302,7 @@ public class ApplicationController {
         User user = authenticationService.getAuthenticatedUser();
         if (!Objects.equals(user.getAuthority().getAuthority(), Authorities.ADMIN.name())
                 && !applicationService.isUserOwner(applicationPutDto, user))
-            return new ResponseEntity<>(new ResponseError("Access denied! You doesn't have rights to edit this application"),
+            return new ResponseEntity<>(new ResponseError("Access denied! You don't have rights to edit this application"),
                     HttpStatus.FORBIDDEN);
         if (!Objects.requireNonNull(logo.getContentType()).contains("image"))
             return new ResponseEntity<>(new ResponseError("Invalid logo file type. Allow only image files"),
@@ -333,9 +332,7 @@ public class ApplicationController {
             description = "Delete application that are based on request body data"
     )
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Returns status of application removing",
-                    content = {@Content(mediaType = "application/json",
-                            schema = @Schema(implementation = AbstractApplicationGetDto.class))}),
+            @ApiResponse(responseCode = "200", description = "Returns status of application removing"),
             @ApiResponse(responseCode = "400", description = "Invalid data supplied", content = @Content),
             @ApiResponse(responseCode = "403", description = "Access denied", content = @Content)})
     public ResponseEntity<?> deleteApplication (
@@ -346,7 +343,7 @@ public class ApplicationController {
         User user = authenticationService.getAuthenticatedUser();
         if (!Objects.equals(user.getAuthority().getAuthority(), Authorities.ADMIN.name())
                 && !applicationService.isUserOwner(applicationId, user)) {
-            return new ResponseEntity<>(new ResponseError("Access denied! You doesn't have rights to remove this application"),
+            return new ResponseEntity<>(new ResponseError("Access denied! You don't have rights to remove this application"),
                     HttpStatus.FORBIDDEN);
         }
         applicationService.deleteApplicationById(applicationId);
