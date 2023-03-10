@@ -4,7 +4,7 @@ import com.softweb.api.store.model.entities.Category;
 import com.softweb.api.store.model.entities.License;
 import lombok.Data;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Data
 public class ApplicationPutDto {
@@ -13,7 +13,7 @@ public class ApplicationPutDto {
     private final String shortDescription;
     private final String longDescription;
     private String logo;
-    private final Date lastUpdate;
+    private final LocalDateTime lastUpdate;
     private License license;
     private Category category;
 
@@ -24,6 +24,6 @@ public class ApplicationPutDto {
         this.longDescription = longDescription;
         this.license = license;
         this.category = category;
-        this.lastUpdate = new Date();
+        this.lastUpdate = LocalDateTime.now();
     }
 }

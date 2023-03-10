@@ -4,7 +4,7 @@ import com.softweb.api.store.model.dto.application.ApplicationPostDto;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.Set;
 
 /**
@@ -76,7 +76,7 @@ public class Application {
      * The date the app was last updated
      */
     @Column(name = "last_update")
-    private Date lastUpdate;
+    private LocalDateTime lastUpdate;
 
     /**
      * Number of app downloads

@@ -4,7 +4,7 @@ import com.softweb.api.store.model.entities.Authority;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Getter @Setter
 public class AbstractUserSaveDto {
@@ -14,7 +14,7 @@ public class AbstractUserSaveDto {
     private final boolean isAdmin;
     private final boolean isEnabled;
     private Authority authority;
-    private Date lastEntered;
+    private LocalDateTime lastEntered;
 
     public AbstractUserSaveDto(String username, String fullName, String password, boolean isAdmin, boolean isEnabled) {
         this.username = username;
@@ -22,6 +22,6 @@ public class AbstractUserSaveDto {
         this.password = password;
         this.isAdmin = isAdmin;
         this.isEnabled = isEnabled;
-        this.lastEntered = new Date();
+        this.lastEntered = LocalDateTime.now();
     }
 }

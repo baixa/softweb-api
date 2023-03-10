@@ -8,7 +8,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.Set;
 
 /**
@@ -64,7 +64,7 @@ public class User {
      * Last login date.
      */
     @Column(name = "last_entered")
-    private Date lastEntered;
+    private LocalDateTime lastEntered;
 
     /**
      * List of published applications.
