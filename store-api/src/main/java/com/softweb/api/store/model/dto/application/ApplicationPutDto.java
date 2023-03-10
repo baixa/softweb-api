@@ -8,24 +8,22 @@ import java.util.Date;
 
 @Data
 public class ApplicationPutDto {
-    private Long id;
+    private String id;
     private final String name;
     private final String shortDescription;
     private final String longDescription;
     private String logo;
     private final Date lastUpdate;
-    private final String licenseCode;
-    private final String categoryName;
     private License license;
     private Category category;
 
-    public ApplicationPutDto(Long id, String name, String shortDescription, String longDescription, String licenseCode, String categoryName) {
+    public ApplicationPutDto(String id, String name, String shortDescription, String longDescription, License license, Category category) {
         this.id = id;
         this.name = name;
         this.shortDescription = shortDescription;
         this.longDescription = longDescription;
-        this.licenseCode = licenseCode;
-        this.categoryName = categoryName;
+        this.license = license;
+        this.category = category;
         this.lastUpdate = new Date();
     }
 }

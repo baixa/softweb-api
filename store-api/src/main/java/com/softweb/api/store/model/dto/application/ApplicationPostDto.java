@@ -20,20 +20,18 @@ public class ApplicationPostDto implements Serializable {
     private final Date lastUpdate;
     private final int views;
     private final int downloads;
-    private final String licenseCode;
-    private final String categoryName;
     private User user;
     private License license;
     private Category category;
 
-    public ApplicationPostDto(String name, String shortDescription, String longDescription, String licenseCode, String categoryName) {
+    public ApplicationPostDto(String name, String shortDescription, String longDescription, License license, Category category) {
         this.name = name;
         this.shortDescription = shortDescription;
         this.longDescription = longDescription;
+        this.license = license;
+        this.category = category;
         this.lastUpdate = new Date();
         this.views = 0;
         this.downloads = 0;
-        this.licenseCode = licenseCode;
-        this.categoryName = categoryName;
     }
 }

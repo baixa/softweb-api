@@ -1,4 +1,6 @@
 package com.softweb.api.store.utils;
 
-public record ResponseError(String error) {
+import java.io.Serializable;
+
+public record ResponseError(String error) implements Serializable {
 }
