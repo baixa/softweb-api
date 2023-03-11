@@ -8,7 +8,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -45,5 +47,16 @@ public class UserService {
     public List<User> getUsers(Pageable pageable) {
         Page<User> usersPage = userRepository.findAll(pageable);
         return usersPage.getContent();
+    }
+
+    public void authUser(String username) {
+        Optional<User> optionalUser = userRepository.findByUsername(username);
+
+        if (optionalUser.isEmpty())
+            return;
+
+        User user = optionalUser.get();
+        user.setLastEntered(LocalDateTime.now());
+        userRepository.save(user);
     }
 }

@@ -83,6 +83,11 @@ If you want, you can create an alias of `sh bin/control.sh` command
  $ sw start 
 ```
 
+### Postman
+
+1. Launch Postman and click __Import__ button
+2. Find and select collection 
+
 ---
 
 > GitHub [@baixa](https://github.com/baixa)

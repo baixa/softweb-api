@@ -1,10 +1,10 @@
 package com.softweb.api.store.controllers;
 
-import com.softweb.api.store.model.dto.application.*;
-import com.softweb.api.store.model.entities.Application;
-import com.softweb.api.store.model.entities.Authorities;
-import com.softweb.api.store.model.entities.Category;
-import com.softweb.api.store.model.entities.User;
+import com.softweb.api.store.model.dto.application.AbstractApplicationGetDto;
+import com.softweb.api.store.model.dto.application.ApplicationDefaultGetDto;
+import com.softweb.api.store.model.dto.application.ApplicationPostDto;
+import com.softweb.api.store.model.dto.application.ApplicationPutDto;
+import com.softweb.api.store.model.entities.*;
 import com.softweb.api.store.services.*;
 import com.softweb.api.store.utils.NumParser;
 import com.softweb.api.store.utils.ResponseError;
@@ -16,6 +16,8 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
@@ -24,7 +26,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -61,6 +62,11 @@ public class ApplicationController {
      * Service, that provides ability manipulate with static files
      */
     private final FileStorageService fileStorageService;
+
+    /**
+     * System logger
+     */
+    private final Logger logger = LoggerFactory.getLogger(ApplicationController.class);
 
     /**
      * Controller
@@ -101,34 +107,11 @@ public class ApplicationController {
             @ApiResponse(responseCode = "404", description = "Application with given id is absent", content = @Content),
             @ApiResponse(responseCode = "400", description = "Invalid data supplied", content = @Content) })
     public ResponseEntity<?> getApplicationById (@PathVariable(name = "id") String applicationId) {
-
         if (NumParser.parseIntOrNull(applicationId) == null)
             return new ResponseEntity<>(new ResponseError("Invalid ID"), HttpStatus.BAD_REQUEST);
-
         Application application = applicationService.getApplicationById(applicationId);
-        Authorities userAuthority = authenticationService.getAuthenticationAuthority();
-
-        if (application == null) {
-            return ResponseEntity.of(Optional.empty());
-        }
-
-        if (userAuthority == null) {
-            return ResponseEntity.ok(new ApplicationDefaultGetDto(application));
-        }
-
-        ResponseEntity<?> result = null;
-        switch (userAuthority) {
-            case ADMIN -> result = ResponseEntity.ok(new ApplicationAdminGetDto(application));
-            case USER -> {
-                if (authenticationService.getAuthenticationName().equals(application.getUser().getUsername())) {
-                    result = ResponseEntity.ok(new ApplicationAdminGetDto(application));
-                } else {
-                    result = ResponseEntity.ok(new ApplicationDefaultGetDto(application));
-                }
-            }
-        }
-
-        return result;
+        return Objects.isNull(application) ? ResponseEntity.of(Optional.empty()) :
+                ResponseEntity.ok(new ApplicationDefaultGetDto(application));
     }
 
     /**
@@ -148,46 +131,9 @@ public class ApplicationController {
                             schema = @Schema(implementation = AbstractApplicationGetDto.class))}),
             @ApiResponse(responseCode = "400", description = "Invalid data supplied", content = @Content) })
     public ResponseEntity<?> getApplications (@ParameterObject Pageable pageable) {
-        Authorities userAuthority = authenticationService.getAuthenticationAuthority();
-        List<AbstractApplicationGetDto> result = new ArrayList<>();
-
-        if (userAuthority == null) {
-            List<Application> applications = applicationService.getApplications(pageable);
-            result.addAll(applications.stream().map(ApplicationDefaultGetDto::new).toList());
-        } else {
-            String authUsername = authenticationService.getAuthenticationName();
-            List<Application> applications = applicationService.getApplications(pageable);
-            fillApplicationByUserAuthority(userAuthority, result, authUsername, applications);
-        }
+        List<Application> applications = applicationService.getApplications(pageable);
+        List<ApplicationDefaultGetDto> result = applications.stream().map(ApplicationDefaultGetDto::new).toList();
         return ResponseEntity.ok(result);
-    }
-
-    /**
-     * Fills the resulting list with applications according to the level of user access to them
-     *
-     * @param userAuthority Level of user access
-     * @param result Result list
-     * @param authUsername Authenticated user
-     * @param applications Base application list
-     */
-    private void fillApplicationByUserAuthority(Authorities userAuthority, List<AbstractApplicationGetDto> result, String authUsername, List<Application> applications) {
-        switch (userAuthority) {
-            case USER -> {
-                result.addAll(
-                        applications.stream()
-                                .filter(item -> !item.getUser().getUsername().equals(authUsername))
-                                .map(ApplicationDefaultGetDto::new)
-                                .toList()
-                );
-                result.addAll(
-                        applications.stream()
-                                .filter(item -> item.getUser().getUsername().equals(authUsername))
-                                .map(ApplicationAdminGetDto::new)
-                                .toList()
-                );
-            }
-            case ADMIN -> result.addAll(applications.stream().map(ApplicationAdminGetDto::new).toList());
-        }
     }
 
     /**
@@ -214,27 +160,22 @@ public class ApplicationController {
             @ParameterObject Pageable pageable) {
         if (NumParser.parseIntOrNull(categoryId) == null)
             return new ResponseEntity<>(new ResponseError("Invalid category ID"), HttpStatus.BAD_REQUEST);
-        Authorities userAuthority = authenticationService.getAuthenticationAuthority();
         Category category = categoryService.getCategoryById(categoryId);
         if (Objects.isNull(category))
             return ResponseEntity.of(Optional.empty());
-        List<AbstractApplicationGetDto> result = new ArrayList<>();
-        if (userAuthority == null) {
-            List<Application> applications = applicationService.getApplicationsByCategory(pageable, category);
-            result.addAll(applications.stream().map(ApplicationDefaultGetDto::new).toList());
-        }
-        else {
-            String authUsername = authenticationService.getAuthenticationName();
-            List<Application> applications = applicationService.getApplicationsByCategory(pageable, category);
-            fillApplicationByUserAuthority(userAuthority, result, authUsername, applications);
-        }
+        List<Application> applications = applicationService.getApplicationsByCategory(pageable, category);
+        List<ApplicationDefaultGetDto> result = applications.stream().map(ApplicationDefaultGetDto::new).toList();
         return ResponseEntity.ok(result);
     }
 
     /**
      * Create application that are based on request body data
      *
-     * @param applicationPostDto Data of creatable application
+     * @param name Name of creatable application
+     * @param shortDescription Short description of creatable application
+     * @param longDescription Long description of creatable application
+     * @param licenseCode License code of creatable application
+     * @param categoryId Category id of creatable application
      * @param logo Image of creatable application
      * @return Created application
      */
@@ -251,15 +192,33 @@ public class ApplicationController {
             @ApiResponse(responseCode = "400", description = "Invalid data supplied", content = @Content),
             @ApiResponse(responseCode = "403", description = "Access denied", content = @Content) })
     public ResponseEntity<?> postApplication(
-            @io.swagger.v3.oas.annotations.parameters.RequestBody(description = "Creatable application", required = true,
-                content = {@Content(mediaType = "application/json",
-                        schema = @Schema(implementation = ApplicationPostDto.class))})
-            @RequestBody ApplicationPostDto applicationPostDto,
             @Parameter(description = "Logo image")
-            @RequestParam("logo") MultipartFile logo) {
+            @RequestParam("logo") MultipartFile logo,
+            @Parameter(description = "Application name")
+            @RequestParam String name,
+            @Parameter(description = "Application short description")
+            @RequestParam String shortDescription,
+            @Parameter(description = "Application long description")
+            @RequestParam String longDescription,
+            @Parameter(description = "License code")
+            @RequestParam String licenseCode,
+            @Parameter(description = "Category id")
+            @RequestParam String categoryId) {
         if (!Objects.requireNonNull(logo.getContentType()).contains("image"))
             return new ResponseEntity<>(new ResponseError("Invalid logo file type. Allow only image files"),
                     HttpStatus.BAD_REQUEST);
+
+        if (NumParser.parseIntOrNull(categoryId) == null)
+            return new ResponseEntity<>(new ResponseError("Invalid categoryId"),
+                    HttpStatus.BAD_REQUEST);
+
+        Category category = categoryService.getCategoryById(categoryId);
+        License license = licenseService.getLicenseById(licenseCode);
+        if (Objects.isNull(category) || Objects.isNull(license))
+            return ResponseEntity.of(Optional.empty());
+
+        ApplicationPostDto applicationPostDto = new ApplicationPostDto(name, shortDescription,
+                longDescription, license, category);
         String fileName = fileStorageService.storeFile(logo);
         String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
                 .path("/v1/image/")
@@ -267,8 +226,6 @@ public class ApplicationController {
                 .toUriString();
         applicationPostDto.setLogo(fileDownloadUri);
         applicationPostDto.setUser(authenticationService.getAuthenticatedUser());
-        applicationPostDto.setLicense(licenseService.getLicenseById(applicationPostDto.getLicenseCode()));
-        applicationPostDto.setCategory(categoryService.getCategoryById(applicationPostDto.getCategoryName()));
         Application application = applicationService.saveApplication(applicationPostDto);
         return new ResponseEntity<>(new ApplicationDefaultGetDto(application), HttpStatus.CREATED);
     }
@@ -276,7 +233,12 @@ public class ApplicationController {
     /**
      * Edit application that are based on request body data
      *
-     * @param applicationPutDto Data of editable application
+     * @param id ID of editable application
+     * @param name Name of editable application
+     * @param shortDescription Short description of editable application
+     * @param longDescription Long description of editable application
+     * @param categoryId Category ID of editable application
+     * @param licenseCode License code of editable application
      * @param logo Logo image of editable application
      * @return Edited application
      */
@@ -293,12 +255,32 @@ public class ApplicationController {
             @ApiResponse(responseCode = "400", description = "Invalid data supplied", content = @Content),
             @ApiResponse(responseCode = "403", description = "Access denied", content = @Content)})
     public ResponseEntity<?> putApplication (
-            @io.swagger.v3.oas.annotations.parameters.RequestBody(description = "Creating application", required = true,
-                    content = {@Content(mediaType = "application/json",
-                            schema = @Schema(implementation = ApplicationPutDto.class))})
-            @RequestBody ApplicationPutDto applicationPutDto,
             @Parameter(description = "Logo image")
-            @RequestParam("logo") MultipartFile logo) {
+            @RequestParam("logo") MultipartFile logo,
+            @Parameter(description = "Application id")
+            @RequestParam String id,
+            @Parameter(description = "Application name")
+            @RequestParam String name,
+            @Parameter(description = "Application short description")
+            @RequestParam String shortDescription,
+            @Parameter(description = "Application long description")
+            @RequestParam String longDescription,
+            @Parameter(description = "License code")
+            @RequestParam String licenseCode,
+            @Parameter(description = "Category id")
+            @RequestParam String categoryId) {
+
+        if (NumParser.parseIntOrNull(categoryId, id) == null)
+            return new ResponseEntity<>(new ResponseError("Invalid id"),
+                    HttpStatus.BAD_REQUEST);
+
+        Category category = categoryService.getCategoryById(categoryId);
+        License license = licenseService.getLicenseById(licenseCode);
+        if (Objects.isNull(category) || Objects.isNull(license))
+            return ResponseEntity.of(Optional.empty());
+
+        ApplicationPutDto applicationPutDto = new ApplicationPutDto(id, name, shortDescription, longDescription, license, category);
+
         User user = authenticationService.getAuthenticatedUser();
         if (!Objects.equals(user.getAuthority().getAuthority(), Authorities.ADMIN.name())
                 && !applicationService.isUserOwner(applicationPutDto, user))
@@ -307,16 +289,15 @@ public class ApplicationController {
         if (!Objects.requireNonNull(logo.getContentType()).contains("image"))
             return new ResponseEntity<>(new ResponseError("Invalid logo file type. Allow only image files"),
                     HttpStatus.BAD_REQUEST);
+
         String fileName = fileStorageService.storeFile(logo);
         String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
                 .path("/v1/image/")
                 .path(fileName)
                 .toUriString();
         applicationPutDto.setLogo(fileDownloadUri);
-        applicationPutDto.setLicense(licenseService.getLicenseById(applicationPutDto.getLicenseCode()));
-        applicationPutDto.setCategory(categoryService.getCategoryById(applicationPutDto.getCategoryName()));
         Application result = applicationService.saveApplication(applicationPutDto);
-        return new ResponseEntity<>(new ApplicationAdminGetDto(result), HttpStatus.OK);
+        return new ResponseEntity<>(new ApplicationDefaultGetDto(result), HttpStatus.OK);
     }
 
     /**
