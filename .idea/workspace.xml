@@ -6,14 +6,20 @@
   <component name="ChangeListManager">
     <list default="true" id="6e1eb751-0cc7-4a2b-80fd-d9eaef23426d" name="Changes" comment="#56 Migrate from Date to LocalDateTime">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/application/AbstractApplicationGetDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/application/AbstractApplicationGetDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/application/ApplicationPostDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/application/ApplicationPostDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/application/ApplicationPutDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/application/ApplicationPutDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/user/AbstractUserGetDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/user/AbstractUserGetDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/user/AbstractUserSaveDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/user/AbstractUserSaveDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/entities/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/entities/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/control.sh" beforeDir="false" afterPath="$PROJECT_DIR$/bin/control.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/src/main/resources/config/eureka-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/src/main/resources/config/eureka.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/src/main/resources/config/gateway.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/src/main/resources/config/gateway.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/src/main/resources/config/store-service-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/src/main/resources/config/store-api-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/src/main/resources/config/store-service-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/src/main/resources/config/store-api-prod.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/src/main/resources/config/store-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/src/main/resources/config/store-api.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/resources/bootstrap.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +98,14 @@
       <recent name="D:\Data\Projects\SoftWeb-API\store-api\src\main\resources\static\files" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.StoreApiApplication">
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Docker.bin: Compose Deployment">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="SoftWeb-API" />
       <method v="2">
@@ -134,6 +147,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml" />
+      <method v="2" />
+    </configuration>
+    <configuration name="bin: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="bin/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="bin.database: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="services">
+            <list>
+              <option value="database" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="bin/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.bin: Compose Deployment" />
+        <item itemvalue="Docker.bin.database: Compose Deployment" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -152,7 +197,8 @@
       <workItem from="1678183072801" duration="94000" />
       <workItem from="1678183373022" duration="876000" />
       <workItem from="1678184587180" duration="1068000" />
-      <workItem from="1678443515279" duration="15714000" />
+      <workItem from="1678443515279" duration="16669000" />
+      <workItem from="1678519616016" duration="8022000" />
     </task>
     <task id="LOCAL-00001" summary="#33 Add applications for social category">
       <created>1677960517018</created>
@@ -266,7 +312,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678469076003</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="#56 Migrate from Date to LocalDateTime">
+      <created>1678470338463</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1678470338463</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

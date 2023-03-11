@@ -64,8 +64,10 @@ $ sh bin/control.sh rm
 # Stops all containers
 $ sh bin/control.sh stop
 
-# Restart containers (the equivalent of `rm + start`)
-$ sh bin/control.sh restart
+# Restart containers
+$ sh bin/control.sh restart # Only reboot all containers
+$ sh bin/control.sh restart -f # Remove all containers and create them from scratch
+$ sh bin/control.sh restart -f container_name # Remove container by name and create it from scratch
 ```
 
 ### Simplification

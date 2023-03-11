@@ -30,11 +30,12 @@
 
         <!--
             Eureka Server - starter lib to register module as eureka server
-            Link: https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-netflix-eureka-server
+            Link: https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-netflix-eureka
          -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+            <version>4.0.0</version>
         </dependency>
 
         <!--

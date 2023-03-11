@@ -1,9 +1,9 @@
 # Spring configs
 spring:
   application:
-    name: eureka-service
+    name: eureka
   profiles:
     active: dev
   cloud:
     config:
-      uri: http://config-server:8888
+      uri: http://config:8888

@@ -1,4 +1,5 @@
 version: '2.1'
+name: softweb
 services:
   database:
     image: postgres:latest
@@ -28,57 +29,43 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
-  keycloak:
-    image: jboss/keycloak
-    restart: always
-    container_name: keycloak
-    environment:
-      KEYCLOAK_VERSION: 6.0.1
-      KEYCLOAK_USER: admin
-      KEYCLOAK_PASSWORD: admin
-    ports:
-      - "8080:8080"
-    networks:
-      backend:
-        aliases:
-          - "keycloak"
-  eureka-server:
+  eureka:
     image: softweb/eureka:0.0.1-SNAPSHOT
-    container_name: eureka-server
+    container_name: eureka
     ports:
       - "8761:8761"
     depends_on:
       database:
         condition: service_healthy
-      config-server:
+      config:
         condition: service_started
     networks:
       backend:
         aliases:
-          - "eureka-server"
-  store-service:
+          - "eureka"
+  store-api:
     image: softweb/store-api:0.0.1-SNAPSHOT
     build:
       context: .
-    container_name: store
+    container_name: store-api
     ports:
       - "8180:8080"
     depends_on:
       database:
         condition: service_healthy
-      config-server:
+      config:
         condition: service_started
-      eureka-server:
+      eureka:
         condition: service_started
     networks:
       backend:
         aliases:
-          - "store-service"
-  config-server:
+          - "store-api"
+  config:
     image: softweb/config:0.0.1-SNAPSHOT
     build:
       context: .
-    container_name: config-server
+    container_name: config
     ports:
       - "8888:8888"
     environment:
@@ -88,7 +75,7 @@ services:
     networks:
       backend:
         aliases:
-          - "config-server"
+          - "config"
   gateway:
     image: softweb/gateway:0.0.1-SNAPSHOT
     build:
@@ -99,9 +86,9 @@ services:
     depends_on:
       database:
         condition: service_healthy
-      config-server:
+      config:
         condition: service_started
-      eureka-server:
+      eureka:
         condition: service_started
     networks:
       backend:
