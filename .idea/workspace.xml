@@ -4,22 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e1eb751-0cc7-4a2b-80fd-d9eaef23426d" name="Changes" comment="#56 Migrate from Date to LocalDateTime">
+    <list default="true" id="6e1eb751-0cc7-4a2b-80fd-d9eaef23426d" name="Changes" comment="#56 Consolidation of the docker file. Setting up a bash script">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/control.sh" beforeDir="false" afterPath="$PROJECT_DIR$/bin/control.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/src/main/resources/config/eureka-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/src/main/resources/config/eureka.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/src/main/resources/config/gateway.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/src/main/resources/config/gateway.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/src/main/resources/config/store-service-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/src/main/resources/config/store-api-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/src/main/resources/config/store-service-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/src/main/resources/config/store-api-prod.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/src/main/resources/config/store-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/src/main/resources/config/store-api.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/scripts/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/bin/scripts/init.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/application/AbstractApplicationGetDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/application/AbstractApplicationGetDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/user/AbstractUserGetDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/user/AbstractUserSaveDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/user/AbstractUserSaveDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/user/UserAdminGetDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/user/UserDefaultGetDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/user/UserGetDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/user/UserPostDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/user/UserPostDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/user/UserPutDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/user/UserPutDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/entities/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,7 +195,7 @@
       <workItem from="1678183373022" duration="876000" />
       <workItem from="1678184587180" duration="1068000" />
       <workItem from="1678443515279" duration="16669000" />
-      <workItem from="1678519616016" duration="8022000" />
+      <workItem from="1678519616016" duration="14175000" />
     </task>
     <task id="LOCAL-00001" summary="#33 Add applications for social category">
       <created>1677960517018</created>
@@ -319,7 +316,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678470338463</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="#56 Consolidation of the docker file. Setting up a bash script">
+      <created>1678551193673</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1678551193673</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -352,6 +356,7 @@
     <MESSAGE value="#56 Set up Installer, Category, License, OS and User controllers" />
     <MESSAGE value="#56 Preparing to add Postman collection" />
     <MESSAGE value="#56 Migrate from Date to LocalDateTime" />
-    <option name="LAST_COMMIT_MESSAGE" value="#56 Migrate from Date to LocalDateTime" />
+    <MESSAGE value="#56 Consolidation of the docker file. Setting up a bash script" />
+    <option name="LAST_COMMIT_MESSAGE" value="#56 Consolidation of the docker file. Setting up a bash script" />
   </component>
 </project>
