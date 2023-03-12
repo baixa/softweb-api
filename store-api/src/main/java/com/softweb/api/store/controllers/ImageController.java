@@ -139,8 +139,11 @@ public class ImageController {
             return new ResponseEntity<>("Invalid file supplied! Available loading only image files",
                     HttpStatus.BAD_REQUEST);
         String fileName = fileStorageService.storeFile(file);
-        String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
-                .path("/v1/image/")
+        String fileDownloadUri = ServletUriComponentsBuilder.newInstance()
+                .scheme("http")
+                .host("localhost")
+                .port("8072")
+                .path("/store/v1/image/")
                 .path(fileName)
                 .toUriString();
         Image image = new Image();
@@ -192,18 +195,25 @@ public class ImageController {
         List<Image> storedImages = new ArrayList<>();
         for (MultipartFile file : files) {
             String fileName = fileStorageService.storeFile(file);
-            String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
-                    .path("/v1/image/")
+            String fileDownloadUri = ServletUriComponentsBuilder.newInstance()
+                    .scheme("http")
+                    .host("localhost")
+                    .port("8072")
+                    .path("/store/v1/image/")
                     .path(fileName)
                     .toUriString();
             Image image = new Image();
             image.setApplication(application);
             image.setPath(fileDownloadUri);
             storedImages.add(image);
-            uploadImageDtos.add(new UploadImageDto(image.getId(), fileName, fileDownloadUri,
+        }
+        storedImages = imageService.saveImages(storedImages);
+        for (int i = 0; i < files.length; i++) {
+            Image image = storedImages.get(i);
+            MultipartFile file = files[i];
+            uploadImageDtos.add(new UploadImageDto(image.getId(), imageService.getFileName(image), image.getPath(),
                     file.getContentType(), file.getSize(), application));
         }
-        imageService.saveImages(storedImages);
         return new ResponseEntity<>(uploadImageDtos, HttpStatus.CREATED);
     }
 

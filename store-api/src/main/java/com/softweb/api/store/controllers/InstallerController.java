@@ -20,8 +20,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
@@ -123,7 +121,7 @@ public class InstallerController {
             @ApiResponse(responseCode = "400", description = "Invalid data supplied"),
             @ApiResponse(responseCode = "403", description = "Access denied")})
     public ResponseEntity<?> uploadFile(
-            @Parameter(description = "Upload image file")
+            @Parameter(description = "Upload installer file")
             @RequestParam("file") MultipartFile file,
             @Parameter(description = "ID of linked application")
             @RequestParam String applicationId,
@@ -143,8 +141,11 @@ public class InstallerController {
         if (!Objects.requireNonNull(file.getContentType()).contains("application"))
             return new ResponseEntity<>("Invalid file supplied", HttpStatus.BAD_REQUEST);
         String fileName = fileStorageService.storeFile(file);
-        String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
-                .path("/v1/installer/")
+        String fileDownloadUri = ServletUriComponentsBuilder.newInstance()
+                .scheme("http")
+                .host("localhost")
+                .port("8072")
+                .path("/store/v1/installer/")
                 .path(fileName)
                 .toUriString();
         Installer installer = new Installer();
@@ -156,69 +157,6 @@ public class InstallerController {
         installerService.saveInstaller(installer);
         return new ResponseEntity<>(new UploadInstallerDto(installer.getId(), fileName, fileDownloadUri,
                 file.getContentType(), file.getSize(), application, system), HttpStatus.CREATED);
-    }
-
-    /**
-     * Upload and save installers in resource folder
-     *
-     * @param files Savable files
-     * @param applicationId ID of linked application
-     * @return Saved files
-     */
-    @PostMapping("/uploadMultiple")
-    @SecurityRequirement(name = "api")
-    @Operation(
-            summary = "Upload multiple application installers to server",
-            description = "Upload application installers to server and save them as Installer objects"
-    )
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "201", description = "Returns created installer objects",
-                    content = {@Content(mediaType = "application/json",
-                            schema = @Schema(implementation = UploadInstallerDto.class))}),
-            @ApiResponse(responseCode = "404", description = "Linked entities not found"),
-            @ApiResponse(responseCode = "400", description = "Invalid data supplied"),
-            @ApiResponse(responseCode = "403", description = "Access denied")})
-    public ResponseEntity<?> uploadMultipleFiles(
-            @Parameter(description = "Upload image files")
-            @RequestParam("files") MultipartFile[] files,
-            @Parameter(description = "Linked application ID")
-            @RequestParam String applicationId,
-            @Parameter(description = "Linked system ID")
-            @RequestParam String systemId,
-            @Parameter(description = "Version of installer")
-            @RequestParam String version) {
-        User authUser = authenticationService.getAuthenticatedUser();
-        Authorities authUserAuthority = authenticationService.getAuthenticationAuthority();
-        Application application = applicationService.getApplicationById(applicationId);
-        OperatingSystem system = operatingSystemService.getOperatingSystemById(systemId);
-        if (Objects.isNull(application) || Objects.isNull(system))
-            return ResponseEntity.of(Optional.empty());
-        List<UploadInstallerDto> uploadInstallerDtos = new ArrayList<>();
-        if (!(Objects.equals(application.getUser().getId(), authUser.getId())) && authUserAuthority != Authorities.ADMIN)
-            return new ResponseEntity<>(new ResponseError("Access denied! You don't have rights to edit this application"), 
-                    HttpStatus.FORBIDDEN);
-        for (MultipartFile file : files)
-            if (!Objects.requireNonNull(file.getContentType()).contains("application"))
-                return new ResponseEntity<>("Invalid file supplied", HttpStatus.BAD_REQUEST);
-        List<Installer> storedInstaller = new ArrayList<>();
-        for (MultipartFile file : files) {
-            String fileName = fileStorageService.storeFile(file);
-            String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
-                    .path("/v1/installer/")
-                    .path(fileName)
-                    .toUriString();
-            Installer installer = new Installer();
-            installer.setApplication(application);
-            installer.setInstallerPath(fileDownloadUri);
-            installer.setSize((int) file.getSize());
-            installer.setSystem(system);
-            installer.setVersion(version);
-            installerService.saveInstaller(installer);
-            uploadInstallerDtos.add(new UploadInstallerDto(installer.getId(), fileName, fileDownloadUri,
-                    file.getContentType(), file.getSize(), application, system));
-        }
-        installerService.saveInstallers(storedInstaller);
-        return new ResponseEntity<>(uploadInstallerDtos, HttpStatus.CREATED);
     }
 
     /**
