@@ -22,8 +22,8 @@ CREATE TABLE users
     username     VARCHAR(30) NOT NULL,
     full_name    VARCHAR(100),
     password     VARCHAR(64) NOT NULL,
-    enabled      BOOLEAN     NOT NULL,
-    last_entered TIMESTAMP WITHOUT TIME ZONE,
+    enabled      BOOLEAN     NOT NULL DEFAULT true,
+    last_entered TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT pk_user PRIMARY KEY (id),
     CONSTRAINT uq_username UNIQUE (username)
 );
@@ -65,7 +65,7 @@ CREATE TABLE application
     license           VARCHAR(100),
     user_id           BIGINT      NOT NULL,
     category_id       BIGINT      NOT NULL,
-    last_update       TIMESTAMP WITHOUT TIME ZONE,
+    last_update       TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     downloads         INTEGER     NOT NULL,
     views             INTEGER     NOT NULL,
     CONSTRAINT pk_application PRIMARY KEY (id)

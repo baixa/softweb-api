@@ -85,8 +85,8 @@ public class User {
         this.username = userDto.getUsername();
         this.fullName = userDto.getFullName();
         this.password = userDto.getPassword();
-        this.isEnabled = userDto.isEnabled();
         this.lastEntered = userDto.getLastEntered();
+        this.isEnabled = true;
     }
 
     @Override

@@ -4,8 +4,6 @@ import com.softweb.api.store.model.entities.Installer;
 import com.softweb.api.store.model.repository.InstallerRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public class InstallerService {
     private final InstallerRepository installerRepository;
@@ -24,10 +22,6 @@ public class InstallerService {
 
     public void deleteInstallerById (String installerId) {
         installerRepository.deleteById(Long.valueOf(installerId));
-    }
-
-    public void saveInstallers(List<Installer> storedInstallers) {
-        installerRepository.saveAll(storedInstallers);
     }
 
     public long getCountInstallersByPath(String installerPath) {

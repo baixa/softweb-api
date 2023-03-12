@@ -64,8 +64,10 @@ $ sh bin/control.sh rm
 # Stops all containers
 $ sh bin/control.sh stop
 
-# Restart containers (the equivalent of `rm + start`)
-$ sh bin/control.sh restart
+# Restart containers
+$ sh bin/control.sh restart # Only reboot all containers
+$ sh bin/control.sh restart -f # Remove all containers and create them from scratch
+$ sh bin/control.sh restart -f container_name # Remove container by name and create it from scratch
 ```
 
 ### Simplification
@@ -86,7 +88,13 @@ If you want, you can create an alias of `sh bin/control.sh` command
 ### Postman
 
 1. Launch Postman and click __Import__ button
-2. Find and select collection 
+2. Find and select [collection](bin/postman/store.postman_collection.json)
+3. Imported collection contains all base requests to Store-API
+
+### Swagger Open API
+
+SpringDoc (Swagger) is available at link: http://localhost:8180/v1/api-swagger/swagger-ui.html 
+Due to inconsistencies with the Gateway mechanism (in development), slight malfunctions are possible.
 
 ---
 

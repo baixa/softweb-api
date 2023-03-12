@@ -33,7 +33,8 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.DELETE, "/v1/application", "/v1/application/**").authenticated()
                         // User endpoints
                         .requestMatchers(HttpMethod.GET,"/v1/user", "/v1/user/**").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/v1/user", "/v1/user/**").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/v1/user").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/v1/user/auth").authenticated()
                         .requestMatchers(HttpMethod.PUT, "/v1/user", "/v1/user/**").authenticated()
                         .requestMatchers(HttpMethod.DELETE, "/v1/user", "/v1/user/**").authenticated()
                         // License endpoints
