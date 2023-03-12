@@ -468,34 +468,3 @@ INSERT INTO public.license (code, name) VALUES ('zlib-acknowledgement', 'zlib/li
 INSERT INTO public.license (code, name) VALUES ('ZPL-1.1', 'Zope Public License 1.1');
 INSERT INTO public.license (code, name) VALUES ('ZPL-2.0', 'Zope Public License 2.0');
 INSERT INTO public.license (code, name) VALUES ('ZPL-2.1', 'Zope Public License 2.1');
-
---- Users table (default password - test, test1, test2)
-INSERT INTO public.users (id, username, full_name, password, enabled, last_entered) VALUES (4, 'Michael', 'Michael Houls', '$2a$09$FdW6rFU6pxaHfAhGDUiav.WdMsNTLArooI2uttn4DFKxLC.JmRl0W', true, '2023-01-27 16:27:32');
-INSERT INTO public.users (id, username, full_name, password, enabled, last_entered) VALUES (5, 'Miles', 'Miles Cole', '$2a$10$adDk5yKRMihe06jKa2MFTuaYYnsIWWiqEEhzd0SmnVdSJfXTyUPG2', true, '2021-01-27 16:27:36');
-INSERT INTO public.users (id, username, full_name, password, enabled, last_entered) VALUES (6, 'James', 'James Trace', '$2a$10$gDkbvFxhFyv0pVGEH/sSmuKN5y.6CQ/pNVI34nvB78S65WEUGICke', true, '2023-01-25 16:28:08');
-
---- Authority table
-INSERT INTO public.authority (id, user_id, authority) VALUES (1, 4, 'ADMIN');
-INSERT INTO public.authority (id, user_id, authority) VALUES (2, 5, 'USER');
-INSERT INTO public.authority (id, user_id, authority) VALUES (3, 6, 'USER');
-
---- Application table
-INSERT INTO public.application (id, name, short_description, long_description, logo_path, license, user_id, last_update, downloads, views) VALUES (4, 'Google Chrome', 'Fastes browser', 'It can help you serf Internet', NULL, 'ZPL-2.0', 4, '2023-02-27 16:28:05', 5, 125);
-INSERT INTO public.application (id, name, short_description, long_description, logo_path, license, user_id, last_update, downloads, views) VALUES (5, 'Yandex Browser', 'Be smart', NULL, NULL, 'Artistic-1.0', 5, '2023-01-24 16:35:08', 4, 106);
-INSERT INTO public.application (id, name, short_description, long_description, logo_path, license, user_id, last_update, downloads, views) VALUES (6, 'Firefox', 'Light browser', NULL, NULL, 'Apache-1.0', 6, '2023-01-10 16:35:50', 7, 100);
-
---- Operating system
-INSERT INTO public.operating_system (id, name) VALUES (1, 'Windows 10');
-INSERT INTO public.operating_system (id, name) VALUES (2, 'Ubuntu');
-INSERT INTO public.operating_system (id, name) VALUES (3, 'Linux Mint');
-INSERT INTO public.operating_system (id, name) VALUES (4, 'Debian 11');
-
---- Image table
-INSERT INTO public.image (id, path, application_id) VALUES (1, 'https://www.istockphoto.com/resources/images/PhotoFTLP/P4-JAN-iStock-1432854572.jpg', 4);
-INSERT INTO public.image (id, path, application_id) VALUES (2, 'https://pixlr.com/images/index/remove-bg.webp', 5);
-INSERT INTO public.image (id, path, application_id) VALUES (3, 'https://images.unsplash.com/photo-1581456495146-65a71b2c8e52?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzF8fHBlcnNvbnxlbnwwfHwwfHw%3D&w=1000&q=80', 6);
-
---- Installer table
-INSERT INTO public.installer (id, application_id, system_id, path, version, size) VALUES (1, 4, 1, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQonZogo8P2FGNcI284GfTw_sbG7JNU1EZfGnnzYuLYLQ&s', '1.0.0', 456000);
-INSERT INTO public.installer (id, application_id, system_id, path, version, size) VALUES (2, 5, 2, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6mhocdwskfhs0q2kS0e0vSuBgoSnFOBAhEDVdI2VT&s', '2.0.1', 657567);
-INSERT INTO public.installer (id, application_id, system_id, path, version, size) VALUES (3, 6, 1, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcq_dOTZh-YeKj9CgTsTXsJUwXMQCY8rp-pmuUma1H&s', '3.0.0', 2174178);

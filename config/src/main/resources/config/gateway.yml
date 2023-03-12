@@ -1,0 +1,49 @@
+# Tomcat configs
+server:
+  port: 8072
+
+# Eureka configs
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://eureka:8761/eureka/
+
+# Spring configs
+spring:
+  cloud:
+    # Spring Cloud Gateway configs
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: store-api
+          uri: lb://store-api
+
+          predicates:
+            - Path=/store/**
+
+          filters:
+            - RewritePath=/store/(?<path>.*), /$\{path}
+
+# Actuator configs
+management:
+  endpoint:
+    gateway:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+# Logger configs
+logging:
+  level:
+    com.netflix: WARN
+    org.springframework.web: WARN
+    com.softweb: DEBUG

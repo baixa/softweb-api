@@ -1,7 +1,9 @@
-server:
-  port: 8761
-
+# Spring configs
 spring:
   application:
-    name: eureka-service
-
+    name: eureka
+  profiles:
+    active: dev
+  cloud:
+    config:
+      uri: http://config:8888

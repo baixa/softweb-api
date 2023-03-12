@@ -1,13 +1,12 @@
 package com.softweb.api.store.model.dto.application;
 
+import com.softweb.api.store.model.entities.Category;
 import com.softweb.api.store.model.entities.License;
 import com.softweb.api.store.model.entities.User;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 /**
  * A DTO for the {@link com.softweb.api.store.model.entities.Application} entity
@@ -17,22 +16,22 @@ public class ApplicationPostDto implements Serializable {
     private final String name;
     private final String shortDescription;
     private final String longDescription;
-    private final String logoBase64;
-    private final Date lastUpdate;
+    private String logo;
+    private final LocalDateTime lastUpdate;
     private final int views;
     private final int downloads;
-    private final String licenseCode;
     private User user;
     private License license;
+    private Category category;
 
-    public ApplicationPostDto(String name, String shortDescription, String longDescription, String logoBase64, String licenseCode) {
+    public ApplicationPostDto(String name, String shortDescription, String longDescription, License license, Category category) {
         this.name = name;
         this.shortDescription = shortDescription;
         this.longDescription = longDescription;
-        this.logoBase64 = logoBase64;
-        this.lastUpdate = new Date();
+        this.license = license;
+        this.category = category;
+        this.lastUpdate = LocalDateTime.now();
         this.views = 0;
         this.downloads = 0;
-        this.licenseCode = licenseCode;
     }
 }

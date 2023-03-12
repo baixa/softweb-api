@@ -8,7 +8,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.Set;
 
 /**
@@ -64,18 +64,18 @@ public class User {
      * Last login date.
      */
     @Column(name = "last_entered")
-    private Date lastEntered;
+    private LocalDateTime lastEntered;
 
     /**
      * List of published applications.
      */
-    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE)
     private Set<Application> applications;
 
     /**
      * User authority
      */
-    @OneToOne(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+    @OneToOne(mappedBy = "user", cascade = CascadeType.REMOVE)
     private Authority authority;
 
     public User(AbstractUserSaveDto userDto) {
@@ -85,8 +85,8 @@ public class User {
         this.username = userDto.getUsername();
         this.fullName = userDto.getFullName();
         this.password = userDto.getPassword();
-        this.isEnabled = userDto.isEnabled();
         this.lastEntered = userDto.getLastEntered();
+        this.isEnabled = true;
     }
 
     @Override

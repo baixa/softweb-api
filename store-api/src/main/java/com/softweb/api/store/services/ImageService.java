@@ -26,7 +26,15 @@ public class ImageService {
         imageRepository.deleteById(Long.valueOf(imageId));
     }
 
-    public void saveImages(List<Image> storedImages) {
-        imageRepository.saveAll(storedImages);
+    public List<Image> saveImages(List<Image> storedImages) {
+        return imageRepository.saveAll(storedImages);
+    }
+
+    public long getCountImagesByPath(String path) {
+        return imageRepository.countByPath(path);
+    }
+
+    public String getFileName(Image image) {
+        return image.getPath().substring(image.getPath().lastIndexOf('/') + 1);
     }
 }

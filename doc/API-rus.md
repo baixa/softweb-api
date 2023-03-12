@@ -28,6 +28,29 @@
 </details>
 
 <details>
+  <summary><code>GET</code> <code><b>/v1/application</b></code> <code>(получить информацию о всех приложениях соответствующих категории)</code></summary>
+
+##### Параметры
+
+| name   | type | required | description                     |
+|--------|------|----------|---------------------------------|
+| `page` | int  | true     | Every page contains 10 elements |
+
+##### Ответы
+
+| http code  | content-type     | response                              |
+|------------|------------------|---------------------------------------|
+| `200`      | application/json | JSON view of List<Application> object |
+
+##### Пример запроса
+
+> ```javascript
+>  curl --location 'http://localhost:8080/v1/application?page=0'
+> ```
+
+</details>
+
+<details>
   <summary><code>GET</code> <code><b>/v1/application/{id}</b></code> <code>(получить информацию о приложении по его id)</code></summary>
 
 ##### Параметры

@@ -15,8 +15,11 @@ import javax.sql.DataSource;
 @Configuration
 public class SecurityConfig {
 
-    @Autowired
-    private DataSource dataSource;
+    private final DataSource dataSource;
+
+    public SecurityConfig(DataSource dataSource) {
+        this.dataSource = dataSource;
+    }
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
@@ -30,7 +33,8 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.DELETE, "/v1/application", "/v1/application/**").authenticated()
                         // User endpoints
                         .requestMatchers(HttpMethod.GET,"/v1/user", "/v1/user/**").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/v1/user", "/v1/user/**").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/v1/user").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/v1/user/auth").authenticated()
                         .requestMatchers(HttpMethod.PUT, "/v1/user", "/v1/user/**").authenticated()
                         .requestMatchers(HttpMethod.DELETE, "/v1/user", "/v1/user/**").authenticated()
                         // License endpoints
@@ -45,6 +49,11 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.GET,"/v1/installer", "/v1/installer/**").permitAll()
                         .requestMatchers(HttpMethod.POST, "/v1/installer", "/v1/installer/**").authenticated()
                         .requestMatchers(HttpMethod.DELETE, "/v1/installer", "/v1/installer/**").authenticated()
+                        // Category endpoints
+                        .requestMatchers(HttpMethod.GET,"/v1/category", "/v1/category/**").permitAll()
+                        // API-Docs endpoint
+                        .requestMatchers(HttpMethod.GET,"/v1/api-docs", "/v1/api-docs/**").permitAll()
+                        .requestMatchers(HttpMethod.GET,"/v1/api-swagger", "/v1/api-swagger/**").permitAll()
                         .anyRequest().denyAll()
                 )
                 .csrf().disable()

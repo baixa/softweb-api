@@ -1,0 +1,9 @@
+# Spring configs
+spring:
+  application:
+    name: gateway
+  profiles:
+    active: dev
+  cloud:
+    config:
+      uri: http://config:8888

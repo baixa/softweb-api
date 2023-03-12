@@ -38,3 +38,7 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+###   Files folder  ###
+store-api/src/main/resources/static/files/*.*
+!store-api/src/main/resources/static/files/*.txt

@@ -1,27 +1,26 @@
 package com.softweb.api.store.model.dto.user;
 
 import com.softweb.api.store.model.entities.Authority;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
+import java.io.Serializable;
+import java.time.LocalDateTime;
 
-import java.util.Date;
-
-@Getter @Setter
-public class AbstractUserSaveDto {
-    private final String username;
-    private final String fullName;
-    private final String password;
-    private final boolean isAdmin;
-    private final boolean isEnabled;
+@Data
+public class AbstractUserSaveDto implements Serializable {
+    private String username;
+    private String fullName;
+    private String password;
+    private boolean isAdmin;
     private Authority authority;
-    private Date lastEntered;
+    private LocalDateTime lastEntered = LocalDateTime.now();
 
-    public AbstractUserSaveDto(String username, String fullName, String password, boolean isAdmin, boolean isEnabled) {
+    public AbstractUserSaveDto(String username, String fullName, String password, boolean isAdmin) {
         this.username = username;
         this.fullName = fullName;
         this.password = password;
         this.isAdmin = isAdmin;
-        this.isEnabled = isEnabled;
-        this.lastEntered = new Date();
+    }
+
+    public AbstractUserSaveDto() {
     }
 }

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    </list>
+    <list default="true" id="6e1eb751-0cc7-4a2b-80fd-d9eaef23426d" name="Changes" comment="#56 Add Postman Collection" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,9 +13,6 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="com.haulmont.jpb.JpaEntity" />
-        <option value="Enum" />
-        <option value="com.haulmont.jpb.NewClass" />
         <option value="Class" />
       </list>
     </option>
@@ -23,15 +20,19 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="15_config_module" />
+        <entry key="$PROJECT_DIR$" value="dev" />
       </map>
     </option>
-    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
     <option name="importingSettings">
       <MavenImportingSettings>
         <option name="workspaceImportEnabled" value="true" />
@@ -41,80 +42,64 @@
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="ProjectErrors" />
   </component>
-  <component name="ProjectId" id="2LmlkeKf2zSPhoKIIgv77QrMuSH" />
+  <component name="ProjectId" id="2MYHuvwxUoctMGvdEbmh8JK0ZwQ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;19&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Data/Projects/Softweb-Root/config/src/main/resources/config&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;bf62f670bcb42774077b8ff9e62c8eba&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "database.data.extractors.current.export.id": "SQL Inserts",
+    "extract.method.default.visibility": "private",
+    "last_opened_file_path": "D:/Data/Projects/SoftWeb-API/bin/postman",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "spring.configuration.checksum": "e84fe88790f64bc68f4fb4a03d90e08a",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ],
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "TEXT",
+      "PLAIN_TEXT"
     ]
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.softweb.api.store.model.dto.application" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Data\Projects\Softweb-Root\config\src\main\resources\config" />
-      <recent name="D:\Data\Projects\Softweb-Root\config" />
-      <recent name="D:\Data\Projects\Softweb-Root\store-api\src\main\resources\static\images" />
-      <recent name="D:\Data\Projects\Softweb-Root\authorization" />
-      <recent name="D:\Data\Projects\Softweb-Root\resource" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Data\Projects\Softweb-Root\store-api\src\main\resources\static\files" />
-      <recent name="D:\Data\Projects\Softweb-Root\store-api\src\main\resources\static" />
+      <recent name="D:\Data\Projects\SoftWeb-API\bin\postman" />
+      <recent name="D:\Data\Projects\SoftWeb-API\store-api\src\main\resources\static\files" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.StoreApiApplication">
-    <configuration name="AuthorizationApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="authorization" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.softweb.authorization.AuthorizationApplication" />
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Docker.bin: Compose Deployment">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="SoftWeb-API" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClientApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="client" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.client.ClientApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ClientApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="client" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.softweb.client.ClientApplication" />
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="SoftWeb-API" />
+      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -126,37 +111,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="demo" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.softweb.demo.DemoApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EurekaApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <configuration name="EurekaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="eureka" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.softweb.eureka.EurekaApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EurekaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="eureka" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.softweb.api.eureka.EurekaApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EurekaClientApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="eureka-client" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.eurekaclient.EurekaClientApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ResourceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="resource" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.resource.ResourceApplication" />
+    <configuration name="GatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.softweb.gateway.GatewayApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -168,108 +132,210 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="bin: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="bin/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="bin.database: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="services">
+            <list>
+              <option value="database" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="bin/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.bin: Compose Deployment" />
+        <item itemvalue="Docker.bin.database: Compose Deployment" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="53817c4f-1016-4278-acc3-7f1b4ff0a562" name="Changes" comment="#1 - Add Store module" />
-      <created>1676484285060</created>
+      <changelist id="6e1eb751-0cc7-4a2b-80fd-d9eaef23426d" name="Changes" comment="#56 Set up Image controller" />
+      <created>1677937825966</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1676484285060</updated>
-      <workItem from="1676484286286" duration="2125000" />
-      <workItem from="1676486928952" duration="1119000" />
-      <workItem from="1676551090656" duration="1399000" />
-      <workItem from="1676617824430" duration="5419000" />
-      <workItem from="1676630136557" duration="1697000" />
-      <workItem from="1676631962484" duration="53000" />
-      <workItem from="1676632755860" duration="2325000" />
-      <workItem from="1676635479566" duration="2640000" />
-      <workItem from="1676651889821" duration="2475000" />
-      <workItem from="1676700475624" duration="9974000" />
-      <workItem from="1676737221873" duration="42000" />
-      <workItem from="1676783975767" duration="11495000" />
-      <workItem from="1676889831334" duration="6493000" />
-      <workItem from="1676957919310" duration="26305000" />
-      <workItem from="1677162082189" duration="18861000" />
-      <workItem from="1677317030341" duration="6047000" />
-      <workItem from="1677396449558" duration="2282000" />
-      <workItem from="1677474978542" duration="9000" />
-      <workItem from="1677493827939" duration="8847000" />
-      <workItem from="1677689075660" duration="2851000" />
-      <workItem from="1677743234282" duration="2756000" />
+      <updated>1677937825966</updated>
+      <workItem from="1677937827992" duration="81000" />
+      <workItem from="1677944908724" duration="10861000" />
+      <workItem from="1677999938918" duration="13975000" />
+      <workItem from="1678024250555" duration="1518000" />
+      <workItem from="1678122217320" duration="7159000" />
+      <workItem from="1678182860627" duration="160000" />
+      <workItem from="1678183072801" duration="94000" />
+      <workItem from="1678183373022" duration="876000" />
+      <workItem from="1678184587180" duration="1068000" />
+      <workItem from="1678443515279" duration="16669000" />
+      <workItem from="1678519616016" duration="14472000" />
+      <workItem from="1678599304315" duration="3978000" />
     </task>
-    <task id="LOCAL-00001" summary="Init commit.&#10;Demo-release of version 1.0-SNAPSHOT. Add README.md and LICENSE.md files and prepare environment to add new modules">
-      <created>1676487159443</created>
+    <task id="LOCAL-00001" summary="#33 Add applications for social category">
+      <created>1677960517018</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1676487159443</updated>
+      <updated>1677960517018</updated>
     </task>
-    <task id="LOCAL-00002" summary="#1 - Add Store module">
-      <created>1676487971927</created>
+    <task id="LOCAL-00002" summary="#33 Add applications for all categories">
+      <created>1678011356556</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1676487971927</updated>
+      <updated>1678011356556</updated>
     </task>
-    <task id="LOCAL-00003" summary="#27 - Completion ApplicationController.java">
-      <created>1676968175402</created>
+    <task id="LOCAL-00003" summary="#33 Fix social category">
+      <created>1678013574855</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1676968175402</updated>
+      <updated>1678013574855</updated>
     </task>
-    <task id="LOCAL-00004" summary="#27 - Completion UserController.java">
-      <created>1677080757262</created>
+    <task id="LOCAL-00004" summary="#33 Fix duplicate names">
+      <created>1678017276663</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1677080757262</updated>
+      <updated>1678017276663</updated>
     </task>
-    <task id="LOCAL-00005" summary="#27 - Edit README.md">
-      <created>1677082010200</created>
+    <task id="LOCAL-00005" summary="#33 Fix duplicate names">
+      <created>1678017612852</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1677082010200</updated>
+      <updated>1678017612852</updated>
     </task>
-    <task id="LOCAL-00006" summary="#27 - Edit LicenseController and OperatingSystemController">
-      <created>1677163821635</created>
+    <task id="LOCAL-00006" summary="#33 Add logo images">
+      <created>1678025462338</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1677163821635</updated>
+      <updated>1678025462338</updated>
     </task>
-    <task id="LOCAL-00007" summary="#27 - Edit ImageController">
-      <created>1677188751711</created>
+    <task id="LOCAL-00007" summary="#33 Add application images">
+      <created>1678129158539</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1677188751711</updated>
+      <updated>1678129158539</updated>
     </task>
-    <task id="LOCAL-00008" summary="Add simple api documentation">
-      <created>1677330613668</created>
+    <task id="LOCAL-00008" summary="#33 Remove redundant files">
+      <created>1678132159885</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1677330613668</updated>
+      <updated>1678132159885</updated>
     </task>
-    <task id="LOCAL-00009" summary="#15 - Add config module">
-      <created>1677575252026</created>
+    <task id="LOCAL-00009" summary="#33 Remove redundant files">
+      <created>1678132535908</created>
       <option name="number" value="00009" />
       <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
-      <updated>1677575252026</updated>
+      <updated>1678132535908</updated>
     </task>
-    <task id="LOCAL-00010" summary="#15 - #16 Set up config server (native mode) and received config for the store module via the config server">
-      <created>1677748356426</created>
+    <task id="LOCAL-00010" summary="#56 Add Swagger OpenAPI UI">
+      <created>1678193444395</created>
       <option name="number" value="00010" />
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1677748356426</updated>
+      <updated>1678193444395</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="#56 Set up swagger settings">
+      <created>1678194264726</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1678194264726</updated>
+    </task>
+    <task id="LOCAL-00012" summary="#56 Set up Category controller">
+      <created>1678368008908</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1678368008908</updated>
+    </task>
+    <task id="LOCAL-00013" summary="#56 Set up Home controller">
+      <created>1678368406934</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1678368406934</updated>
+    </task>
+    <task id="LOCAL-00014" summary="#56 Set up Image controller">
+      <created>1678373302949</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1678373302949</updated>
+    </task>
+    <task id="LOCAL-00015" summary="#56 Set up Installer, Category, License, OS and User controllers">
+      <created>1678456953403</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1678456953403</updated>
+    </task>
+    <task id="LOCAL-00016" summary="#56 Preparing to add Postman collection">
+      <created>1678469076003</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1678469076003</updated>
+    </task>
+    <task id="LOCAL-00017" summary="#56 Migrate from Date to LocalDateTime">
+      <created>1678470338463</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1678470338463</updated>
+    </task>
+    <task id="LOCAL-00018" summary="#56 Consolidation of the docker file. Setting up a bash script">
+      <created>1678551193673</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1678551193673</updated>
+    </task>
+    <task id="LOCAL-00019" summary="#56 Prepare UserController to add Postman Collection">
+      <created>1678557350843</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1678557350843</updated>
+    </task>
+    <task id="LOCAL-00020" summary="#56 Prepare Image and Installer Controllers to add Postman Collection">
+      <created>1678603062503</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1678603062503</updated>
+    </task>
+    <task id="LOCAL-00021" summary="#56 Add Postman Collection">
+      <created>1678603298345</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1678603298345</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,71 +346,32 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="origin/dev" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="origin/dev" />
-                </option>
-              </RecentGroup>
-            </list>
+            <State />
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <ignored-roots>
-      <path value="$PROJECT_DIR$/store-api" />
-      <path value="$PROJECT_DIR$/eureka" />
-      <path value="$PROJECT_DIR$/config" />
-    </ignored-roots>
-    <MESSAGE value="Init commit.&#10;Demo-release of version 1.0-SNAPSHOT. Add README.md and LICENSE.md files and prepare environment to add new modules" />
-    <MESSAGE value="#1 - Add Store module" />
-    <MESSAGE value="#27 - Completion ApplicationController.java" />
-    <MESSAGE value="#27 - Completion UserController.java" />
-    <MESSAGE value="#27 - Edit README.md" />
-    <MESSAGE value="#27 - Edit LicenseController and OperatingSystemController" />
-    <MESSAGE value="#27 - Edit ImageController" />
-    <MESSAGE value="Add simple api documentation" />
-    <MESSAGE value="#15 - Add config module" />
-    <MESSAGE value="#15 - #16 Set up config server (native mode) and received config for the store module via the config server" />
-    <option name="LAST_COMMIT_MESSAGE" value="#15 - #16 Set up config server (native mode) and received config for the store module via the config server" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/UserController.java</url>
-          <line>103</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/UserController.java</url>
-          <line>129</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="#33 Add applications for social category" />
+    <MESSAGE value="#33 Add applications for all categories" />
+    <MESSAGE value="#33 Fix social category" />
+    <MESSAGE value="#33 Fix duplicate names" />
+    <MESSAGE value="#33 Add logo images" />
+    <MESSAGE value="#33 Add application images" />
+    <MESSAGE value="#33 Remove redundant files" />
+    <MESSAGE value="#56 Add Swagger OpenAPI UI" />
+    <MESSAGE value="#56 Set up swagger settings" />
+    <MESSAGE value="#56 Set up Category controller" />
+    <MESSAGE value="#56 Set up Home controller" />
+    <MESSAGE value="#56 Set up Image controller" />
+    <MESSAGE value="#56 Set up Installer, Category, License, OS and User controllers" />
+    <MESSAGE value="#56 Preparing to add Postman collection" />
+    <MESSAGE value="#56 Migrate from Date to LocalDateTime" />
+    <MESSAGE value="#56 Consolidation of the docker file. Setting up a bash script" />
+    <MESSAGE value="#56 Prepare UserController to add Postman Collection" />
+    <MESSAGE value="#56 Prepare Image and Installer Controllers to add Postman Collection" />
+    <MESSAGE value="#56 Add Postman Collection" />
+    <option name="LAST_COMMIT_MESSAGE" value="#56 Add Postman Collection" />
   </component>
 </project>

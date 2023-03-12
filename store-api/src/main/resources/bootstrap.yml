@@ -1,8 +1,9 @@
+# Spring configs
 spring:
   application:
-    name: store-service
+    name: store-api
   profiles:
       active: dev
   cloud:
     config:
-      uri: http://localhost:8888
+      uri: http://config:8888

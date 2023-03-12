@@ -1,0 +1,30 @@
+# Custom configs
+application:
+  profile:
+    name: "DEV"
+
+# Spring configs
+spring:
+  datasource:
+    url: jdbc:postgresql://database:5432/softweb_dev
+    username: "postgres"
+    password: "{cipher}AYCIb3GwbF7O3VLBheaj9eNVof3S1IrM79jNv+AAqdetaaTyr1T6sTwkimEDcUDTTAkd0n0O1ktm1uZf8gP0RUmtVRPCFNvunFXs8xBTGpzZA0GMr/4EQFPixxDMAVIfQvuO0G60Mz5eOfiFsBRvYiZh6yHbUW9I7aI8VCdCxE8iFYaAuJiM8dVUzqqDM7XsB8/AT6sVSQLqNRm2le8b0qZeXTspXBbNW88cu/5lrIgQjgeWM9nnhpH46HFl0SzwzxD+rRC+sljlhTdj5cTV3KNIyBAu6yZQRK57ZI1LoYnCN9xAUOZyNrHFpTz3s6FsGGZoigeps2Sge05sPP4USD1Jw+BIEdfa2zmJ2mzJ/0UjSqM0llLyxAD7Uk0MeUz5R0DV0vxMcsZYZARqCmzbLDOulNCLF67C5llF47/qqJJNfiydPvzI0eQ/Hkle1qG6MepNkw9jjv1of4L22MMto2PSwI4lspJaZFN7QRjo22V6XWLACNRD6zY7scym5W9lhsfyVeZJJAfefij+kAorFoObJOqSKqpny7ZacJHMHMe2bw=="
+  security:
+    user:
+      name: "user"
+      password: "{cipher}AYBghpwziWw0+NGExJEzTrUAnCKVvccK8Nk2omVtSkWARTVRK1/CNCyO5XIA/+4yIXUPq51ZqRmPjrGkqIzDNYOS1kvi8Y1UgZWx/zBV2R5mhmH6uiRc0yCqrR3yp7B8C44R8t/puf/fJvAqav9hxcvpFfAH9mbtEi/cmTEDEU94V8oHHvwIr6sijpUocYiAl1QrNR/lu10tdJYnkhtYGY2YcWn7sQLhNOlM0iWvaoaqUhbqJ77/F0R3HwaQhJ+i97ppKRP3s3jsGVbrKOdhQAtlPd0YGaKYc9ntj4Lt+Pi9MaJnh5cbs90Mx+RX/ICqbi8Z8spjhBhLIBO5SoUxjkntHWCpBWQvRgJi3FkvA6oLesEN7oKFbun1RQTtROiP+LLS7M7bUVAcTLdWMiTmDpOOP8SDAhFlQaod3MeVbVC17b4eWc3xAE35cDzogxzdkYoRJB7J+d8yoKhb5uc9PtX1UR5U5jVcM+D0y5yeX+8X7NIR63JErxEokjrrLSpQlhhRfLRDFKKfiYYC+kxNqQdq7u9Bp8Do3YvoDn/SO8yULA=="
+
+# Logger configs
+logging:
+  level:
+    com:
+      netflix:
+        eureka: ERROR
+        discovery: ERROR
+
+# SpringDoc configs
+springdoc:
+  api-docs:
+    path: /v1/api-docs
+  swagger-ui:
+    path: /v1/api-swagger/swagger-ui.html

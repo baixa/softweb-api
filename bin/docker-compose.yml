@@ -1,4 +1,5 @@
 version: '2.1'
+name: softweb
 services:
   database:
     image: postgres:latest
@@ -10,8 +11,15 @@ services:
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB:       softweb_dev
     volumes:
-      - ./scripts/init.sql:/docker-entrypoint-initdb.d/1-init.sql
-      - ./scripts/data.sql:/docker-entrypoint-initdb.d/2-data.sql
+      - ./scripts/init.sql:/docker-entrypoint-initdb.d/01-init.sql
+      - ./scripts/data_os.sql:/docker-entrypoint-initdb.d/02-data_os.sql
+      - ./scripts/data_license.sql:/docker-entrypoint-initdb.d/03-data_license.sql
+      - ./scripts/data_user.sql:/docker-entrypoint-initdb.d/04-data_user.sql
+      - ./scripts/data_authority.sql:/docker-entrypoint-initdb.d/05-data_authority.sql
+      - ./scripts/data_category.sql:/docker-entrypoint-initdb.d/06-data_category.sql
+      - ./scripts/data_application.sql:/docker-entrypoint-initdb.d/07-data_application.sql
+      - ./scripts/data_image.sql:/docker-entrypoint-initdb.d/08-data_image.sql
+      - ./scripts/data_installer.sql:/docker-entrypoint-initdb.d/09-data_installer.sql
     networks:
       backend:
         aliases:
@@ -21,53 +29,71 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
-  eureka-server:
+  eureka:
     image: softweb/eureka:0.0.1-SNAPSHOT
-    container_name: eureka-server
+    container_name: eureka
     ports:
       - "8761:8761"
-    networks:
-      backend:
-        aliases:
-          - "eureka-server"
-  store-service:
-    image: softweb/store-api:0.0.1-SNAPSHOT
-    build:
-      context: .
-    container_name: store
-    ports:
-      - "8080:8080"
     depends_on:
       database:
         condition: service_healthy
-      config-server:
+      config:
         condition: service_started
-      eureka-server:
-        condition: service_started
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://database:5432/softweb_dev
-      SPRING_DATASOURCE_USERNAME: postgres
-      SPRING_DATASOURCE_PASSWORD: postgres
-      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka/
-      PROFILE: "dev"
-      CONFIGSERVER_URI: http://config-server:8888
-      CONFIGSERVER_PORT: 8888
-      SPRING_CLOUD_CONFIG_URI: http://config-server:8888
     networks:
       backend:
         aliases:
-          - "store-service"
-  config-server:
+          - "eureka"
+  store-api:
+    image: softweb/store-api:0.0.1-SNAPSHOT
+    build:
+      context: .
+    container_name: store-api
+    ports:
+      - "8180:8080"
+    depends_on:
+      database:
+        condition: service_healthy
+      config:
+        condition: service_started
+      eureka:
+        condition: service_started
+    networks:
+      backend:
+        aliases:
+          - "store-api"
+  config:
     image: softweb/config:0.0.1-SNAPSHOT
     build:
       context: .
-    container_name: config-server
+    container_name: config
     ports:
       - "8888:8888"
+    environment:
+      ENCRYPT_KEYSTORE_PASSWORD: "gth67dtg33"
+      ENCRYPT_KEYSTORE_ALIAS: "config-server-key"
+      ENCRYPT_KEYSTORE_SECRET: "gth67dtg33"
     networks:
       backend:
         aliases:
-          - "config-server"
+          - "config"
+  gateway:
+    image: softweb/gateway:0.0.1-SNAPSHOT
+    build:
+      context: .
+    container_name: gateway
+    ports:
+      - "8072:8072"
+    depends_on:
+      database:
+        condition: service_healthy
+      config:
+        condition: service_started
+      eureka:
+        condition: service_started
+    networks:
+      backend:
+        aliases:
+          - "gateway"
 
 networks:
   backend:

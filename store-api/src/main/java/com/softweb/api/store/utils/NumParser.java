@@ -1,11 +1,17 @@
 package com.softweb.api.store.utils;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class NumParser {
-    public static Integer parseIntOrNull(String value) {
+    public static List<Integer> parseIntOrNull(String... value) {
+        List<Integer> result = new ArrayList<>(value.length);
         try {
-            return Integer.parseInt(value);
+            Arrays.stream(value).mapToInt(Integer::parseInt).forEach(result::add);
         } catch (NumberFormatException e) {
             return null;
         }
+        return result;
     }
 }

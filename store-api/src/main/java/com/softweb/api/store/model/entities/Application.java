@@ -4,7 +4,7 @@ import com.softweb.api.store.model.dto.application.ApplicationPostDto;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.Set;
 
 /**
@@ -76,7 +76,7 @@ public class Application {
      * The date the app was last updated
      */
     @Column(name = "last_update")
-    private Date lastUpdate;
+    private LocalDateTime lastUpdate;
 
     /**
      * Number of app downloads
@@ -93,25 +93,30 @@ public class Application {
     /**
      * Application image list
      */
-    @OneToMany(mappedBy = "application", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "application", cascade = CascadeType.REMOVE)
     private Set<Image> images;
 
     /**
      * List of app installers
      */
-    @OneToMany(mappedBy = "application", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "application", cascade = CascadeType.REMOVE)
     private Set<Installer> installers;
+
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
 
     public Application(ApplicationPostDto applicationDto) {
         this.name = applicationDto.getName();
         this.shortDescription = applicationDto.getShortDescription();
         this.longDescription = applicationDto.getLongDescription();
-        this.logoPath = applicationDto.getLogoBase64();
+        this.logoPath = applicationDto.getLogo();
         this.lastUpdate = applicationDto.getLastUpdate();
         this.views = applicationDto.getViews();
         this.downloads = applicationDto.getDownloads();
         this.user = applicationDto.getUser();
         this.license = applicationDto.getLicense();
+        this.category = applicationDto.getCategory();
     }
 
     @Override
@@ -123,6 +128,7 @@ public class Application {
                 ", longDescription='" + longDescription + '\'' +
                 ", logoPath='" + logoPath + '\'' +
                 ", license=" + license +
+                ", category=" + category +
                 ", user=" + user +
                 ", lastUpdate=" + lastUpdate +
                 ", downloads=" + downloads +

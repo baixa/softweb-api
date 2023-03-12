@@ -2,15 +2,15 @@ package com.softweb.api.store.services;
 
 import com.softweb.api.store.model.dto.user.AbstractUserSaveDto;
 import com.softweb.api.store.model.entities.User;
-import com.softweb.api.store.model.repository.RepositoryConstants;
 import com.softweb.api.store.model.repository.UserRepository;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -44,10 +44,19 @@ public class UserService {
         return userRepository.findByUsername(authenticationName).orElse(null);
     }
 
-    public List<User> getUsers(Integer pageValue) {
-        Page<User> usersPage = userRepository.findAll(
-                PageRequest.of(pageValue, RepositoryConstants.COUNT_PAGE_ELEMENTS, Sort.by(Sort.Direction.ASC, "id"))
-        );
+    public List<User> getUsers(Pageable pageable) {
+        Page<User> usersPage = userRepository.findAll(pageable);
         return usersPage.getContent();
+    }
+
+    public void authUser(String username) {
+        Optional<User> optionalUser = userRepository.findByUsername(username);
+
+        if (optionalUser.isEmpty())
+            return;
+
+        User user = optionalUser.get();
+        user.setLastEntered(LocalDateTime.now());
+        userRepository.save(user);
     }
 }
