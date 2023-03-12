@@ -88,7 +88,8 @@ If you want, you can create an alias of `sh bin/control.sh` command
 ### Postman
 
 1. Launch Postman and click __Import__ button
-2. Find and select collection 
+2. Find and select [collection](bin/postman/store.postman_collection.json)
+3. Imported collection contains all base requests to Store-API
 
 ---
 
