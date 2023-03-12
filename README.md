@@ -91,6 +91,11 @@ If you want, you can create an alias of `sh bin/control.sh` command
 2. Find and select [collection](bin/postman/store.postman_collection.json)
 3. Imported collection contains all base requests to Store-API
 
+### Swagger Open API
+
+SpringDoc (Swagger) is available at link: http://localhost:8180/v1/api-swagger/swagger-ui.html 
+Due to inconsistencies with the Gateway mechanism (in development), slight malfunctions are possible.
+
 ---
 
 > GitHub [@baixa](https://github.com/baixa)
