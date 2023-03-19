@@ -25,10 +25,6 @@ public class ApplicationService {
         return applicationRepository.findById(Long.valueOf(applicationId)).orElse(null);
     }
 
-    public Application getApplicationById (Long applicationId) {
-        return applicationRepository.findById(applicationId).orElse(null);
-    }
-
     public List<Application> getApplications (Pageable pageable) {
         Page<Application> applicationPage = applicationRepository.findAll(pageable);
         return applicationPage.getContent();
@@ -82,5 +78,10 @@ public class ApplicationService {
         else {
             return Objects.equals(application.getUser().getId(), user.getId());
         }
+    }
+
+    public List<Application> getApplicationsByUser(Pageable pageable, User user) {
+        Page<Application> applicationPage = applicationRepository.findByUser(user, pageable);
+        return applicationPage.getContent();
     }
 }

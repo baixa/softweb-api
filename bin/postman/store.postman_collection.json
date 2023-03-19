@@ -298,6 +298,46 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Get applications by user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8072/store/v1/application/user?page=0&size=5&sort=id,asc&userId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8072",
+							"path": [
+								"store",
+								"v1",
+								"application",
+								"user"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								},
+								{
+									"key": "sort",
+									"value": "id,asc"
+								},
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -976,96 +1016,6 @@
 								"v1",
 								"user",
 								"5"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Utils",
-			"item": [
-				{
-					"name": "Gateway routes",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8072/actuator/gateway/routes",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8072",
-							"path": [
-								"actuator",
-								"gateway",
-								"routes"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Check Request",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8072/store/v1/application/category?page=0&categoryId=1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8072",
-							"path": [
-								"store",
-								"v1",
-								"application",
-								"category"
-							],
-							"query": [
-								{
-									"key": "page",
-									"value": "0"
-								},
-								{
-									"key": "categoryId",
-									"value": "1"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Check Request Copy",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8072/store/v1/application/category?page=0&categoryId=1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8072",
-							"path": [
-								"store",
-								"v1",
-								"application",
-								"category"
-							],
-							"query": [
-								{
-									"key": "page",
-									"value": "0"
-								},
-								{
-									"key": "categoryId",
-									"value": "1"
-								}
 							]
 						}
 					},

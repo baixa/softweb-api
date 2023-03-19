@@ -16,8 +16,6 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
@@ -59,33 +57,36 @@ public class ApplicationController {
     private final CategoryService categoryService;
 
     /**
+     * Service, that provides ability to interaction with the User entity
+     */
+    private final UserService userService;
+
+    /**
      * Service, that provides ability manipulate with static files
      */
     private final FileStorageService fileStorageService;
 
     /**
-     * System logger
-     */
-    private final Logger logger = LoggerFactory.getLogger(ApplicationController.class);
-
-    /**
      * Controller
      *
-     * @param applicationService Application service
+     * @param applicationService    Application service
      * @param authenticationService Authentication service
-     * @param licenseService License service
-     * @param categoryService Category service
-     * @param fileStorageService FileStorage service
+     * @param licenseService        License service
+     * @param categoryService       Category service
+     * @param userService           User service
+     * @param fileStorageService    FileStorage service
      */
     public ApplicationController(ApplicationService applicationService,
                                  AuthenticationService authenticationService,
                                  LicenseService licenseService,
                                  CategoryService categoryService,
+                                 UserService userService,
                                  FileStorageService fileStorageService) {
         this.applicationService = applicationService;
         this.authenticationService = authenticationService;
         this.licenseService = licenseService;
         this.categoryService = categoryService;
+        this.userService = userService;
         this.fileStorageService = fileStorageService;
     }
 
@@ -154,7 +155,7 @@ public class ApplicationController {
                             schema = @Schema(implementation = AbstractApplicationGetDto.class))}),
             @ApiResponse(responseCode = "404", description = "Category with given id is absent", content = @Content),
             @ApiResponse(responseCode = "400", description = "Invalid data supplied", content = @Content) })
-    public ResponseEntity<?> getApplicationsByCategoryName (
+    public ResponseEntity<?> getApplicationsByCategory(
             @Parameter(description = "Id of requested category")
             @RequestParam(name = "categoryId") String categoryId,
             @ParameterObject Pageable pageable) {
@@ -164,6 +165,38 @@ public class ApplicationController {
         if (Objects.isNull(category))
             return ResponseEntity.of(Optional.empty());
         List<Application> applications = applicationService.getApplicationsByCategory(pageable, category);
+        List<ApplicationDefaultGetDto> result = applications.stream().map(ApplicationDefaultGetDto::new).toList();
+        return ResponseEntity.ok(result);
+    }
+
+    /**
+     * Returns a list of applications, that user corresponds request param userId
+     *
+     * @param userId Id of requested user
+     * @param pageable Data of elements quality
+     * @return List of user's applications
+     */
+    @GetMapping("/user")
+    @Operation(
+            summary = "Get apps by user id",
+            description = "Returns a list of applications, that user corresponds request param userId"
+    )
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Returns requested applications",
+                    content = {@Content(mediaType = "application/json",
+                            schema = @Schema(implementation = AbstractApplicationGetDto.class))}),
+            @ApiResponse(responseCode = "404", description = "User with given id is absent", content = @Content),
+            @ApiResponse(responseCode = "400", description = "Invalid data supplied", content = @Content) })
+    public ResponseEntity<?> getApplicationsByUser (
+            @Parameter(description = "Id of requested user")
+            @RequestParam(name = "userId") String userId,
+            @ParameterObject Pageable pageable) {
+        if (NumParser.parseIntOrNull(userId) == null)
+            return new ResponseEntity<>(new ResponseError("Invalid user ID"), HttpStatus.BAD_REQUEST);
+        User user = userService.getUserById(userId);
+        if (Objects.isNull(user))
+            return ResponseEntity.of(Optional.empty());
+        List<Application> applications = applicationService.getApplicationsByUser(pageable, user);
         List<ApplicationDefaultGetDto> result = applications.stream().map(ApplicationDefaultGetDto::new).toList();
         return ResponseEntity.ok(result);
     }
