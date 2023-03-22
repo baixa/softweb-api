@@ -35,6 +35,7 @@ import java.util.Optional;
  */
 @RestController
 @RequestMapping(value = "/v1/user")
+@CrossOrigin
 @Tag(name = "User", description = "API provides ability to manipulate users")
 public class UserController {
     /**
