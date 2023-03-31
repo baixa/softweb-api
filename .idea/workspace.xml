@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e1eb751-0cc7-4a2b-80fd-d9eaef23426d" name="Changes" comment="Add endpoint to get applications by user id">
+    <list default="true" id="6e1eb751-0cc7-4a2b-80fd-d9eaef23426d" name="Changes" comment="Hot-Fix: Fix CORS settings">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/src/main/resources/config/gateway.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/src/main/resources/config/gateway.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/config/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/scripts/data_user.sql" beforeDir="false" afterPath="$PROJECT_DIR$/bin/scripts/data_user.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/application/AbstractApplicationGetDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/application/AbstractApplicationGetDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/user/UserGetDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/user/UserGetDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/utils/NumParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/utils/NumParser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +67,9 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;e84fe88790f64bc68f4fb4a03d90e08a&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
@@ -199,7 +203,10 @@
       <workItem from="1679241608926" duration="1846000" />
       <workItem from="1679477365169" duration="1705000" />
       <workItem from="1679499620619" duration="553000" />
-      <workItem from="1679664388383" duration="2856000" />
+      <workItem from="1679664388383" duration="3286000" />
+      <workItem from="1679909857481" duration="645000" />
+      <workItem from="1680177045524" duration="2244000" />
+      <workItem from="1680254635604" duration="2688000" />
     </task>
     <task id="LOCAL-00001" summary="#33 Add applications for social category">
       <created>1677960517018</created>
@@ -362,7 +369,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679479347833</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Hot-Fix: Fix CORS settings">
+      <created>1679667882972</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1679667882972</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -400,6 +414,7 @@
     <MESSAGE value="#56 Prepare Image and Installer Controllers to add Postman Collection" />
     <MESSAGE value="#56 Add Postman Collection" />
     <MESSAGE value="Add endpoint to get applications by user id" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add endpoint to get applications by user id" />
+    <MESSAGE value="Hot-Fix: Fix CORS settings" />
+    <option name="LAST_COMMIT_MESSAGE" value="Hot-Fix: Fix CORS settings" />
   </component>
 </project>

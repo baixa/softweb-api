@@ -1,7 +1,7 @@
 --- Users table (default password - test)
 INSERT INTO public.users (id, username, full_name, password, enabled, last_entered) VALUES (1, 'Michael', 'Michael Houls', '$2a$09$FdW6rFU6pxaHfAhGDUiav.WdMsNTLArooI2uttn4DFKxLC.JmRl0W', true, '2023-01-27 16:27:32.000000');
-INSERT INTO public.users (id, username, full_name, password, enabled, last_entered) VALUES (2, 'Miles', 'Miles Cole', '$2a$10$adDk5yKRMihe06jKa2MFTuaYYnsIWWiqEEhzd0SmnVdSJfXTyUPG2', true, '2021-01-27 16:27:36.000000');
-INSERT INTO public.users (id, username, full_name, password, enabled, last_entered) VALUES (3, 'James', 'James Trace', '$2a$10$gDkbvFxhFyv0pVGEH/sSmuKN5y.6CQ/pNVI34nvB78S65WEUGICke', true, '2023-01-25 16:28:08.000000');
+INSERT INTO public.users (id, username, full_name, password, enabled, last_entered) VALUES (2, 'Miles', 'Miles Cole', '$2a$09$FdW6rFU6pxaHfAhGDUiav.WdMsNTLArooI2uttn4DFKxLC.JmRl0W', true, '2021-01-27 16:27:36.000000');
+INSERT INTO public.users (id, username, full_name, password, enabled, last_entered) VALUES (3, 'James', 'James Trace', '$2a$09$FdW6rFU6pxaHfAhGDUiav.WdMsNTLArooI2uttn4DFKxLC.JmRl0W', true, '2023-01-25 16:28:08.000000');
 INSERT INTO public.users (id, username, full_name, password, enabled, last_entered) VALUES (4, 'etibalt3', 'Edie Tibalt', '$2a$09$FdW6rFU6pxaHfAhGDUiav.WdMsNTLArooI2uttn4DFKxLC.JmRl0W', true, '2021-04-26 23:41:37.000000');
 INSERT INTO public.users (id, username, full_name, password, enabled, last_entered) VALUES (5, 'cwonfar4', 'Chan Wonfar', '$2a$09$FdW6rFU6pxaHfAhGDUiav.WdMsNTLArooI2uttn4DFKxLC.JmRl0W', true, '2020-03-30 07:39:12.000000');
 INSERT INTO public.users (id, username, full_name, password, enabled, last_entered) VALUES (6, 'estonnell5', 'Elvin Stonnell', '$2a$09$FdW6rFU6pxaHfAhGDUiav.WdMsNTLArooI2uttn4DFKxLC.JmRl0W', true, '2020-01-13 16:06:23.000000');
