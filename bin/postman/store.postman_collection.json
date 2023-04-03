@@ -73,6 +73,37 @@
 					"response": []
 				},
 				{
+					"name": "Get applications request Info (param - size)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8072/store/v1/application/info?size=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8072",
+							"path": [
+								"store",
+								"v1",
+								"application",
+								"info"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Get applications by category",
 					"request": {
 						"auth": {
@@ -105,6 +136,42 @@
 								{
 									"key": "sort",
 									"value": "id,asc"
+								},
+								{
+									"key": "categoryId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get applications by category Info",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8072/store/v1/application/category/info?size=5&categoryId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8072",
+							"path": [
+								"store",
+								"v1",
+								"application",
+								"category",
+								"info"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "5"
 								},
 								{
 									"key": "categoryId",
@@ -329,6 +396,39 @@
 								{
 									"key": "sort",
 									"value": "id,asc"
+								},
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get applications by user Info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8072/store/v1/application/user/info?size=5&userId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8072",
+							"path": [
+								"store",
+								"v1",
+								"application",
+								"user",
+								"info"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "5"
 								},
 								{
 									"key": "userId",
