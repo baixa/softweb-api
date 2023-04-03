@@ -14,6 +14,9 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface ApplicationRepository extends JpaRepository<Application, Long> {
+    long countByCategory(Category category);
+    long countByUser(User user);
+
     Page<Application> findByUser(User user, Pageable pageable);
 
     Page<Application> findAllByCategory(Category category, Pageable pageable);

@@ -84,4 +84,16 @@ public class ApplicationService {
         Page<Application> applicationPage = applicationRepository.findByUser(user, pageable);
         return applicationPage.getContent();
     }
+
+    public Long getApplicationsCount() {
+        return applicationRepository.count();
+    }
+
+    public Long getApplicationsCountByCategory(Category category) {
+        return applicationRepository.countByCategory(category);
+    }
+
+    public Long getApplicationsCountByUser(User user) {
+        return applicationRepository.countByUser(user);
+    }
 }

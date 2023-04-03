@@ -6,6 +6,7 @@ import com.softweb.api.store.model.dto.application.ApplicationPostDto;
 import com.softweb.api.store.model.dto.application.ApplicationPutDto;
 import com.softweb.api.store.model.entities.*;
 import com.softweb.api.store.services.*;
+import com.softweb.api.store.utils.CollectionsInfoResponse;
 import com.softweb.api.store.utils.NumParser;
 import com.softweb.api.store.utils.ResponseError;
 import io.swagger.v3.oas.annotations.Operation;
@@ -138,9 +139,30 @@ public class ApplicationController {
     }
 
     /**
+     * Returns info about list of applications (total count of elements, count of pages) by size of page
+     *
+     * @param size Size of requested page
+     * @return Info about list of applications
+     */
+    @GetMapping("/info")
+    @Operation(
+            summary = "Get info about list of applications",
+            description = "Returns a list of applications (total count of elements, count of pages) by size of page"
+    )
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Returns requested info",
+                    content = {@Content(mediaType = "application/json",
+                            schema = @Schema(implementation = CollectionsInfoResponse.class))}),
+            @ApiResponse(responseCode = "400", description = "Invalid data supplied", content = @Content) })
+    public ResponseEntity<?> getApplicationsInfo (@RequestParam Integer size) {
+        Long applicationsCount = applicationService.getApplicationsCount();
+        return ResponseEntity.ok(new CollectionsInfoResponse(applicationsCount, size));
+    }
+
+    /**
      * Returns a list of applications, that category corresponds request param categoryId
      *
-     * @param categoryId Id of requested category
+     * @param categoryId ID of requested category
      * @param pageable Data of elements quality
      * @return List of category's applications
      */
@@ -167,6 +189,32 @@ public class ApplicationController {
         List<Application> applications = applicationService.getApplicationsByCategory(pageable, category);
         List<ApplicationDefaultGetDto> result = applications.stream().map(ApplicationDefaultGetDto::new).toList();
         return ResponseEntity.ok(result);
+    }
+
+    /**
+     * Returns info about list of applications by category (total count of elements, count of pages) by size of page
+     *
+     * @param size Size of requested page
+     * @return Info about list of applications
+     */
+    @GetMapping("/category/info")
+    @Operation(
+            summary = "Get info about list of applications by category",
+            description = "Returns a list of applications by category (total count of elements, count of pages) by size of page"
+    )
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Returns requested info",
+                    content = {@Content(mediaType = "application/json",
+                            schema = @Schema(implementation = CollectionsInfoResponse.class))}),
+            @ApiResponse(responseCode = "400", description = "Invalid data supplied", content = @Content) })
+    public ResponseEntity<?> getApplicationsInfoByCategory (@RequestParam Integer size, @RequestParam String categoryId) {
+        if (NumParser.parseIntOrNull(categoryId) == null)
+            return new ResponseEntity<>(new ResponseError("Invalid category ID"), HttpStatus.BAD_REQUEST);
+        Category category = categoryService.getCategoryById(categoryId);
+        if (Objects.isNull(category))
+            return ResponseEntity.of(Optional.empty());
+        Long applicationsCount = applicationService.getApplicationsCountByCategory(category);
+        return ResponseEntity.ok(new CollectionsInfoResponse(applicationsCount, size));
     }
 
     /**
@@ -199,6 +247,32 @@ public class ApplicationController {
         List<Application> applications = applicationService.getApplicationsByUser(pageable, user);
         List<ApplicationDefaultGetDto> result = applications.stream().map(ApplicationDefaultGetDto::new).toList();
         return ResponseEntity.ok(result);
+    }
+
+    /**
+     * Returns info about list of applications by user (total count of elements, count of pages) by size of page
+     *
+     * @param size Size of requested page
+     * @return Info about list of applications
+     */
+    @GetMapping("/user/info")
+    @Operation(
+            summary = "Get info about list of applications by user",
+            description = "Returns a list of applications by user (total count of elements, count of pages) by size of page"
+    )
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Returns requested info",
+                    content = {@Content(mediaType = "application/json",
+                            schema = @Schema(implementation = CollectionsInfoResponse.class))}),
+            @ApiResponse(responseCode = "400", description = "Invalid data supplied", content = @Content) })
+    public ResponseEntity<?> getApplicationsInfoByUser (@RequestParam Integer size, @RequestParam String userId) {
+        if (NumParser.parseIntOrNull(userId) == null)
+            return new ResponseEntity<>(new ResponseError("Invalid user ID"), HttpStatus.BAD_REQUEST);
+        User user = userService.getUserById(userId);
+        if (Objects.isNull(user))
+            return ResponseEntity.of(Optional.empty());
+        Long applicationsCount = applicationService.getApplicationsCountByUser(user);
+        return ResponseEntity.ok(new CollectionsInfoResponse(applicationsCount, size));
     }
 
     /**
