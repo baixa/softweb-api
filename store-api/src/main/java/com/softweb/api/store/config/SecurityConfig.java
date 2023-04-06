@@ -54,7 +54,7 @@ public class SecurityConfig {
                         // API-Docs endpoint
                         .requestMatchers(HttpMethod.GET,"/v1/api-docs", "/v1/api-docs/**").permitAll()
                         .requestMatchers(HttpMethod.GET,"/v1/api-swagger", "/v1/api-swagger/**").permitAll()
-                        .anyRequest().denyAll()
+                        .anyRequest().permitAll()
                 )
                 .csrf().disable()
                 .httpBasic();

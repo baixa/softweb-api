@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e1eb751-0cc7-4a2b-80fd-d9eaef23426d" name="Changes" comment="Hot-Fix: Return array format of date and fix users passwords">
-      <change afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/utils/CollectionsInfoResponse.java" afterDir="false" />
+    <list default="true" id="6e1eb751-0cc7-4a2b-80fd-d9eaef23426d" name="Changes" comment="Update Postman collection">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/ApplicationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/ApplicationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/repository/ApplicationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/repository/ApplicationRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/ApplicationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/ApplicationService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,7 +203,9 @@
       <workItem from="1679909857481" duration="645000" />
       <workItem from="1680177045524" duration="2244000" />
       <workItem from="1680254635604" duration="2969000" />
-      <workItem from="1680522341819" duration="3496000" />
+      <workItem from="1680522341819" duration="4207000" />
+      <workItem from="1680597756500" duration="901000" />
+      <workItem from="1680633345675" duration="616000" />
     </task>
     <task id="LOCAL-00001" summary="#33 Add applications for social category">
       <created>1677960517018</created>
@@ -384,7 +382,21 @@
       <option name="project" value="LOCAL" />
       <updated>1680258054629</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Add info requests to collection requests (with data about count of elements)">
+      <created>1680528256321</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1680528256321</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Update Postman collection">
+      <created>1680528335436</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1680528335436</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -424,6 +436,8 @@
     <MESSAGE value="Add endpoint to get applications by user id" />
     <MESSAGE value="Hot-Fix: Fix CORS settings" />
     <MESSAGE value="Hot-Fix: Return array format of date and fix users passwords" />
-    <option name="LAST_COMMIT_MESSAGE" value="Hot-Fix: Return array format of date and fix users passwords" />
+    <MESSAGE value="Add info requests to collection requests (with data about count of elements)" />
+    <MESSAGE value="Update Postman collection" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Postman collection" />
   </component>
 </project>
