@@ -112,8 +112,13 @@ public class ApplicationController {
         if (NumParser.parseIntOrNull(applicationId) == null)
             return new ResponseEntity<>(new ResponseError("Invalid ID"), HttpStatus.BAD_REQUEST);
         Application application = applicationService.getApplicationById(applicationId);
-        return Objects.isNull(application) ? ResponseEntity.of(Optional.empty()) :
-                ResponseEntity.ok(new ApplicationDefaultGetDto(application));
+        if (Objects.isNull(application))
+            return ResponseEntity.of(Optional.empty());
+        else {
+            application.view();
+            applicationService.saveApplication(application);
+            return ResponseEntity.ok(new ApplicationDefaultGetDto(application));
+        }
     }
 
     /**

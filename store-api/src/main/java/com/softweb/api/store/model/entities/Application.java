@@ -137,4 +137,12 @@ public class Application {
                 ", installers=" + installers +
                 '}';
     }
+
+    public void view() {
+        views += 1;
+    }
+
+    public void download() {
+        downloads += 1;
+    }
 }

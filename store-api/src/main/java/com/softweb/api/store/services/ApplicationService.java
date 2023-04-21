@@ -96,4 +96,8 @@ public class ApplicationService {
     public Long getApplicationsCountByUser(User user) {
         return applicationRepository.countByUser(user);
     }
+
+    public Application saveApplication(Application application) {
+        return applicationRepository.save(application);
+    }
 }
