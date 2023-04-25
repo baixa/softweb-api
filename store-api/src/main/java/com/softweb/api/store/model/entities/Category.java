@@ -42,9 +42,17 @@ public class Category {
     @Column(name = "image_path", nullable = false)
     private String image;
 
+    /**
+     * Linked application list
+     */
     @OneToMany(mappedBy = "category")
     private Set<Application> applications;
 
+    /**
+     * Generates string view of object
+     *
+     * @return string view of object
+     */
     @Override
     public String toString() {
         return "Category{" +

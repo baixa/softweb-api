@@ -40,6 +40,11 @@ public class OperatingSystem {
     @OneToMany(mappedBy = "system", fetch = FetchType.EAGER)
     private Set<Installer> installers;
 
+    /**
+     * Generates string view of object
+     *
+     * @return string view
+     */
     @Override
     public String toString() {
         return "OperatingSystem{" +

@@ -58,6 +58,11 @@ public class Installer {
     @Column(name = "size")
     private int size;
 
+    /**
+     * Generates string view of object
+     *
+     * @return string view
+     */
     @Override
     public String toString() {
         return "Installer{" +

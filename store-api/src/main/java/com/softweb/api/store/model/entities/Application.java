@@ -102,10 +102,18 @@ public class Application {
     @OneToMany(mappedBy = "application", cascade = CascadeType.REMOVE)
     private Set<Installer> installers;
 
+    /**
+     * Category of application
+     */
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
 
+    /**
+     * Constructor
+     *
+     * @param applicationDto Dto view of creatable Application object
+     */
     public Application(ApplicationPostDto applicationDto) {
         this.name = applicationDto.getName();
         this.shortDescription = applicationDto.getShortDescription();
@@ -119,6 +127,11 @@ public class Application {
         this.category = applicationDto.getCategory();
     }
 
+    /**
+     * Generates string view of object
+     *
+     * @return string view of object
+     */
     @Override
     public String toString() {
         return "Application{" +
@@ -138,11 +151,10 @@ public class Application {
                 '}';
     }
 
+    /**
+     * Increases views
+     */
     public void view() {
         views += 1;
-    }
-
-    public void download() {
-        downloads += 1;
     }
 }

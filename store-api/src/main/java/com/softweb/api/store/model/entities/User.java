@@ -78,6 +78,11 @@ public class User {
     @OneToOne(mappedBy = "user", cascade = CascadeType.REMOVE)
     private Authority authority;
 
+    /**
+     * Constructor
+     *
+     * @param userDto Dto view of creatable User object
+     */
     public User(AbstractUserSaveDto userDto) {
         if (userDto instanceof UserPutDto)
             this.id = ((UserPutDto) userDto).getId();
@@ -89,6 +94,11 @@ public class User {
         this.isEnabled = true;
     }
 
+    /**
+     * Generates string view of object
+     *
+     * @return string view
+     */
     @Override
     public String toString() {
         return "User{" +

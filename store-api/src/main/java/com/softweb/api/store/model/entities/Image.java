@@ -45,6 +45,11 @@ public class Image {
     @JoinColumn(name = "application_id", nullable = false)
     private Application application;
 
+    /**
+     * Generates string view of object
+     *
+     * @return string view
+     */
     @Override
     public String toString() {
         return "Image{" +

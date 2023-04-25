@@ -332,8 +332,11 @@ public class ApplicationController {
         ApplicationPostDto applicationPostDto = new ApplicationPostDto(name, shortDescription,
                 longDescription, license, category);
         String fileName = fileStorageService.storeFile(logo);
-        String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
-                .path("/v1/image/")
+        String fileDownloadUri = ServletUriComponentsBuilder.newInstance()
+                .scheme("http")
+                .host("localhost")
+                .port("8072")
+                .path("/store/v1/image/")
                 .path(fileName)
                 .toUriString();
         applicationPostDto.setLogo(fileDownloadUri);
@@ -403,8 +406,11 @@ public class ApplicationController {
                     HttpStatus.BAD_REQUEST);
 
         String fileName = fileStorageService.storeFile(logo);
-        String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
-                .path("/v1/image/")
+        String fileDownloadUri = ServletUriComponentsBuilder.newInstance()
+                .scheme("http")
+                .host("localhost")
+                .port("8072")
+                .path("/store/v1/image/")
                 .path(fileName)
                 .toUriString();
         applicationPutDto.setLogo(fileDownloadUri);
