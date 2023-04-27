@@ -5,7 +5,17 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Util class that perform parsing data
+ */
 public class NumParser {
+
+    /**
+     * Parse string value of number to Integer value
+     *
+     * @param value Array of parsable data
+     * @return List of parsed values
+     */
     public static List<Integer> parseIntOrNull(String... value) {
         List<Integer> result = new ArrayList<>(value.length);
         try {
@@ -15,7 +25,13 @@ public class NumParser {
         }
         return result;
     }
-    
+
+    /**
+     * Parse data value to Integer array
+     *
+     * @param localDateTime Parsable datetime
+     * @return Parsed datetime
+     */
     public static int[] parseDateToNumArray(LocalDateTime localDateTime) {
         int[] parsedDate = new int[5];
         parsedDate[0] = localDateTime.getYear();

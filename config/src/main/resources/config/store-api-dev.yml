@@ -13,7 +13,10 @@ spring:
     user:
       name: "user"
       password: "{cipher}AYBghpwziWw0+NGExJEzTrUAnCKVvccK8Nk2omVtSkWARTVRK1/CNCyO5XIA/+4yIXUPq51ZqRmPjrGkqIzDNYOS1kvi8Y1UgZWx/zBV2R5mhmH6uiRc0yCqrR3yp7B8C44R8t/puf/fJvAqav9hxcvpFfAH9mbtEi/cmTEDEU94V8oHHvwIr6sijpUocYiAl1QrNR/lu10tdJYnkhtYGY2YcWn7sQLhNOlM0iWvaoaqUhbqJ77/F0R3HwaQhJ+i97ppKRP3s3jsGVbrKOdhQAtlPd0YGaKYc9ntj4Lt+Pi9MaJnh5cbs90Mx+RX/ICqbi8Z8spjhBhLIBO5SoUxjkntHWCpBWQvRgJi3FkvA6oLesEN7oKFbun1RQTtROiP+LLS7M7bUVAcTLdWMiTmDpOOP8SDAhFlQaod3MeVbVC17b4eWc3xAE35cDzogxzdkYoRJB7J+d8yoKhb5uc9PtX1UR5U5jVcM+D0y5yeX+8X7NIR63JErxEokjrrLSpQlhhRfLRDFKKfiYYC+kxNqQdq7u9Bp8Do3YvoDn/SO8yULA=="
-
+  servlet:
+    multipart:
+      max-file-size: 1024MB
+      max-request-size: 1024MB
 # Logger configs
 logging:
   level:
