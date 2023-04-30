@@ -1,9 +1,6 @@
 package com.softweb.api.store.controllers;
 
-import com.softweb.api.store.model.dto.application.AbstractApplicationGetDto;
-import com.softweb.api.store.model.dto.application.ApplicationDefaultGetDto;
-import com.softweb.api.store.model.dto.application.ApplicationPostDto;
-import com.softweb.api.store.model.dto.application.ApplicationPutDto;
+import com.softweb.api.store.model.dto.application.*;
 import com.softweb.api.store.model.entities.*;
 import com.softweb.api.store.services.*;
 import com.softweb.api.store.utils.CollectionsInfoResponse;
@@ -140,6 +137,26 @@ public class ApplicationController {
     public ResponseEntity<?> getApplications (@ParameterObject Pageable pageable) {
         List<Application> applications = applicationService.getApplications(pageable);
         List<ApplicationDefaultGetDto> result = applications.stream().map(ApplicationDefaultGetDto::new).toList();
+        return ResponseEntity.ok(result);
+    }
+
+    /**
+     * Returns a list of applications' names, that are used in search fields
+     *
+     * @return List of applications' names
+     */
+    @GetMapping("/search")
+    @Operation(
+            summary = "Get applications' data for search fields",
+            description = "Returns a list of applications' names, that are used in search fields"
+    )
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Returns requested list",
+                    content = {@Content(mediaType = "application/json",
+                            schema = @Schema(implementation = ApplicationSearch.class))})})
+    public ResponseEntity<?> getApplicationsSearchData () {
+        List<Application> applications = applicationService.getSortedApplications();
+        List<ApplicationSearch> result = applications.stream().map(ApplicationSearch::new).toList();
         return ResponseEntity.ok(result);
     }
 

@@ -135,9 +135,11 @@ public class ImageController {
         if (!(Objects.equals(application.getUser().getId(), authUser.getId())) && authUserAuthority != Authorities.ADMIN)
            return new ResponseEntity<>(new ResponseError("Access denied. You don't have rights to edit this application"),
                    HttpStatus.FORBIDDEN);
-        if (!Objects.requireNonNull(file.getContentType()).contains("image"))
-            return new ResponseEntity<>("Invalid file supplied! Available loading only image files",
+        if (!Objects.requireNonNull(file.getContentType()).contains("image")) {
+            System.out.println(file.getContentType());
+            return new ResponseEntity<>(new ResponseError("Invalid file supplied! Available loading only image files"),
                     HttpStatus.BAD_REQUEST);
+        }
         String fileName = fileStorageService.storeFile(file);
         String fileDownloadUri = ServletUriComponentsBuilder.newInstance()
                 .scheme("http")

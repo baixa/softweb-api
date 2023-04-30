@@ -8,6 +8,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
  * Application repository, that allow to perform
  * CRUD operations in corresponding table
@@ -20,4 +22,6 @@ public interface ApplicationRepository extends JpaRepository<Application, Long> 
     Page<Application> findByUser(User user, Pageable pageable);
 
     Page<Application> findAllByCategory(Category category, Pageable pageable);
+
+    List<Application> findAllByOrderByNameAsc();
 }

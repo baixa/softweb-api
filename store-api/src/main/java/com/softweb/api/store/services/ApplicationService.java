@@ -30,6 +30,10 @@ public class ApplicationService {
         return applicationPage.getContent();
     }
 
+    public List<Application> getSortedApplications() {
+        return applicationRepository.findAllByOrderByNameAsc();
+    }
+
     public List<Application> getApplicationsByCategory (Pageable pageable, Category category) {
         Page<Application> applicationPage = applicationRepository.findAllByCategory(category,pageable);
         return applicationPage.getContent();
