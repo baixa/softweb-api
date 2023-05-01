@@ -127,12 +127,12 @@ public class ImageController {
             @RequestParam("file") MultipartFile file,
             @Parameter(description = "ID of linked application")
             @RequestParam String applicationId) {
-        User authUser = authenticationService.getAuthenticatedUser();
+        Optional<User> authUser = authenticationService.getAuthenticatedUser();
         Authorities authUserAuthority = authenticationService.getAuthenticationAuthority();
         Application application = applicationService.getApplicationById(applicationId);
-        if (Objects.isNull(application))
+        if (Objects.isNull(application) || authUser.isEmpty())
             return ResponseEntity.of(Optional.empty());
-        if (!(Objects.equals(application.getUser().getId(), authUser.getId())) && authUserAuthority != Authorities.ADMIN)
+        if (!(Objects.equals(application.getUser().getId(), authUser.get().getId())) && authUserAuthority != Authorities.ADMIN)
            return new ResponseEntity<>(new ResponseError("Access denied. You don't have rights to edit this application"),
                    HttpStatus.FORBIDDEN);
         if (!Objects.requireNonNull(file.getContentType()).contains("image")) {
@@ -181,13 +181,13 @@ public class ImageController {
             @RequestParam("files") MultipartFile[] files,
             @Parameter(description = "Linked application ID")
             @RequestParam String applicationId) {
-        User authUser = authenticationService.getAuthenticatedUser();
+        Optional<User> authUser = authenticationService.getAuthenticatedUser();
         Authorities authUserAuthority = authenticationService.getAuthenticationAuthority();
         Application application = applicationService.getApplicationById(applicationId);
-        if (Objects.isNull(application))
+        if (Objects.isNull(application) || authUser.isEmpty())
             return ResponseEntity.of(Optional.empty());
         List<UploadImageDto> uploadImageDtos = new ArrayList<>();
-        if (!(Objects.equals(application.getUser().getId(), authUser.getId())) && authUserAuthority != Authorities.ADMIN)
+        if (!(Objects.equals(application.getUser().getId(), authUser.get().getId())) && authUserAuthority != Authorities.ADMIN)
             return new ResponseEntity<>(new ResponseError("Access denied. You don't have rights to edit this application"),
                     HttpStatus.FORBIDDEN);
         for (MultipartFile file : files)
@@ -240,11 +240,12 @@ public class ImageController {
             @ApiResponse(responseCode = "404", description = "Image not found")})
     public ResponseEntity<?> deleteImage(@PathVariable String id) {
         Image image = imageService.getImageById(id);
-        if (Objects.isNull(image))
+        Optional<User> authUser = authenticationService.getAuthenticatedUser();
+        if (Objects.isNull(image) || authUser.isEmpty()) {
             return ResponseEntity.of(Optional.empty());
-        User authUser = authenticationService.getAuthenticatedUser();
+        }
         Authorities authUserAuthority = authenticationService.getAuthenticationAuthority();
-        if (!(Objects.equals(image.getApplication().getUser().getId(), authUser.getId()))
+        if (!(Objects.equals(image.getApplication().getUser().getId(), authUser.get().getId()))
                 && authUserAuthority != Authorities.ADMIN)
             return new ResponseEntity<>(new ResponseError("Access denied. You don't have rights to edit this application"),
                     HttpStatus.FORBIDDEN);

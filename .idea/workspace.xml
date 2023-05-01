@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e1eb751-0cc7-4a2b-80fd-d9eaef23426d" name="Changes" comment="Add application search endpoint" />
+    <list default="true" id="6e1eb751-0cc7-4a2b-80fd-d9eaef23426d" name="Changes" comment="Update Postman collection">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/ApplicationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/ApplicationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/ImageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/ImageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/InstallerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/InstallerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/AuthenticationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/UserService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -218,7 +226,8 @@
       <workItem from="1682430152474" duration="3951000" />
       <workItem from="1682445463430" duration="2569000" />
       <workItem from="1682586633490" duration="5232000" />
-      <workItem from="1682785607358" duration="2878000" />
+      <workItem from="1682785607358" duration="3083000" />
+      <workItem from="1682959961331" duration="2996000" />
     </task>
     <task id="LOCAL-00001" summary="#33 Add applications for social category">
       <created>1677960517018</created>
@@ -444,7 +453,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682871024821</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Update Postman collection">
+      <created>1682871305588</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1682871305588</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -481,12 +497,12 @@
     <MESSAGE value="Hot-Fix: Fix CORS settings" />
     <MESSAGE value="Hot-Fix: Return array format of date and fix users passwords" />
     <MESSAGE value="Add info requests to collection requests (with data about count of elements)" />
-    <MESSAGE value="Update Postman collection" />
     <MESSAGE value="Synchronize with frontend" />
     <MESSAGE value="Fix counter of applications' views" />
     <MESSAGE value="Fix generation application logo url and add docs for some classes" />
     <MESSAGE value="Update max file request size" />
     <MESSAGE value="Add application search endpoint" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add application search endpoint" />
+    <MESSAGE value="Update Postman collection" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Postman collection" />
   </component>
 </project>

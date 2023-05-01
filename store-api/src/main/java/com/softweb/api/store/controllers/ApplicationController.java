@@ -357,7 +357,7 @@ public class ApplicationController {
                 .path(fileName)
                 .toUriString();
         applicationPostDto.setLogo(fileDownloadUri);
-        applicationPostDto.setUser(authenticationService.getAuthenticatedUser());
+        applicationPostDto.setUser(authenticationService.getAuthenticatedUser().orElse(null));
         Application application = applicationService.saveApplication(applicationPostDto);
         return new ResponseEntity<>(new ApplicationDefaultGetDto(application), HttpStatus.CREATED);
     }
@@ -413,9 +413,9 @@ public class ApplicationController {
 
         ApplicationPutDto applicationPutDto = new ApplicationPutDto(id, name, shortDescription, longDescription, license, category);
 
-        User user = authenticationService.getAuthenticatedUser();
-        if (!Objects.equals(user.getAuthority().getAuthority(), Authorities.ADMIN.name())
-                && !applicationService.isUserOwner(applicationPutDto, user))
+        Optional<User> user = authenticationService.getAuthenticatedUser();
+        if (user.isPresent() && !Objects.equals(user.get().getAuthority().getAuthority(), Authorities.ADMIN.name())
+                && !applicationService.isUserOwner(applicationPutDto, user.get()))
             return new ResponseEntity<>(new ResponseError("Access denied! You don't have rights to edit this application"),
                     HttpStatus.FORBIDDEN);
         if (!Objects.requireNonNull(logo.getContentType()).contains("image"))
@@ -456,9 +456,9 @@ public class ApplicationController {
             @PathVariable(name = "id") String applicationId) {
         if (NumParser.parseIntOrNull(applicationId) == null)
             return new ResponseEntity<>(new ResponseError("Invalid application ID"), HttpStatus.BAD_REQUEST);
-        User user = authenticationService.getAuthenticatedUser();
-        if (!Objects.equals(user.getAuthority().getAuthority(), Authorities.ADMIN.name())
-                && !applicationService.isUserOwner(applicationId, user)) {
+        Optional<User> user = authenticationService.getAuthenticatedUser();
+        if (user.isPresent() && !Objects.equals(user.get().getAuthority().getAuthority(), Authorities.ADMIN.name())
+                && !applicationService.isUserOwner(applicationId, user.get())) {
             return new ResponseEntity<>(new ResponseError("Access denied! You don't have rights to remove this application"),
                     HttpStatus.FORBIDDEN);
         }
