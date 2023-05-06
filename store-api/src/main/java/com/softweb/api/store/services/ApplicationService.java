@@ -30,10 +30,6 @@ public class ApplicationService {
         return applicationPage.getContent();
     }
 
-    public List<Application> getSortedApplications() {
-        return applicationRepository.findAllByOrderByNameAsc();
-    }
-
     public List<Application> getApplicationsByCategory (Pageable pageable, Category category) {
         Page<Application> applicationPage = applicationRepository.findAllByCategory(category,pageable);
         return applicationPage.getContent();
@@ -101,7 +97,11 @@ public class ApplicationService {
         return applicationRepository.countByUser(user);
     }
 
-    public Application saveApplication(Application application) {
-        return applicationRepository.save(application);
+    public void saveApplication(Application application) {
+        applicationRepository.save(application);
+    }
+
+    public List<Application> getApplicationsByName(String name) {
+        return applicationRepository.findByNameContainsIgnoreCase(name);
     }
 }

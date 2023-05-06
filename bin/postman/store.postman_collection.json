@@ -208,7 +208,7 @@
 								{
 									"key": "logo",
 									"type": "file",
-									"src": "/C:/Users/Иван/Desktop/Scheme.png"
+									"src": "/C:/Users/Иван/Pictures/check.png"
 								},
 								{
 									"key": "name",
@@ -279,7 +279,7 @@
 								{
 									"key": "logo",
 									"type": "file",
-									"src": "/C:/Users/Иван/Desktop/Scheme.png"
+									"src": "/C:/Users/Иван/Pictures/check.png"
 								},
 								{
 									"key": "name",
@@ -445,7 +445,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8072/store/v1/application/search",
+							"raw": "http://localhost:8072/store/v1/application/search?name=ts",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -456,6 +456,12 @@
 								"v1",
 								"application",
 								"search"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "ts"
+								}
 							]
 						}
 					},

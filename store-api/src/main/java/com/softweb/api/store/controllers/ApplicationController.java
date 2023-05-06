@@ -141,22 +141,22 @@ public class ApplicationController {
     }
 
     /**
-     * Returns a list of applications' names, that are used in search fields
+     * Returns a list of applications' names, that names contains value
      *
      * @return List of applications' names
      */
     @GetMapping("/search")
     @Operation(
             summary = "Get applications' data for search fields",
-            description = "Returns a list of applications' names, that are used in search fields"
+            description = "Returns a list of applications' names, that names contains value"
     )
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Returns requested list",
                     content = {@Content(mediaType = "application/json",
-                            schema = @Schema(implementation = ApplicationSearch.class))})})
-    public ResponseEntity<?> getApplicationsSearchData () {
-        List<Application> applications = applicationService.getSortedApplications();
-        List<ApplicationSearch> result = applications.stream().map(ApplicationSearch::new).toList();
+                            schema = @Schema(implementation = ApplicationDefaultGetDto.class))})})
+    public ResponseEntity<?> getApplicationsSearchData (@RequestParam String name) {
+        List<Application> applications = applicationService.getApplicationsByName(name);
+        List<ApplicationDefaultGetDto> result = applications.stream().map(ApplicationDefaultGetDto::new).toList();
         return ResponseEntity.ok(result);
     }
 

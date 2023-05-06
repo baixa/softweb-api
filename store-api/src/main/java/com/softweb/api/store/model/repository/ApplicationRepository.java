@@ -16,6 +16,7 @@ import java.util.List;
  */
 @Repository
 public interface ApplicationRepository extends JpaRepository<Application, Long> {
+    List<Application> findByNameContainsIgnoreCase(String name);
     long countByCategory(Category category);
     long countByUser(User user);
 
@@ -23,5 +24,4 @@ public interface ApplicationRepository extends JpaRepository<Application, Long> 
 
     Page<Application> findAllByCategory(Category category, Pageable pageable);
 
-    List<Application> findAllByOrderByNameAsc();
 }
