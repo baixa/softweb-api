@@ -259,10 +259,19 @@ public class UserController {
         if (NumParser.parseIntOrNull(userId) == null)
             return new ResponseEntity<>(new ResponseError("Invalid user ID"), HttpStatus.BAD_REQUEST);
         Authorities authUserAuthority = authenticationService.getAuthenticationAuthority();
+
+        if (authenticationService.getAuthenticatedUser().isPresent()
+                && authenticationService.getAuthenticatedUser().get().getId().toString().equals(userId)) {
+            userService.deleteUserById(userId);
+            return new ResponseEntity<>(new ResponseError("User is removed successfully by himself"), HttpStatus.OK);
+        }
+
         if (Objects.requireNonNull(authUserAuthority) == Authorities.ADMIN) {
             userService.deleteUserById(userId);
-            return new ResponseEntity<>(new ResponseError("User removed successfully!"), HttpStatus.OK);
+            return new ResponseEntity<>(new ResponseError("User is removed successfully by administrator!"), HttpStatus.OK);
         }
+
+
         return new ResponseEntity<>(new ResponseError("Access denied! You don't have rights to remove this user"),
                 HttpStatus.FORBIDDEN);
     }
