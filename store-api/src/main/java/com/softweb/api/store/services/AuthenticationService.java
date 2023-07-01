@@ -8,10 +8,12 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class AuthenticationService {
     private Authentication authentication;
-    private UserService userService;
+    private final UserService userService;
 
     public AuthenticationService(UserService userService) {
         this.userService = userService;
@@ -36,12 +38,7 @@ public class AuthenticationService {
                 null : authentication.getName();
     }
 
-    public boolean isAuthenticated() {
-        loadAuthentication();
-        return authentication.isAuthenticated();
-    }
-
-    public User getAuthenticatedUser() {
+    public Optional<User> getAuthenticatedUser() {
         return userService.getUserByUsername(getAuthenticationName());
     }
 }

@@ -101,7 +101,9 @@ public class UserController {
     @PostMapping("/auth")
     @Hidden
     public ResponseEntity<UserGetDto> auth() {
-        return ResponseEntity.ok(new UserGetDto(authenticationService.getAuthenticatedUser()));
+        return authenticationService.getAuthenticatedUser().isPresent() ?
+            ResponseEntity.ok(new UserGetDto(authenticationService.getAuthenticatedUser().get())) :
+            ResponseEntity.of(Optional.empty());
     }
 
     /**
@@ -152,9 +154,16 @@ public class UserController {
         Authorities requestedUserAuthority = userDto.isAdmin() ? Authorities.ADMIN : Authorities.USER;
         if (requestedUserAuthority.equals(Authorities.ADMIN) &&
                 (authUserAuthority == null || !authUserAuthority.equals(Authorities.ADMIN))) {
-            return new ResponseEntity<>(new ResponseError("Access denied! You don't have rights to edit this user"),
+            return new ResponseEntity<>(new ResponseError("Access denied! You don't have rights to create user"),
                     HttpStatus.FORBIDDEN);
         }
+
+        Optional<User> existedUserWithSameUsername = userService.getUserByUsername(userDto.getUsername());
+        if (existedUserWithSameUsername.isPresent()) {
+            return new ResponseEntity<>(new ResponseError("Access denied! This login is used by another user"),
+                    HttpStatus.FORBIDDEN);
+        }
+
         User savedUser = userService.saveUser(userDto);
         if (savedUser == null) {
             return new ResponseEntity<>(new ResponseError("Access denied!"),
@@ -193,13 +202,23 @@ public class UserController {
             @ApiResponse(responseCode = "403", description = "Access denied", content = @Content)})
     public ResponseEntity<?> putUser (@RequestBody UserPutDto userDto) {
         Authorities authUserAuthority = authenticationService.getAuthenticationAuthority();
-        User authUser = authenticationService.getAuthenticatedUser();
+        Optional<User> authUser = authenticationService.getAuthenticatedUser();
         Authorities requestedUserAuthority = userDto.isAdmin() ? Authorities.ADMIN : Authorities.USER;
         if (requestedUserAuthority.equals(Authorities.ADMIN) && !authUserAuthority.equals(Authorities.ADMIN)) {
             return new ResponseEntity<>(new ResponseError("Access denied! You don't have rights to edit this user"),
                     HttpStatus.FORBIDDEN);
         }
-        if (!Objects.equals(authUser.getId(), userDto.getId()) && !authUserAuthority.equals(Authorities.ADMIN)) {
+
+        Optional<User> existedUserWithSameUsername = userService.getUserByUsername(userDto.getUsername());
+        if (existedUserWithSameUsername.isPresent() && !existedUserWithSameUsername.get().getId().equals(userDto.getId())) {
+            return new ResponseEntity<>(new ResponseError("Access denied! This login is used by another user"),
+                    HttpStatus.FORBIDDEN);
+        }
+
+        if (authUser.isEmpty()) {
+            return ResponseEntity.of(Optional.empty());
+        }
+        if (!Objects.equals(authUser.get().getId(), userDto.getId()) && !authUserAuthority.equals(Authorities.ADMIN)) {
             return new ResponseEntity<>(new ResponseError("Access denied! You don't have rights to edit this user"),
                     HttpStatus.FORBIDDEN);
         }
@@ -240,10 +259,19 @@ public class UserController {
         if (NumParser.parseIntOrNull(userId) == null)
             return new ResponseEntity<>(new ResponseError("Invalid user ID"), HttpStatus.BAD_REQUEST);
         Authorities authUserAuthority = authenticationService.getAuthenticationAuthority();
+
+        if (authenticationService.getAuthenticatedUser().isPresent()
+                && authenticationService.getAuthenticatedUser().get().getId().toString().equals(userId)) {
+            userService.deleteUserById(userId);
+            return new ResponseEntity<>(new ResponseError("User is removed successfully by himself"), HttpStatus.OK);
+        }
+
         if (Objects.requireNonNull(authUserAuthority) == Authorities.ADMIN) {
             userService.deleteUserById(userId);
-            return new ResponseEntity<>(new ResponseError("User removed successfully!"), HttpStatus.OK);
+            return new ResponseEntity<>(new ResponseError("User is removed successfully by administrator!"), HttpStatus.OK);
         }
+
+
         return new ResponseEntity<>(new ResponseError("Access denied! You don't have rights to remove this user"),
                 HttpStatus.FORBIDDEN);
     }

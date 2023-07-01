@@ -1,11 +1,9 @@
 package com.softweb.api.store.controllers;
 
-import com.softweb.api.store.model.dto.application.AbstractApplicationGetDto;
-import com.softweb.api.store.model.dto.application.ApplicationDefaultGetDto;
-import com.softweb.api.store.model.dto.application.ApplicationPostDto;
-import com.softweb.api.store.model.dto.application.ApplicationPutDto;
+import com.softweb.api.store.model.dto.application.*;
 import com.softweb.api.store.model.entities.*;
 import com.softweb.api.store.services.*;
+import com.softweb.api.store.utils.CollectionsInfoResponse;
 import com.softweb.api.store.utils.NumParser;
 import com.softweb.api.store.utils.ResponseError;
 import io.swagger.v3.oas.annotations.Operation;
@@ -16,8 +14,6 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
@@ -59,33 +55,36 @@ public class ApplicationController {
     private final CategoryService categoryService;
 
     /**
+     * Service, that provides ability to interaction with the User entity
+     */
+    private final UserService userService;
+
+    /**
      * Service, that provides ability manipulate with static files
      */
     private final FileStorageService fileStorageService;
 
     /**
-     * System logger
-     */
-    private final Logger logger = LoggerFactory.getLogger(ApplicationController.class);
-
-    /**
      * Controller
      *
-     * @param applicationService Application service
+     * @param applicationService    Application service
      * @param authenticationService Authentication service
-     * @param licenseService License service
-     * @param categoryService Category service
-     * @param fileStorageService FileStorage service
+     * @param licenseService        License service
+     * @param categoryService       Category service
+     * @param userService           User service
+     * @param fileStorageService    FileStorage service
      */
     public ApplicationController(ApplicationService applicationService,
                                  AuthenticationService authenticationService,
                                  LicenseService licenseService,
                                  CategoryService categoryService,
+                                 UserService userService,
                                  FileStorageService fileStorageService) {
         this.applicationService = applicationService;
         this.authenticationService = authenticationService;
         this.licenseService = licenseService;
         this.categoryService = categoryService;
+        this.userService = userService;
         this.fileStorageService = fileStorageService;
     }
 
@@ -110,8 +109,13 @@ public class ApplicationController {
         if (NumParser.parseIntOrNull(applicationId) == null)
             return new ResponseEntity<>(new ResponseError("Invalid ID"), HttpStatus.BAD_REQUEST);
         Application application = applicationService.getApplicationById(applicationId);
-        return Objects.isNull(application) ? ResponseEntity.of(Optional.empty()) :
-                ResponseEntity.ok(new ApplicationDefaultGetDto(application));
+        if (Objects.isNull(application))
+            return ResponseEntity.of(Optional.empty());
+        else {
+            application.view();
+            applicationService.saveApplication(application);
+            return ResponseEntity.ok(new ApplicationDefaultGetDto(application));
+        }
     }
 
     /**
@@ -137,9 +141,50 @@ public class ApplicationController {
     }
 
     /**
+     * Returns a list of applications' names, that names contains value
+     *
+     * @return List of applications' names
+     */
+    @GetMapping("/search")
+    @Operation(
+            summary = "Get applications' data for search fields",
+            description = "Returns a list of applications' names, that names contains value"
+    )
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Returns requested list",
+                    content = {@Content(mediaType = "application/json",
+                            schema = @Schema(implementation = ApplicationDefaultGetDto.class))})})
+    public ResponseEntity<?> getApplicationsSearchData (@RequestParam String name) {
+        List<Application> applications = applicationService.getApplicationsByName(name);
+        List<ApplicationDefaultGetDto> result = applications.stream().map(ApplicationDefaultGetDto::new).toList();
+        return ResponseEntity.ok(result);
+    }
+
+    /**
+     * Returns info about list of applications (total count of elements, count of pages) by size of page
+     *
+     * @param size Size of requested page
+     * @return Info about list of applications
+     */
+    @GetMapping("/info")
+    @Operation(
+            summary = "Get info about list of applications",
+            description = "Returns a list of applications (total count of elements, count of pages) by size of page"
+    )
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Returns requested info",
+                    content = {@Content(mediaType = "application/json",
+                            schema = @Schema(implementation = CollectionsInfoResponse.class))}),
+            @ApiResponse(responseCode = "400", description = "Invalid data supplied", content = @Content) })
+    public ResponseEntity<?> getApplicationsInfo (@RequestParam Integer size) {
+        Long applicationsCount = applicationService.getApplicationsCount();
+        return ResponseEntity.ok(new CollectionsInfoResponse(applicationsCount, size));
+    }
+
+    /**
      * Returns a list of applications, that category corresponds request param categoryId
      *
-     * @param categoryId Id of requested category
+     * @param categoryId ID of requested category
      * @param pageable Data of elements quality
      * @return List of category's applications
      */
@@ -154,7 +199,7 @@ public class ApplicationController {
                             schema = @Schema(implementation = AbstractApplicationGetDto.class))}),
             @ApiResponse(responseCode = "404", description = "Category with given id is absent", content = @Content),
             @ApiResponse(responseCode = "400", description = "Invalid data supplied", content = @Content) })
-    public ResponseEntity<?> getApplicationsByCategoryName (
+    public ResponseEntity<?> getApplicationsByCategory(
             @Parameter(description = "Id of requested category")
             @RequestParam(name = "categoryId") String categoryId,
             @ParameterObject Pageable pageable) {
@@ -166,6 +211,90 @@ public class ApplicationController {
         List<Application> applications = applicationService.getApplicationsByCategory(pageable, category);
         List<ApplicationDefaultGetDto> result = applications.stream().map(ApplicationDefaultGetDto::new).toList();
         return ResponseEntity.ok(result);
+    }
+
+    /**
+     * Returns info about list of applications by category (total count of elements, count of pages) by size of page
+     *
+     * @param size Size of requested page
+     * @return Info about list of applications
+     */
+    @GetMapping("/category/info")
+    @Operation(
+            summary = "Get info about list of applications by category",
+            description = "Returns a list of applications by category (total count of elements, count of pages) by size of page"
+    )
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Returns requested info",
+                    content = {@Content(mediaType = "application/json",
+                            schema = @Schema(implementation = CollectionsInfoResponse.class))}),
+            @ApiResponse(responseCode = "400", description = "Invalid data supplied", content = @Content) })
+    public ResponseEntity<?> getApplicationsInfoByCategory (@RequestParam Integer size, @RequestParam String categoryId) {
+        if (NumParser.parseIntOrNull(categoryId) == null)
+            return new ResponseEntity<>(new ResponseError("Invalid category ID"), HttpStatus.BAD_REQUEST);
+        Category category = categoryService.getCategoryById(categoryId);
+        if (Objects.isNull(category))
+            return ResponseEntity.of(Optional.empty());
+        Long applicationsCount = applicationService.getApplicationsCountByCategory(category);
+        return ResponseEntity.ok(new CollectionsInfoResponse(applicationsCount, size));
+    }
+
+    /**
+     * Returns a list of applications, that user corresponds request param userId
+     *
+     * @param userId Id of requested user
+     * @param pageable Data of elements quality
+     * @return List of user's applications
+     */
+    @GetMapping("/user")
+    @Operation(
+            summary = "Get apps by user id",
+            description = "Returns a list of applications, that user corresponds request param userId"
+    )
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Returns requested applications",
+                    content = {@Content(mediaType = "application/json",
+                            schema = @Schema(implementation = AbstractApplicationGetDto.class))}),
+            @ApiResponse(responseCode = "404", description = "User with given id is absent", content = @Content),
+            @ApiResponse(responseCode = "400", description = "Invalid data supplied", content = @Content) })
+    public ResponseEntity<?> getApplicationsByUser (
+            @Parameter(description = "Id of requested user")
+            @RequestParam(name = "userId") String userId,
+            @ParameterObject Pageable pageable) {
+        if (NumParser.parseIntOrNull(userId) == null)
+            return new ResponseEntity<>(new ResponseError("Invalid user ID"), HttpStatus.BAD_REQUEST);
+        User user = userService.getUserById(userId);
+        if (Objects.isNull(user))
+            return ResponseEntity.of(Optional.empty());
+        List<Application> applications = applicationService.getApplicationsByUser(pageable, user);
+        List<ApplicationDefaultGetDto> result = applications.stream().map(ApplicationDefaultGetDto::new).toList();
+        return ResponseEntity.ok(result);
+    }
+
+    /**
+     * Returns info about list of applications by user (total count of elements, count of pages) by size of page
+     *
+     * @param size Size of requested page
+     * @return Info about list of applications
+     */
+    @GetMapping("/user/info")
+    @Operation(
+            summary = "Get info about list of applications by user",
+            description = "Returns a list of applications by user (total count of elements, count of pages) by size of page"
+    )
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Returns requested info",
+                    content = {@Content(mediaType = "application/json",
+                            schema = @Schema(implementation = CollectionsInfoResponse.class))}),
+            @ApiResponse(responseCode = "400", description = "Invalid data supplied", content = @Content) })
+    public ResponseEntity<?> getApplicationsInfoByUser (@RequestParam Integer size, @RequestParam String userId) {
+        if (NumParser.parseIntOrNull(userId) == null)
+            return new ResponseEntity<>(new ResponseError("Invalid user ID"), HttpStatus.BAD_REQUEST);
+        User user = userService.getUserById(userId);
+        if (Objects.isNull(user))
+            return ResponseEntity.of(Optional.empty());
+        Long applicationsCount = applicationService.getApplicationsCountByUser(user);
+        return ResponseEntity.ok(new CollectionsInfoResponse(applicationsCount, size));
     }
 
     /**
@@ -220,12 +349,15 @@ public class ApplicationController {
         ApplicationPostDto applicationPostDto = new ApplicationPostDto(name, shortDescription,
                 longDescription, license, category);
         String fileName = fileStorageService.storeFile(logo);
-        String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
-                .path("/v1/image/")
+        String fileDownloadUri = ServletUriComponentsBuilder.newInstance()
+                .scheme("http")
+                .host("localhost")
+                .port("8072")
+                .path("/store/v1/image/")
                 .path(fileName)
                 .toUriString();
         applicationPostDto.setLogo(fileDownloadUri);
-        applicationPostDto.setUser(authenticationService.getAuthenticatedUser());
+        applicationPostDto.setUser(authenticationService.getAuthenticatedUser().orElse(null));
         Application application = applicationService.saveApplication(applicationPostDto);
         return new ResponseEntity<>(new ApplicationDefaultGetDto(application), HttpStatus.CREATED);
     }
@@ -281,9 +413,9 @@ public class ApplicationController {
 
         ApplicationPutDto applicationPutDto = new ApplicationPutDto(id, name, shortDescription, longDescription, license, category);
 
-        User user = authenticationService.getAuthenticatedUser();
-        if (!Objects.equals(user.getAuthority().getAuthority(), Authorities.ADMIN.name())
-                && !applicationService.isUserOwner(applicationPutDto, user))
+        Optional<User> user = authenticationService.getAuthenticatedUser();
+        if (user.isPresent() && !Objects.equals(user.get().getAuthority().getAuthority(), Authorities.ADMIN.name())
+                && !applicationService.isUserOwner(applicationPutDto, user.get()))
             return new ResponseEntity<>(new ResponseError("Access denied! You don't have rights to edit this application"),
                     HttpStatus.FORBIDDEN);
         if (!Objects.requireNonNull(logo.getContentType()).contains("image"))
@@ -291,8 +423,11 @@ public class ApplicationController {
                     HttpStatus.BAD_REQUEST);
 
         String fileName = fileStorageService.storeFile(logo);
-        String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
-                .path("/v1/image/")
+        String fileDownloadUri = ServletUriComponentsBuilder.newInstance()
+                .scheme("http")
+                .host("localhost")
+                .port("8072")
+                .path("/store/v1/image/")
                 .path(fileName)
                 .toUriString();
         applicationPutDto.setLogo(fileDownloadUri);
@@ -321,9 +456,9 @@ public class ApplicationController {
             @PathVariable(name = "id") String applicationId) {
         if (NumParser.parseIntOrNull(applicationId) == null)
             return new ResponseEntity<>(new ResponseError("Invalid application ID"), HttpStatus.BAD_REQUEST);
-        User user = authenticationService.getAuthenticatedUser();
-        if (!Objects.equals(user.getAuthority().getAuthority(), Authorities.ADMIN.name())
-                && !applicationService.isUserOwner(applicationId, user)) {
+        Optional<User> user = authenticationService.getAuthenticatedUser();
+        if (user.isPresent() && !Objects.equals(user.get().getAuthority().getAuthority(), Authorities.ADMIN.name())
+                && !applicationService.isUserOwner(applicationId, user.get())) {
             return new ResponseEntity<>(new ResponseError("Access denied! You don't have rights to remove this application"),
                     HttpStatus.FORBIDDEN);
         }

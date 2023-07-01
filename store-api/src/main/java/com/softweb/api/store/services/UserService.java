@@ -40,8 +40,8 @@ public class UserService {
         userRepository.deleteById(Long.valueOf(userId));
     }
 
-    public User getUserByUsername(String authenticationName) {
-        return userRepository.findByUsername(authenticationName).orElse(null);
+    public Optional<User> getUserByUsername(String authenticationName) {
+        return userRepository.findByUsername(authenticationName);
     }
 
     public List<User> getUsers(Pageable pageable) {

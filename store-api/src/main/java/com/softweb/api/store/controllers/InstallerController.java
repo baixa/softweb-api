@@ -129,13 +129,13 @@ public class InstallerController {
             @RequestParam String systemId,
             @Parameter(description = "Version of installer")
             @RequestParam String version) {
-        User authUser = authenticationService.getAuthenticatedUser();
+        Optional<User> authUser = authenticationService.getAuthenticatedUser();
         Authorities authUserAuthority = authenticationService.getAuthenticationAuthority();
         Application application = applicationService.getApplicationById(applicationId);
         OperatingSystem system = operatingSystemService.getOperatingSystemById(systemId);
-        if (Objects.isNull(application) || Objects.isNull(system))
+        if (Objects.isNull(application) || Objects.isNull(system) || authUser.isEmpty())
             return ResponseEntity.of(Optional.empty());
-        if (!(Objects.equals(application.getUser().getId(), authUser.getId())) && authUserAuthority != Authorities.ADMIN)
+        if (!(Objects.equals(application.getUser().getId(), authUser.get().getId())) && authUserAuthority != Authorities.ADMIN)
             return new ResponseEntity<>(new ResponseError("Access denied. You don't have rights to edit this application"), 
                     HttpStatus.FORBIDDEN);
         if (!Objects.requireNonNull(file.getContentType()).contains("application"))
@@ -180,11 +180,12 @@ public class InstallerController {
             @ApiResponse(responseCode = "404", description = "Installer not found")})
     public ResponseEntity<?> deleteInstaller(@PathVariable String id) {
         Installer installer = installerService.getInstallerById(id);
-        if (installer == null)
+        Optional<User> authUser = authenticationService.getAuthenticatedUser();
+        if (Objects.isNull(installer) || authUser.isEmpty()) {
             return ResponseEntity.of(Optional.empty());
-        User authUser = authenticationService.getAuthenticatedUser();
+        }
         Authorities authUserAuthority = authenticationService.getAuthenticationAuthority();
-        if (!(Objects.equals(installer.getApplication().getUser().getId(), authUser.getId()))
+        if (!(Objects.equals(installer.getApplication().getUser().getId(), authUser.get().getId()))
                 && authUserAuthority != Authorities.ADMIN)
             return new ResponseEntity<>(new ResponseError("Access denied! You don't have rights to edit this installer"), 
                     HttpStatus.FORBIDDEN);

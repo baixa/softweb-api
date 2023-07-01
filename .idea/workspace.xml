@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e1eb751-0cc7-4a2b-80fd-d9eaef23426d" name="Changes" comment="#56 Add Postman Collection" />
+    <list default="true" id="6e1eb751-0cc7-4a2b-80fd-d9eaef23426d" name="Changes" comment="Add feature to user remove his account himself">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/ApplicationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/controllers/ApplicationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/dto/application/ApplicationSearch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/repository/ApplicationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/model/repository/ApplicationRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/ApplicationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-api/src/main/java/com/softweb/api/store/services/ApplicationService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,7 +26,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev" />
+        <entry key="$PROJECT_DIR$" value="20_config_git" />
       </map>
     </option>
   </component>
@@ -48,32 +54,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "database.data.extractors.current.export.id": "SQL Inserts",
-    "extract.method.default.visibility": "private",
-    "last_opened_file_path": "D:/Data/Projects/SoftWeb-API/bin/postman",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "spring.configuration.checksum": "e84fe88790f64bc68f4fb4a03d90e08a",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;database.data.extractors.current.export.id&quot;: &quot;SQL Inserts&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Data/Projects/SoftWeb-API/bin/postman&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;e84fe88790f64bc68f4fb4a03d90e08a&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ],
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "TEXT",
-      "PLAIN_TEXT"
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;TEXT&quot;,
+      &quot;PLAIN_TEXT&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -90,7 +100,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Docker.bin: Compose Deployment">
+  <component name="RunManager" selected="Spring Boot.ConfigApplication">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="SoftWeb-API" />
       <method v="2">
@@ -164,6 +174,9 @@
       <list>
         <item itemvalue="Docker.bin: Compose Deployment" />
         <item itemvalue="Docker.bin.database: Compose Deployment" />
+        <item itemvalue="Docker.bin: Compose Deployment" />
+        <item itemvalue="Docker.bin.database: Compose Deployment" />
+        <item itemvalue="Docker.bin: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -187,6 +200,33 @@
       <workItem from="1678443515279" duration="16669000" />
       <workItem from="1678519616016" duration="14472000" />
       <workItem from="1678599304315" duration="3978000" />
+      <workItem from="1679152884876" duration="1381000" />
+      <workItem from="1679241608926" duration="1846000" />
+      <workItem from="1679477365169" duration="1705000" />
+      <workItem from="1679499620619" duration="553000" />
+      <workItem from="1679664388383" duration="3286000" />
+      <workItem from="1679909857481" duration="645000" />
+      <workItem from="1680177045524" duration="2244000" />
+      <workItem from="1680254635604" duration="2969000" />
+      <workItem from="1680522341819" duration="4207000" />
+      <workItem from="1680597756500" duration="901000" />
+      <workItem from="1680633345675" duration="616000" />
+      <workItem from="1680790263764" duration="725000" />
+      <workItem from="1681125474594" duration="130000" />
+      <workItem from="1681127452959" duration="1681000" />
+      <workItem from="1681184992428" duration="987000" />
+      <workItem from="1681654593691" duration="1920000" />
+      <workItem from="1681658231779" duration="802000" />
+      <workItem from="1682054056304" duration="1647000" />
+      <workItem from="1682321968624" duration="3014000" />
+      <workItem from="1682338843964" duration="3499000" />
+      <workItem from="1682405231760" duration="1803000" />
+      <workItem from="1682430152474" duration="3951000" />
+      <workItem from="1682445463430" duration="2569000" />
+      <workItem from="1682586633490" duration="5232000" />
+      <workItem from="1682785607358" duration="3083000" />
+      <workItem from="1682959961331" duration="3607000" />
+      <workItem from="1683370277321" duration="2949000" />
     </task>
     <task id="LOCAL-00001" summary="#33 Add applications for social category">
       <created>1677960517018</created>
@@ -335,7 +375,105 @@
       <option name="project" value="LOCAL" />
       <updated>1678603298345</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Add endpoint to get applications by user id">
+      <created>1679243617347</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1679243617347</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Add endpoint to get applications by user id">
+      <created>1679479347833</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1679479347833</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Hot-Fix: Fix CORS settings">
+      <created>1679667882972</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1679667882972</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Hot-Fix: Return array format of date and fix users passwords">
+      <created>1680258054629</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1680258054629</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Add info requests to collection requests (with data about count of elements)">
+      <created>1680528256321</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1680528256321</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Update Postman collection">
+      <created>1680528335436</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1680528335436</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Synchronize with frontend">
+      <created>1680790363559</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1680790363559</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Fix counter of applications' views">
+      <created>1682055696095</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1682055696095</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Fix generation application logo url and add docs for some classes">
+      <created>1682406353330</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1682406353330</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Update max file request size">
+      <created>1682587641861</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1682587641861</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Add application search endpoint">
+      <created>1682871024821</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1682871024821</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Update Postman collection">
+      <created>1682871305588</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1682871305588</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Fix add user someone else's username">
+      <created>1682963101077</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1682963101077</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Add feature to user remove his account himself">
+      <created>1683372938126</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1683372938127</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -353,12 +491,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="#33 Add applications for social category" />
-    <MESSAGE value="#33 Add applications for all categories" />
-    <MESSAGE value="#33 Fix social category" />
-    <MESSAGE value="#33 Fix duplicate names" />
-    <MESSAGE value="#33 Add logo images" />
-    <MESSAGE value="#33 Add application images" />
     <MESSAGE value="#33 Remove redundant files" />
     <MESSAGE value="#56 Add Swagger OpenAPI UI" />
     <MESSAGE value="#56 Set up swagger settings" />
@@ -372,6 +504,18 @@
     <MESSAGE value="#56 Prepare UserController to add Postman Collection" />
     <MESSAGE value="#56 Prepare Image and Installer Controllers to add Postman Collection" />
     <MESSAGE value="#56 Add Postman Collection" />
-    <option name="LAST_COMMIT_MESSAGE" value="#56 Add Postman Collection" />
+    <MESSAGE value="Add endpoint to get applications by user id" />
+    <MESSAGE value="Hot-Fix: Fix CORS settings" />
+    <MESSAGE value="Hot-Fix: Return array format of date and fix users passwords" />
+    <MESSAGE value="Add info requests to collection requests (with data about count of elements)" />
+    <MESSAGE value="Synchronize with frontend" />
+    <MESSAGE value="Fix counter of applications' views" />
+    <MESSAGE value="Fix generation application logo url and add docs for some classes" />
+    <MESSAGE value="Update max file request size" />
+    <MESSAGE value="Add application search endpoint" />
+    <MESSAGE value="Update Postman collection" />
+    <MESSAGE value="Fix add user someone else's username" />
+    <MESSAGE value="Add feature to user remove his account himself" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add feature to user remove his account himself" />
   </component>
 </project>
