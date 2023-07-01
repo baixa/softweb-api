@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -149,6 +150,19 @@ public class Application {
                 ", images=" + images +
                 ", installers=" + installers +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Application that = (Application) o;
+        return downloads == that.downloads && views == that.views && Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(shortDescription, that.shortDescription) && Objects.equals(longDescription, that.longDescription) && Objects.equals(logoPath, that.logoPath) && Objects.equals(license, that.license) && Objects.equals(user, that.user) && Objects.equals(lastUpdate, that.lastUpdate) && Objects.equals(images, that.images) && Objects.equals(installers, that.installers) && Objects.equals(category, that.category);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, shortDescription, longDescription, logoPath, license, user, lastUpdate, downloads, views, images, installers, category);
     }
 
     /**
